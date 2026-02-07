@@ -41,7 +41,6 @@ import { CommonModule } from '@angular/common';
               </div>
               <h4>Email Us</h4>
               <p>info@happyghumakkads.com</p>
-              <p>support@happyghumakkads.com</p>
               <small>We respond within 24 hours</small>
             </div>
           </div>
@@ -51,8 +50,8 @@ import { CommonModule } from '@angular/common';
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <h4>Visit Us</h4>
-              <p>123 Travel Street</p>
-              <p>New Delhi, India</p>
+              <p>Mishra Complex, Ground Floor, Chauhan Nagar</p>
+              <p>Pateri, Satna (M.P.) 485001</p>
               <small>By appointment only</small>
             </div>
           </div>
