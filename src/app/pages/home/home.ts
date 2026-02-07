@@ -81,7 +81,7 @@ import { Router } from '@angular/router';
                     </div>
                     <div class="col-md-3 col-6">
                       <div class="stat-item">
-                        <h3 class="text-warning">15+</h3>
+                        <h3 class="text-warning">8+</h3>
                         <p class="text-white">Years Experience</p>
                       </div>
                     </div>

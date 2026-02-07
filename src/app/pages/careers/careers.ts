@@ -81,7 +81,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Delhi, NCR</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Satna (M.P.)</span>
                   <span><i class="fas fa-money-bill"></i> ₹4-6 LPA</span>
                 </div>
                 <p class="job-description">Help customers plan their perfect trips, provide expert travel advice, and create customized itineraries.</p>
@@ -105,7 +105,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Delhi, NCR</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Satna, (M.P)</span>
                   <span><i class="fas fa-money-bill"></i> ₹3-5 LPA</span>
                 </div>
                 <p class="job-description">Drive our marketing initiatives, manage social media, and promote our amazing travel packages.</p>
@@ -153,7 +153,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Delhi, NCR</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Satna (M.P.)</span>
                   <span><i class="fas fa-money-bill"></i> ₹2-3 LPA</span>
                 </div>
                 <p class="job-description">Handle customer inquiries, resolve issues, and ensure exceptional service quality.</p>

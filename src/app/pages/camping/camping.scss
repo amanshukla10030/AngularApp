@@ -10,21 +10,53 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8)), url('/assets/images/HGI-image2.jpg') center/cover;
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(135deg, 
+    rgba(46, 204, 113, 0.9) 0%, 
+    rgba(39, 174, 96, 0.8) 25%, 
+    rgba(52, 73, 94, 0.7) 50%, 
+    rgba(41, 128, 185, 0.8) 75%, 
+    rgba(142, 68, 173, 0.7) 100%
+  ), url('/images/camping.jpg') center/cover;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(46, 204, 113, 0.7) 0%, 
+    rgba(52, 73, 94, 0.5) 50%, 
+    rgba(142, 68, 173, 0.3) 100%
+  );
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 800px;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero-text h1 {
@@ -35,15 +67,116 @@
 }
 
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-features {
   display: flex;
   gap: 2rem;
+  margin-top: 3rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.feature-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-item span {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-actions {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-actions .btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions .btn-warning {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  border: none;
+  color: white;
+}
+
+.hero-actions .btn-warning:hover {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-actions .btn-outline-light {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.hero-actions .btn-outline-light:hover {
+  background: white;
+  color: #27ae60;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .feature-item {

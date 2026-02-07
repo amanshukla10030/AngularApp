@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
             <div class="mt-4">
               <div class="d-flex gap-4 mb-3">
                 <div class="stat-box">
-                  <h3 class="text-warning">15+</h3>
+                  <h3 class="text-warning">8+</h3>
                   <p>Years Experience</p>
                 </div>
                 <div class="stat-box">
