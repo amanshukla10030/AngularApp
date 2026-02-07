@@ -1,0 +1,220 @@
+<div class="student-groups-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-text">
+              <h1 class="display-3 fw-bold mb-4 text-white">
+                Student Group Tours
+              </h1>
+              <p class="lead mb-4 text-white">
+                Educational tours and special packages for student groups and young travelers
+              </p>
+              <div class="hero-features">
+                <div class="feature-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Educational Tours</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-book"></i>
+                  <span>Study Tours</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-users"></i>
+                  <span>Group Discounts</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-bed"></i>
+                  <span>Budget Accommodation</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-utensils"></i>
+                  <span>Meals Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tours -->
+  <section class="featured-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Student Packages</h2>
+      <div class="featured-grid">
+        <div class="featured-card" (click)="navigateToPackages()">
+          <div class="featured-image">
+            <img src="/assets/images/HGI-image1.jpg" alt="Student Tour" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Historical Study Tour</h4>
+            <p>Educational journey through India's rich heritage</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 5 Nights Hotel Accommodation on triple sharing basis</li>
+              <li><i class="fas fa-check"></i> All meals included</li>
+              <li><i class="fas fa-check"></i> Transportation throughout</li>
+              <li><i class="fas fa-check"></i> Professional guide</li>
+              <li><i class="fas fa-check"></i> Entrance fees included</li>
+              <li><i class="fas fa-check"></i> Study materials provided</li>
+              <li><i class="fas fa-check"></i> Group discounts available</li>
+              <li><i class="fas fa-check"></i> Inclusive all taxes</li>
+              <li><i class="fas fa-check"></i> No any Hidden cost</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary Section -->
+  <section class="itinerary-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Historical Study Tour Itinerary</h2>
+      <div class="itinerary-timeline">
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 1: Delhi - Arrival & Orientation</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Arrival in Delhi:</strong> Welcome to the capital city! Upon arrival at Delhi Airport/Railway Station, our representative will transfer you to your hotel. After check-in and freshening up, attend an orientation session about the historical significance of the places you'll be visiting. Evening cultural program introducing India's diverse heritage. Dinner and overnight stay in Delhi.</p>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 2: Delhi - Agra (Taj Mahal)</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Delhi to Agra:</strong> After breakfast, drive to Agra, home of the magnificent Taj Mahal. Visit the iconic Taj Mahal at sunrise - a truly unforgettable experience. Explore Agra Fort and learn about Mughal architecture. Evening visit to Mehtab Bagh for sunset view of the Taj Mahal. Return to Agra. Dinner and overnight stay in Agra.</p>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 3: Agra - Jaipur (Pink City)</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Agra to Jaipur:</strong> After breakfast, drive to Jaipur, the Pink City. Visit City Palace, Hawa Mahal, Jantar Mantar (astronomical observatory), and local markets. Experience Rajasthani culture and cuisine. Evening traditional Rajasthani folk performance. Dinner and overnight stay in Jaipur.</p>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 4: Jaipur - Delhi</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Jaipur to Delhi:</strong> After breakfast, drive back to Delhi. En route, visit to Fatehpur Sikri, known for its magnificent architecture and historical significance. Upon arrival in Delhi, final group discussion and certificate distribution. Farewell dinner and overnight stay in Delhi.</p>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 5: Departure from Delhi</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Departure:</strong> After breakfast, transfer to Delhi Airport/Railway Station for your return journey, carrying with you enriching educational experiences and newfound knowledge about India's glorious past.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Exclusions -->
+  <section class="exclusions-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Package Exclusions</h2>
+      <div class="exclusions-list">
+        <ul>
+          <li>Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic).</li>
+          <li>Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train).</li>
+          <li>Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions).</li>
+          <li>Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations—such costs must be borne directly by the traveler at the time.</li>
+          <li>Room heater charges at hotels or resorts.</li>
+          <li>Any items or services not explicitly mentioned under the "Inclusions" section.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Book Your Educational Tour</h2>
+      <div class="booking-form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="institution-name" class="form-label">Institution Name</label>
+              <input type="text" class="form-control" id="institution-name" placeholder="Enter your institution name">
+            </div>
+            <div class="form-group">
+              <label for="contact-person" class="form-label">Contact Person</label>
+              <input type="text" class="form-control" id="contact-person" placeholder="Enter contact person name">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+              <label for="travel-date" class="form-label">Travel Date</label>
+              <input type="date" class="form-control" id="travel-date">
+            </div>
+            <div class="form-group">
+              <label for="group-size" class="form-label">Number of Students</label>
+              <input type="number" class="form-control" id="group-size" placeholder="Enter number of students">
+            </div>
+            <div class="form-group">
+              <label for="special-requests" class="form-label">Special Requirements</label>
+              <textarea class="form-control" id="special-requests" rows="4" placeholder="Any special educational requirements..."></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="booking-info">
+              <h4>Package Highlights</h4>
+              <ul>
+                <li>Educational guide throughout</li>
+                <li>Study materials included</li>
+                <li>Entrance fees to monuments</li>
+                <li>Certificate of completion</li>
+                <li>Group discounts available</li>
+                <li>Transportation throughout</li>
+              </ul>
+            </div>
+            <div class="price-info">
+              <h4>Starting from ₹8,500 per student</h4>
+              <p class="lead">5 Days / 4 Nights - All inclusive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg" (click)="navigateToContact()">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section py-5">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Educational Journey?</h2>
+        <p class="lead mb-4 text-white">Learn and explore with expert guidance</p>
+        <div class="cta-buttons">
+          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All Student Tours</button>
+          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

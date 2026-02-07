@@ -1,0 +1,2289 @@
+<div class="packages-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-text">
+              <h1 class="display-3 fw-bold mb-4 text-white">Tour Packages</h1>
+              <p class="lead mb-4 text-white">Discover amazing destinations and create unforgettable memories with our carefully crafted tour packages</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Categories -->
+  <section class="categories-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Explore Our Tour Categories</h2>
+      <div class="categories-grid">
+        <div class="category-card" (click)="navigateToAdventurePhotography()">
+          <div class="category-icon">
+            <i class="fas fa-mountain"></i>
+          </div>
+          <h3>Adventure Tours</h3>
+          <div class="category-description">
+            <p>Thrilling wildlife safaris, trekking, paragliding, and adventure sports activities</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToCamping()">
+          <div class="category-icon">
+            <i class="fas fa-campground"></i>
+          </div>
+          <h3>Camping Tours</h3>
+          <div class="category-description">
+            <p>Experience the great outdoors with our camping adventures</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToSpiritualTours()">
+          <div class="category-icon">
+            <i class="fas fa-om"></i>
+          </div>
+          <h3>Pilgrimage Tours</h3>
+          <div class="category-description">
+            <p>Sacred journeys to holy sites, temple visits, and spiritual experiences</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToInternationalTours()">
+          <div class="category-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>International Tours</h3>
+          <div class="category-description">
+            <p>Explore destinations beyond India with our curated international packages</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToCorporateEvents()">
+          <div class="category-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Corporate Events</h3>
+          <div class="category-description">
+            <p>Customized corporate travel packages for team building and business events</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToStudentGroups()">
+          <div class="category-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Student Groups</h3>
+          <div class="category-description">
+            <p>Educational tours and special packages for student groups and young travelers</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToIndustrialTours()">
+          <div class="category-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Industrial Tours</h3>
+          <div class="category-description">
+            <p>Explore manufacturing facilities, industrial sites, and technological innovations</p>
+          </div>
+        </div>
+        
+        <div class="category-card" (click)="navigateToCulturalHeritageTours()">
+          <div class="category-icon">
+            <i class="fas fa-monument"></i>
+          </div>
+          <h3>Cultural & Heritage</h3>
+          <div class="category-description">
+            <p>Discover India's rich cultural heritage and historical treasures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Packages -->
+  <section class="featured-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Tour Packages</h2>
+      
+      <!-- Madhya Pradesh -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MADHYA PRADESH WILDLIFE SAFARI</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹12,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/mpws.jpg" alt="Madhya Pradesh Wildlife Safari" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Wildlife Adventure</h4>
+            <p>Experience the thrill of spotting tigers, leopards, and exotic wildlife in their natural habitat. Includes jeep safaris, nature walks, and tribal village visits.</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 3 Nights Hotel Stay</li>
+              <li><i class="fas fa-check"></i> All Meals Included</li>
+              <li><i class="fas fa-check"></i> Expert Naturalist Guide</li>
+              <li><i class="fas fa-check"></i> Airport Transfers</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- North India -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">GRAND NORTH INDIA HERITAGE TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">10 Nights / 11 Days</span>
+            <span class="price">Starting from ₹25,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/gni.webp" alt="North India Heritage Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Cultural Heritage Journey</h4>
+            <p>Explore the rich cultural heritage of North India, from majestic monuments to spiritual sites. Visit Delhi, Agra, Jaipur, and more.</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 10 Nights Hotel Stay</li>
+              <li><i class="fas fa-check"></i> All Meals Included</li>
+              <li><i class="fas fa-check"></i> Guided Tours</li>
+              <li><i class="fas fa-check"></i> Transportation</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jammu & Kashmir -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">JAMMU & KASHMIR SPIRITUAL JOURNEY</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹18,500/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/jandk.jpg" alt="Jammu & Kashmir Spiritual Journey" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Divine Pilgrimage</h4>
+            <p>Experience the spiritual bliss of Jammu & Kashmir with visits to sacred temples, houseboat stays, and beautiful landscapes.</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 4 Nights Hotel Stay</li>
+              <li><i class="fas fa-check"></i> All Meals Included</li>
+              <li><i class="fas fa-check"></i> Airport Transfers</li>
+              <li><i class="fas fa-check"></i> Spiritual Guide</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panchmarhi 2N/3D Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">PANCHMARHI TOUR PACKAGE FOR 02 NIGHTS 03 DAYS</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹8,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/panchmarhi.jpg" alt="Panchmarhi Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Hill Station Paradise</h4>
+            <p>Discover the enchanting hill station of Pachmarhi, nestled in the Satpura range. Explore ancient caves, majestic waterfalls, and breathtaking viewpoints.</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 2 Nights Hotel Accommodation</li>
+              <li><i class="fas fa-check"></i> Pickup & Drop from Railway Station</li>
+              <li><i class="fas fa-check"></i> Morning Tea, Breakfast & Dinner</li>
+              <li><i class="fas fa-check"></i> Non-Forest & Forest Area Sightseeing</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panchmarhi 3N/4D Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">PANCHMARHI TOUR PACKAGE FOR 03 NIGHTS 04 DAYS</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹12,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/panchmarhi1.jpg" alt="Panchmarhi Extended Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Extended Hill Station Experience</h4>
+            <p>Enjoy an extended stay in Pachmarhi with comprehensive sightseeing including natural wonders, waterfalls, spiritual sites, and cultural landmarks.</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 3 Nights Hotel Accommodation</li>
+              <li><i class="fas fa-check"></i> Pickup & Drop from Railway Station</li>
+              <li><i class="fas fa-check"></i> Morning Tea, Breakfast & Dinner</li>
+              <li><i class="fas fa-check"></i> Non-Forest, Forest & Spiritual Tours</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kanha Jabalpur Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">KANHA JABALPUR WILDLIFE SAFARI PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹15,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/kanhajbp.jpg" alt="Kanha Jabalpur Wildlife Safari" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Wildlife Adventure & Natural Beauty</h4>
+            <p>Experience the thrill of tiger sightings in Kanha National Park combined with the breathtaking natural beauty of Jabalpur's Marble Rocks and waterfalls.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Jabalpur – Transfer to Kanha National Park</h6>
+                <p>Upon arrival at Jabalpur Railway Station or Airport, you will be received by our representative and driven to Kanha National Park (approx. 4–5 hours by road), one of India's finest tiger reserves and a paradise for wildlife lovers. After check-in at the jungle resort and some relaxation, spend the evening enjoying the serene forest atmosphere or an optional village walk. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Kanha – Jungle Safari and Leisure</h6>
+                <p>Rise early for a thrilling morning jungle safari in Kanha's core zone with a forest guide and gypsy (subject to availability and pre-booking). Witness the pristine beauty of the park and its rich wildlife, including tigers, barasinghas, leopards, wild dogs, and a variety of birds. Return to the resort for breakfast and leisure time. Later, you may opt for another evening safari or enjoy nature trails and birdwatching around the resort. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Kanha to Jabalpur – Sightseeing in Jabalpur</h6>
+                <p>After breakfast, check out from the resort and drive back to Jabalpur. Upon arrival, check-in at your hotel. In the afternoon, explore key attractions such as the famous Marble Rocks at Bhedaghat, the majestic Dhuandhar Waterfall, and take a boat ride on the Narmada River (subject to water level and availability). You can also visit Chausath Yogini Temple for panoramic views. Return to the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Jabalpur</h6>
+                <p>After breakfast, check out from the hotel. You will be transferred to Jabalpur Railway Station or Airport for your onward journey, carrying unforgettable memories of Kanha's wilderness and Jabalpur's natural beauty.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing of Kanha National Park Non-Forest area By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Kanha National Park Forest Area By Gypsy</li>
+                <li>❖ One Local Sightseeing tour of Jabalpur By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khajuraho Panna Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">KHAJURAHO WITH PANNA PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹11,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/khajuraho.jpg" alt="Khajuraho Panna Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Heritage Temples & Wildlife Safari</h4>
+            <p>Discover the perfect blend of ancient temple architecture at Khajuraho and thrilling wildlife encounters at Panna National Park in this comprehensive 3-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Khajuraho – Transfer to Panna National Park</h6>
+                <p>Upon arrival at Khajuraho Railway Station or Khajuraho Airport, you will be received by our representative and driven to Panna National Park (approximately 1.5 hours by road). Check-in at your resort and enjoy a welcome drink. After a brief rest, embark on a safari tour in Panna National Park, famous for its rich wildlife including tigers, leopards, and various species of birds. In the evening, you can relax at the resort or enjoy a nature walk around the property. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Full-Day Exploration of Khajuraho Temples</h6>
+                <p>After an early breakfast, return to Khajuraho for a full day of sightseeing. Visit the UNESCO World Heritage-listed Khajuraho Group of Monuments, known for their exquisite temples adorned with intricate carvings depicting various aspects of life, culture, and spirituality. Explore the Western Group of Temples, home to the iconic Kandariya Mahadev Temple and the Lakshmana Temple. After lunch, continue to the Eastern Group of temples, including the Javari Temple and Vishwanatha Temple. In the evening, enjoy the Sound and Light Show at the Khajuraho temples, which narrates the history of the region. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Visit to Raneh Falls & Departure</h6>
+                <p>After breakfast, check out from your hotel and visit Raneh Falls, located just 20 km from Khajuraho, known for its beautiful canyon made of red sandstone and stunning waterfalls. Spend some time enjoying the natural beauty and the tranquil environment. Afterward, you will be transferred to Khajuraho Railway Station or Airport for your onward journey, concluding your 3-day tour with wonderful memories.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing of Panna National Park Forest area By Gypsy</li>
+                <li>❖ One Sightseeing tour of Khajuraho By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandhavgarh Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">BANDHAVGARH WILDLIFE SAFARI PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹13,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/bandhavgarh.jpg" alt="Bandhavgarh Wildlife Safari" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Tiger Territory Adventure</h4>
+            <p>Experience the thrill of tiger sightings in Bandhavgarh National Park, one of India's premier tiger reserves with the highest density of Royal Bengal Tigers.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Bandhavgarh – Check-in & Leisure</h6>
+                <p>Arrive at Umaria Railway Station or directly at Bandhavgarh, where our representative will receive you. Transfer to the wildlife resort and check in. After lunch and some relaxation, you may explore the nearby nature trails or visit Bandhavgarh Fort (if accessible). Enjoy the evening at leisure amidst forest surroundings. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Jungle Safari and Nature Activities</h6>
+                <p>Early morning, head out for an exciting jungle safari in an open gypsy with a trained naturalist (subject to permit availability). Explore the core area of the park and spot majestic wildlife such as tigers, leopards, deer, langurs, and a variety of bird species. Return to the resort for breakfast. Spend the day at leisure or engage in resort-based activities. Optional: You may opt for an evening safari at additional cost. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Check-out and Departure</h6>
+                <p>After breakfast, check out from the resort. You will be dropped at Umaria Railway Station or your onward travel point, carrying with your unforgettable memories of the jungle.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing of Bandhavgarh National Park Forest area By Gypsy</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panchmarhi Madhai Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">PANCHMARHI MADHAI FOREST PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹18,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/panchmarhi2.jpg" alt="Panchmarhi Madhai Forest Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Hill Station & Forest Edge Experience</h4>
+            <p>Combine the serene beauty of Pachmarhi hill station with the wilderness experience of Satpura Tiger Reserve in this comprehensive 5-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Pipariya – Transfer to Pachmarhi – Local Sightseeing</h6>
+                <p>Upon arrival at Pipariya Railway Station, our representative will greet you and transfer you to Pachmarhi, the "Queen of Satpura" (approx. 1.5-hour drive). After hotel check-in and freshening up, begin your local sightseeing tour with visits to the Pandav Caves, Bee Fall, and Pachmarhi Lake. Enjoy the pleasant weather and tranquil surroundings. Return to the hotel. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Full-Day Sightseeing in Pachmarhi</h6>
+                <p>After breakfast, explore more of Pachmarhi's natural and spiritual charm. Visit the sacred Jata Shankar Cave, Mahadev Cave, and Gupt Mahadev. Continue to Reechgarh for a short trek and panoramic views. In the evening, head to Dhoopgarh, the highest point in Madhya Pradesh, to witness a breathtaking sunset. Return to the hotel. Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Pachmarhi to Madhai – Forest Edge Experience</h6>
+                <p>After breakfast, check out from your hotel and drive to Madhai, the scenic gateway to Satpura Tiger Reserve (approx. 4-hour drive). Upon arrival, check-in at the forest lodge or riverside resort. In the evening, enjoy a serene boat ride in the Denwa River, offering glimpses of wildlife and rich birdlife. Relax by the riverside and enjoy dinner. Overnight stay in Madhai.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Jungle Safari & Nature Activities in Madhai</h6>
+                <p>Wake up early for a thrilling jungle safari inside Satpura National Park, known for its rich biodiversity and offbeat wilderness. With luck, you may spot tigers, leopards, sloth bears, giant squirrels, and several bird species. Return to the lodge for breakfast. Spend the afternoon at leisure or take a guided nature walk or cycling tour (optional). Dinner and overnight stay at the resort.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Departure from Madhai to Pipariya</h6>
+                <p>After breakfast, check out from your lodge and depart for Pipariya Railway Station for your onward journey, taking back cherished memories of hills, forest, and wildlife.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 04 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing of Kanha National Park Non-Forest area By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Kanha National Park Forest Area By Gypsy</li>
+                <li>❖ One Local Sightseeing tour of Madhai Forest area By Gypsy</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khajuraho Orchha Gwalior Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">KHAJURAHO – ORCHHA – GWALIOR HERITAGE TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">5 Nights / 6 Days</span>
+            <span class="price">Starting from ₹22,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/khajuraho1.webp" alt="Khajuraho Orchha Gwalior Heritage Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Architectural Wonders & Royal Heritage</h4>
+            <p>Explore the magnificent temples of Khajuraho, medieval forts of Orchha, and the grand Gwalior Fort in this comprehensive heritage tour of Madhya Pradesh.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Khajuraho – Local Sightseeing</h6>
+                <p>On arrival at Khajuraho, you will be received and transferred to your hotel. After check-in and freshening up, explore the Western Group of Temples, a UNESCO World Heritage Site, renowned for their intricate sculptures and architectural brilliance, including the Kandariya Mahadev Temple, Lakshmana Temple, and Vishwanatha Temple. In the evening, attend the Light and Sound Show, which narrates the glorious history of Khajuraho. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Khajuraho – Eastern & Southern Group of Temples – Optional Panna Visit</h6>
+                <p>After breakfast, visit the Eastern Group of Temples (including Jain temples like Parsvanatha and Adinath) and the Southern Group of Temples. Later, you may opt for a half-day visit to Panna National Park for a wildlife safari or explore Raneh Falls, known for its dramatic red-rock canyon. Return to Khajuraho. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Khajuraho to Orchha – Fort & Temple Tour</h6>
+                <p>After breakfast, check out and proceed to Orchha (approx. 4 hours by road). On arrival, check in at the hotel and then begin exploring the majestic Orchha Fort Complex, including Jahangir Mahal, Raja Mahal, and Sheesh Mahal. Visit the beautiful Ram Raja Temple, the only temple in India where Lord Rama is worshipped as a king. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Orchha – Nature & Heritage Walks</h6>
+                <p>After breakfast, explore Chaturbhuj Temple, Lakshmi Narayan Temple, and the peaceful Cenotaphs (Chhatris) by the Betwa River. Spend the rest of the day enjoying leisure walks along the riverside or opt for water activities such as river rafting (seasonal). You may also explore the local handicrafts market. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Orchha to Gwalior – Sightseeing</h6>
+                <p>After breakfast, check out and drive to Gwalior (approx. 3.5 hours). Upon arrival, visit the iconic Gwalior Fort, one of the largest hill forts in India, known for its stunning views and historical significance. Explore Saas Bahu Temples, Teli ka Mandir, and the Man Singh Palace inside the fort complex. In the evening, enjoy the Sound and Light Show (subject to schedule). Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 6: Departure from Gwalior</h6>
+                <p>After breakfast, check out from the hotel. You will be transferred to Gwalior Railway Station or Airport for your onward journey, carrying with your rich memories of Madhya Pradesh's architectural wonders and royal heritage.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 05 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing tour of Khajuraho By Pvt. Car</li>
+                <li>❖ 02 Sightseeing tour of Orchha By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Gwalior By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ujjain Indore Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">UJJAIN – INDORE SPIRITUAL TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹14,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/ujjain.jpg" alt="Ujjain Indore Spiritual Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Divine Journey & Cultural Experience</h4>
+            <p>Experience the spiritual bliss of Ujjain's ancient temples combined with the vibrant culture and culinary delights of Indore in this enriching 4-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Indore – Transfer to Ujjain – Temple Visit</h6>
+                <p>Upon arrival at Indore Airport or Railway Station, you will be greeted by our representative and transferred to Ujjain (approx. 1.5 hours by road). Check in to your hotel and relax. In the evening, visit the sacred Mahakaleshwar Jyotirlinga Temple, one of the twelve Jyotirlingas of Lord Shiva. Experience the divine ambiance and attend the evening aarti on the banks of the Shipra River. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Full-Day Ujjain Sightseeing</h6>
+                <p>Start your day early with an optional visit to attend the Bhasma Aarti at Mahakaleshwar (advance booking recommended). After breakfast, explore other important spiritual and cultural landmarks including Kal Bhairav Temple, Mangalnath Temple, Harsiddhi Temple, Ram Ghat, and Sandipani Ashram. Enjoy the peaceful environment of this holy city. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Ujjain to Indore – Local Sightseeing</h6>
+                <p>After breakfast, check out and drive to Indore. Upon arrival, visit the famous Rajwada Palace, an iconic symbol of Holkar architecture, and explore Lal Bagh Palace and the Kanch Mandir (Glass Temple). In the evening, stroll through Sarafa Bazaar, a popular night street food market. Check-in at the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Indore</h6>
+                <p>After breakfast, check out from your hotel. You will be dropped at Indore Airport or Railway Station for your return journey, carrying divine memories of Ujjain and the vibrant charm of Indore.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing tour of Indore By Pvt. Car</li>
+                <li>❖ 02 Sightseeing tour of Ujjain By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khajuraho Jabalpur Panna Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">KHAJURAHO – JABALPUR – PANNA TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹19,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/khajuraho3.jpg" alt="Khajuraho Jabalpur Panna Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Temples, Tigers & Marble Rocks</h4>
+            <p>Experience the perfect combination of ancient temple architecture, thrilling wildlife safaris, and stunning natural landscapes in this comprehensive 5-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Khajuraho – Local Sightseeing</h6>
+                <p>Arrive at Khajuraho, where you'll be welcomed by our tour representative and transferred to your hotel. After check-in and a short rest, proceed to explore the Western Group of Temples, a UNESCO World Heritage Site known for its stunning sculptures and Nagara-style architecture. Visit Kandariya Mahadev Temple, Lakshmana Temple, and Devi Jagdambi Temple. In the evening, enjoy the Sound & Light Show at the temple complex. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Eastern Group Temples & Raneh Falls Excursion</h6>
+                <p>After breakfast, explore the Eastern Group of Temples, including Parsvanath, Adinath, and Ghantai Temples—noted for their Jain architectural influence. Later, head to Raneh Falls, a spectacular canyon of crystalline granite rock formations and waterfalls, just 20 km away. Return to Khajuraho in the evening. Optional: Visit the Tribal and Folk Art Museum. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Khajuraho to Panna National Park – Safari Experience</h6>
+                <p>After breakfast, check out and proceed to Panna National Park (approx. 1.5 hours by road), a renowned tiger reserve on the banks of the Ken River. On arrival, check in at a jungle resort. In the afternoon, head out for a thrilling jungle safari (subject to availability and permits) to witness tigers, leopards, sloth bears, and a rich variety of birdlife. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Panna to Jabalpur – Marble Rocks Visit</h6>
+                <p>After breakfast, check out and drive to Jabalpur (approx. 4.5–5 hours). On arrival, check-in at the hotel and relax. In the late afternoon, visit the magnificent Bhedaghat Marble Rocks and enjoy a peaceful boat ride on the Narmada River (subject to season and water level). Also, witness the beautiful Dhuandhar Waterfall and visit Chausath Yogini Temple. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Departure from Jabalpur</h6>
+                <p>After breakfast, check out from the hotel. You will be transferred to Jabalpur Airport or Railway Station for your onward journey, carrying beautiful memories of temples, tigers, and river landscapes.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 04 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing tour of Khajuraho By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Panna By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Jabalpur By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indore Ujjain Mandu Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">INDORE – UJJAIN – MANDU HERITAGE TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹16,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/ujjain2.jpg" alt="Indore Ujjain Mandu Heritage Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Royal Heritage & Spiritual Journey</h4>
+            <p>Discover the perfect blend of spiritual experiences in Ujjain, royal heritage in Indore, and the medieval romance of Mandu in this culturally rich tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Indore – Local Sightseeing</h6>
+                <p>Upon arrival at Indore Airport or Railway Station, you will be greeted by our representative. Check-in at your hotel and freshen up. Begin local sightseeing with visits to Rajwada Palace, Lal Bagh Palace, and the beautifully crafted Kanch Mandir (Glass Temple). In the evening, explore Sarafa Bazaar, famous for its vibrant street food culture. Return to the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Indore to Ujjain – Spiritual Journey</h6>
+                <p>After breakfast, check out and proceed to Ujjain (approx. 1.5-hour drive), one of the holiest cities in India and home to the Mahakaleshwar Jyotirlinga, one of the twelve sacred Jyotirlingas. Visit Kal Bhairav Temple, Mangalnath Temple, Harsiddhi Temple, and Ram Ghat on the banks of the Shipra River. If possible, attend the divine Bhasma Aarti at Mahakaleshwar Temple (advance registration required). Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Ujjain to Mandu – Heritage Exploration</h6>
+                <p>After breakfast, check out and drive to Mandu (approx. 4.5-hour drive), a historical town famed for its Afghan architecture, romantic legends, and scenic beauty. On arrival, check in to your hotel. Explore Jahaz Mahal, Hindola Mahal, Baz Bahadur's Palace, Roopmati Pavilion, and Jami Masjid. Enjoy the sunset views from Mandu's hilltop locations. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Mandu to Indore – Departure</h6>
+                <p>After breakfast, check out from the hotel and drive back to Indore (approx. 2.5 hours). You will be dropped at Indore Airport or Railway Station for your onward journey, concluding a culturally rich and memorable tour.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Sightseeing tour of Indore By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Ujjain By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Mandu By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maa Sharda Darshan Maihar Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MAA SHARDA DARSHAN - MAIHAR TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹7,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/maihar.webp" alt="Maa Sharda Darshan Maihar Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Divine Pilgrimage to Goddess Sharda</h4>
+            <p>Experience the divine blessings of Maa Sharda at her sacred hilltop temple in Maihar, one of the 51 Shakti Peethas, in this spiritually enriching 3-day pilgrimage tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Maihar – Evening Darshan</h6>
+                <p>Upon arrival at Maihar or nearby Satna/Jabalpur railway station, our representative will receive you and transfer you to your hotel in Maihar. After check-in and some rest, head for evening darshan at Maa Sharda Temple, situated atop the Trikuta Hill. You can either trek 1,063 steps or use the ropeway (if operational) for a comfortable ascent. Experience the spiritual aura and enjoy the panoramic view of the town below. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Morning Puja & Nearby Sightseeing</h6>
+                <p>Begin your day with a morning puja and darshan at the Maa Sharda Temple. After breakfast, explore nearby spiritual sites like the Alha Udal Akhada, believed to be associated with the legendary warriors who were devotees of Maa Sharda. You may also visit Badi Mai Temple and Oila Temple, or relax at Barhi Talab. In the evening, you can again visit the temple for aarti or simply enjoy a peaceful walk through the town. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Departure from Maihar</h6>
+                <p>After breakfast, check out from your hotel and proceed to your departure point at Maihar / Satna / Jabalpur Railway Station, with the divine blessings of Maa Sharda and cherished spiritual memories.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ Maihar Mata Darshan</li>
+                <li>❖ One Local Sightseeing tour of Maihar By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chitrakoot Darshan Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">CHITRAKOOT DARSHAN TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹9,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/Chitrakoot.jpg" alt="Chitrakoot Darshan Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Ramayana Trail Spiritual Journey</h4>
+            <p>Walk in the footsteps of Lord Rama during his exile in Chitrakoot, the sacred land where divine events unfolded, in this spiritually enriching pilgrimage tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival at Chitrakoot – Leisure & Spiritual Orientation</h6>
+                <p>Arrive at Chitrakoot Dham (Karwi) or Satna Railway Station, where our representative will welcome you and transfer you to the hotel in Chitrakoot. After check-in and some rest, take a leisurely walk to get acquainted with the spiritual ambiance of this divine town nestled along the banks of the Mandakini River. In the evening, attend the Sandhya Aarti at Ram Ghat, a sacred place where Lord Rama, Sita, and Lakshmana are believed to have spent time during their exile. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Full-Day Chitrakoot Darshan – Ramayana Trail</h6>
+                <p>After breakfast, begin your full-day pilgrimage tour of the key Ramayana sites in Chitrakoot. Visit the sacred Kamadgiri Temple, believed to be the heart of Chitrakoot and the place where Lord Rama resided. Continue to Bharat Milap Temple, Sati Anusuya Ashram, and Gupt Godavari Caves, two sacred streams emerging from a cave believed to be used by Lord Rama. Explore Hanuman Dhara, a picturesque site with a steep climb and a waterfall said to be created by Lord Rama for Hanuman's comfort. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Nearby Excursions & Peaceful Exploration</h6>
+                <p>After breakfast, enjoy a quieter day visiting lesser-known but spiritually rich sites like Janaki Kund, Spatik Shila (a white rock believed to bear the footprints of Lord Rama and Sita), and Valmiki Ashram. Spend time by the Mandakini River or take part in a spiritual discourse or meditation session (optional). Evening at leisure or optional revisit to Ram Ghat for the aarti. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Chitrakoot</h6>
+                <p>After breakfast, check out from the hotel and proceed to Chitrakoot Dham / Satna Railway Station for your return journey, carrying divine blessings and tranquil memories from this sacred land of Lord Rama.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ Parikrama of Kamadgiri Parvat (Kamtanath Jee)</li>
+                <li>❖ 02 Days Sightseeing of Chitrakoot By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maheshwar Omkareshwar Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MAHESHWAR & OMKARESHWAR DARSHAN TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹8,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/omkaleshwar.jpg" alt="Maheshwar Omkareshwar Darshan Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Narmada Ghats & Jyotirlinga Pilgrimage</h4>
+            <p>Experience the divine blessings of two sacred Jyotirlingas along the holy Narmada River in this spiritually enriching pilgrimage tour of Maheshwar and Omkareshwar.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Indore to Maheshwar – Heritage & Temple Tour</h6>
+                <p>Upon arrival at Indore Airport or Railway Station, meet our representative and drive to Maheshwar (approx. 2.5 hours). Check-in at the hotel and begin exploring the town known for its spiritual aura and elegant ghats. Visit the revered Ahilya Fort, Rajrajeshwar Temple, and take a peaceful stroll along the Narmada River Ghats. Enjoy a serene boat ride at sunset for a divine view of temples reflecting on the river. Dinner and overnight stay in Maheshwar.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Maheshwar to Omkareshwar – Jyotirlinga Darshan</h6>
+                <p>After breakfast, check out and drive to Omkareshwar (approx. 2 hours), home to one of the 12 Jyotirlingas of Lord Shiva. Visit the sacred Omkareshwar Temple, located on the Mandhata Island shaped like the holy "Om" symbol. Explore Mamleshwar Temple, Kedareshwar Temple, and take a parikrama (circumambulation) around the island, which offers a mix of spirituality and nature. Enjoy the evening aarti on the riverbanks. Dinner & Overnight stay in Omkareshwar.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Departure from Omkareshwar to Indore</h6>
+                <p>After a peaceful breakfast, check out and drive back to Indore for your onward journey. You will be dropped at Indore Airport or Railway Station with sacred memories of Narmada's holy towns and divine blessings of Lord Shiva.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One sightseeing tour of Maheswar By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Omkareshwar By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bhopal Special Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">BHOPAL SPECIAL TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹12,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/bhopal.jpg" alt="Bhopal Special Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>City of Lakes & Heritage Exploration</h4>
+            <p>Discover the perfect blend of natural beauty, rich history, and cultural heritage in Bhopal, the City of Lakes, along with UNESCO World Heritage sites nearby.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Bhopal – Local Sightseeing</h6>
+                <p>Arrive at Bhopal Airport or Railway Station, where our representative will greet you and assist with your transfer to the hotel. After check-in and some rest, begin your local sightseeing with a visit to the beautiful Upper Lake (Bhojtal) and VIP Road, known for stunning sunset views. Explore Gauhar Mahal and Shaukat Mahal, reflecting the blend of Mughal and European architecture. In the evening, enjoy street food at Sarafa Bazaar or a peaceful boat ride on the lake. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Historical and Cultural Exploration</h6>
+                <p>After breakfast, proceed to explore Bhopal's rich history. Visit the State Museum and Tribal Museum, offering fascinating insights into Madhya Pradesh's diverse cultural heritage. Later, visit the magnificent Taj-ul-Masajid, one of the largest mosques in Asia, followed by Moti Masjid and Birla Mandir. Optionally, explore the local crafts at Mrignayani Emporium. Return to the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Sanchi Stupa & Bhimbetka Caves Excursion</h6>
+                <p>After an early breakfast, embark on a full-day excursion. First, visit the UNESCO World Heritage Site Sanchi Stupa (approx. 1.5 hours away), a revered Buddhist monument dating back to the 3rd century BCE. Later, drive to Bhimbetka Rock Shelters, another UNESCO site showcasing prehistoric cave paintings over 30,000 years old. Also stop by Tropic of Cancer marker en route. Return to Bhopal by evening. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Bhopal</h6>
+                <p>After breakfast, check out from the hotel. You will be dropped off at Bhopal Airport or Railway Station for your return journey, carrying unforgettable memories of the City of Lakes.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One sightseeing tour of Bhopal By Pvt. Car</li>
+                <li>❖ One Sightseeing tour of Sanchi Stupa & Bhimbetka By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jaipur Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">JAIPUR TOUR ITINERARY</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹13,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/jaipur.jpg" alt="Jaipur Tour Itinerary" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Pink City Heritage Experience</h4>
+            <p>Discover the royal heritage and architectural marvels of Jaipur, the Pink City, with its magnificent forts, palaces, and vibrant culture in this comprehensive 3-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Jaipur & Local Sightseeing</h6>
+                <p>Upon arrival at Jaipur Airport or Railway Station, you will be warmly received by our representative and transferred to your hotel. After check-in and a brief rest, begin your exploration of the Pink City with a visit to the magnificent City Palace, an architectural marvel that combines Rajput and Mughal styles. Next, explore the nearby Jantar Mantar, an ancient astronomical observatory and UNESCO World Heritage Site. Continue to the iconic Hawa Mahal, or "Palace of Winds," known for its unique honeycomb design. In the evening, indulge in shopping at the vibrant local markets like Johari Bazaar or Bapu Bazaar. For a cultural touch, you may opt to attend the light and sound show at Amber Fort or enjoy a traditional Rajasthani dinner at Chokhi Dhani (optional). Return to the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Full Day Jaipur Sightseeing</h6>
+                <p>After a hearty breakfast, set out for a full-day tour of Jaipur's historical wonders. Begin with the majestic Amber Fort, a hilltop fortress offering stunning views and rich history; you can opt for an elephant ride or jeep ride to reach the top. Inside the fort, admire the beautiful Sheesh Mahal (Mirror Palace), Diwan-e-Aam, and other royal chambers. On your way back, make a brief stop at Jal Mahal (Water Palace) for photographs. Continue to the Albert Hall Museum, which showcases an extensive collection of artifacts and artworks. Later, visit the serene Birla Mandir (Laxmi Narayan Temple), built in white marble and dedicated to Lord Vishnu and Goddess Lakshmi. The evening is free for personal activities or exploring more of Jaipur's traditional bazaars. Return to your hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Departure from Jaipur</h6>
+                <p>Enjoy a relaxed breakfast at the hotel, followed by some leisure time for last-minute shopping or a short stroll around the local area. Depending on your departure schedule, you can optionally visit nearby attractions or temples. After check-out, you will be transferred to Jaipur Railway Station or Airport for your onward journey, carrying with you the fond memories of your royal getaway in the Pink City.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 2 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Romantic Rajasthan Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">ROMANTIC RAJASTHAN TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹24,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/rajasthan.webp" alt="Romantic Rajasthan Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Lakes & Hill Station Romance</h4>
+            <p>Experience the romantic charm of Rajasthan's lakes and hill stations with visits to Udaipur, the City of Lakes, and Mount Abu, the only hill station in Rajasthan.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Udaipur – The City of Lakes</h6>
+                <p>On arrival at Udaipur Airport or Railway Station, you will be welcomed and transferred to your hotel. After check-in and some rest, begin your romantic escape with a visit to the beautiful Saheliyon Ki Bari, a historic garden built for royal ladies. Then head to the Fateh Sagar Lake for a peaceful boat ride amid the Aravalli hills. In the evening, enjoy a romantic sunset at Pichola Lake, followed by a boat ride to Jag Mandir Island Palace (optional). Return to your hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Udaipur Local Sightseeing</h6>
+                <p>After breakfast, explore the grandeur of Udaipur, starting with the City Palace, a blend of Mughal and Rajasthani architecture offering panoramic views of the city and lakes. Visit the Crystal Gallery, known for its rare artefacts, and then explore Jagdish Temple, a beautiful example of Indo-Aryan architecture. Later, visit the Vintage Car Museum to witness royal automobiles of the Mewar dynasty. In the evening, enjoy a traditional Rajasthani cultural dance show at Bagore Ki Haveli situated near Lake Pichola. Return to your hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Udaipur to Mount Abu (Approx. 165 km / 3.5 hrs)</h6>
+                <p>After breakfast, check out and proceed to Mount Abu, Rajasthan's only hill station, nestled in the Aravalli Range. On arrival, check in to your hotel and unwind. Later, visit the beautiful Nakki Lake, where you can enjoy a romantic boat ride surrounded by scenic hills. Stroll through the local market and relax at Sunset Point, one of the most romantic spots in Mount Abu, offering breathtaking views of the setting sun. Enjoy the cool mountain breeze and a peaceful evening. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Mount Abu Sightseeing</h6>
+                <p>Begin the day with a visit to the stunning Dilwara Temples, renowned for their exquisite marble carvings and spiritual ambience. Then head to Guru Shikhar, the highest point of the Aravalli Range, which offers panoramic views of the region and a sense of calm. Later, explore the Mount Abu Wildlife Sanctuary or spend quiet moments amidst nature in local gardens like Peace Park. In the evening, return to Nakki Lake for a relaxed walk or a romantic café experience. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Mount Abu to Udaipur – Departure</h6>
+                <p>After breakfast, check out from your hotel and drive back to Udaipur. Depending on your departure time, you may opt for a short visit to Eklingji Temple or do some last-minute shopping for souvenirs. You will then be dropped at Udaipur Airport or Railway Station for your onward journey, taking along the sweet memories of your romantic Rajasthan getaway.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 4 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kutch Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">KUTCH TOUR PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹16,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/kutch.jpg" alt="Kutch Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>White Desert & Cultural Heritage</h4>
+            <p>Discover the magical white desert of Kutch, explore traditional handicraft villages, and experience the vibrant folk culture in this unique 3-day tour of Gujarat's western region.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Bhuj – Drive to White Rann & Sunset</h6>
+                <p>Arrive at Bhuj Railway Station / Airport and transfer to the White Rann area (approx. 80 km / 2 hrs). En route, complete your Bhirandiyara check post permit formalities (required to visit Rann Utsav or White Desert). Check in at your resort or tent city (seasonal). In the evening, visit the White Rann of Kutch, a stunning salt desert that turns magical under the sunset. Enjoy local folk music and cultural activities (especially during the Rann Utsav, Nov–Feb). Overnight stay near the White Rann.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Kalo Dungar – Handicraft Villages – Bhuj Sightseeing</h6>
+                <p>Early morning, visit Kalo Dungar (Black Hill), the highest point in Kutch, offering panoramic views of the Great Rann. After breakfast, explore nearby handicraft villages like Nirona (Rogan art, copper bell craft) or Hodka and Ludiya (mud and mirror work, embroidery). Later, drive back to Bhuj. Visit Aina Mahal, Prag Mahal, and Bhujodi village – famous for weaving and handicrafts. Overnight stay in Bhuj.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Bhuj Local Market – Departure</h6>
+                <p>After breakfast, check out and explore the Bhuj local market for souvenirs like Kutchi embroidery, mirror work textiles, leather goods, and traditional jewelry. Later, transfer to Bhuj Airport or Railway Station for your onward journey, carrying vibrant memories of Kutch's desert beauty and rich heritage.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dwarka Somnath Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">DWARKA – SOMNATH TOUR PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹18,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/somnath.jpg" alt="Dwarka Somnath Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Divine Pilgrimage Circuit</h4>
+            <p>Experience the spiritual journey to two of India's most sacred pilgrimage sites - Dwarka, the kingdom of Lord Krishna, and Somnath, home to the first Jyotirlinga of Lord Shiva.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Dwarka – Temple Darshan</h6>
+                <p>Arrive at Dwarka by road or train. Check in at the hotel and relax. In the afternoon, visit the revered Dwarkadhish Temple, dedicated to Lord Krishna. Attend the evening aarti in a spiritually charged atmosphere. Later, visit Rukmini Devi Temple, dedicated to Lord Krishna's consort, and enjoy a peaceful walk along Gomti Ghat. Overnight stay in Dwarka.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Bet Dwarka – Nageshwar Jyotirlinga – Gopi Talav – Porbandar – Somnath</h6>
+                <p>After early breakfast, proceed for an excursion to Bet Dwarka via Okha jetty, taking a short ferry ride. Visit the ancient Bet Dwarka Temple, associated with Lord Krishna's abode. On the way back, visit the Nageshwar Jyotirlinga Temple, one of the 12 sacred Jyotirlingas of Lord Shiva. Also visit Gopi Talav, a place linked to Krishna's leelas with the Gopis. Later, drive to Porbandar (approx. 105 km / 2 hrs), the birthplace of Mahatma Gandhi. Visit Kirti Mandir, a memorial museum. Continue to Somnath (approx. 130 km / 2.5 hrs). Check in at your hotel. In the evening, visit the magnificent Somnath Temple and attend the light & sound show (optional) and aarti. Overnight stay in Somnath.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Somnath Sightseeing – Triveni Sangam – Bhalka Tirth</h6>
+                <p>After breakfast, explore key religious sites in Somnath. Visit the Triveni Sangam (confluence of three rivers), Bhalka Tirth (where Lord Krishna was struck by an arrow), and Gita Mandir. You may also visit the Surya Mandir and the Prabhas Patan Museum to understand the region's rich history. Evening at leisure to stroll along the beach or revisit the temple for a peaceful darshan. Overnight stay in Somnath.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Somnath / Veraval / Diu / Rajkot</h6>
+                <p>After breakfast, check out from the hotel. Depending on your travel plans, transfer to Veraval Railway Station, Diu Airport, Rajkot, or Ahmedabad for your onward journey. The tour ends with divine blessings and memorable experiences from Gujarat's most sacred pilgrimage circuit.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Odisha Honeymoon Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">ODISHA HONEYMOON TOUR PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹22,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/orissahoneymoon.jpg" alt="Odisha Honeymoon Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Romance & Spiritual Bliss</h4>
+            <p>Experience the perfect blend of romance, spirituality, and coastal beauty in this enchanting 5-day honeymoon tour of Odisha's sacred sites and serene beaches.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 01: Arrival in Bhubaneswar – Temple Tour – Romantic Evening</h6>
+                <p>Arrive at Bhubaneswar Airport/Railway Station and transfer to your hotel. After check-in and relaxation, begin your journey with visits to the iconic temples of Bhubaneswar including Lingaraj Temple, Mukteswar Temple, and Rajarani Temple, known for their architectural beauty and spiritual significance. Later, enjoy a quiet couple's walk through Ekamra Van by Bindusagar Lake. Return to the hotel for a peaceful. Overnight stay in Bhubaneswar.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 02: Bhubaneswar – Dhauli – Pipli – Konark – Chandrabhaga – Puri</h6>
+                <p>After breakfast, check out and begin your romantic drive to Puri. On the way, visit the Dhauli Shanti Stupa, where Emperor Ashoka renounced war and embraced Buddhism. Stop at Pipli, known for vibrant appliqué crafts—perfect for picking up colorful souvenirs. Proceed to the magnificent Konark Sun Temple, a UNESCO World Heritage Site, and enjoy quiet moments at Chandrabhaga Beach. Arrive in Puri, check-in to a beachside hotel, and relax at Golden Sea Beach. Overnight stay in Puri.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 03: Puri – Jagannath Temple – Satapada (Chilika Lake)</h6>
+                <p>Early morning visit to the sacred Jagannath Temple (for Hindus only), one of the Char Dhams. After breakfast, drive to Satapada on Chilika Lake, Asia's largest brackish water lagoon. Enjoy a private boat ride to see Irrawaddy dolphins and explore Sea Mouth Island and Rajhans Island, known for their romantic and tranquil setting. Return to Puri in the evening. Enjoy free time at the beach or explore local markets. Overnight stay in Puri.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 04: Puri – Bhubaneswar – Caves & Museum Tour</h6>
+                <p>After breakfast, check out and drive back to Bhubaneswar. En route, visit the Odisha State Tribal Museum, which showcases the diverse tribal heritage of the state. Later, explore the ancient Khandagiri & Udayagiri Caves, which were once Jain dwellings and offer panoramic views. Arrive in Bhubaneswar and check-in to the hotel. Enjoy a relaxed evening, shop at Ekamra Haat, or opt for a spa session. Overnight stay in Bhubaneswar.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 05: Bhubaneswar – Departure</h6>
+                <p>After breakfast, check out from your hotel and transfer to Bhubaneswar Airport or Railway Station for your onward journey. Your romantic Odisha honeymoon concludes with unforgettable memories of spirituality, nature, and serene coastal charm.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 04 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Majestic Gangtok Darjeeling Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MAJESTIC GANGTOK-DARJEELING TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹18,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/darjleeling.jpg" alt="Majestic Gangtok Darjeeling Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Himalayan Paradise Experience</h4>
+            <p>Discover the majestic beauty of the Eastern Himalayas with visits to Gangtok, the capital of Sikkim, and Darjeeling, the Queen of Hills, in this enchanting 4-day mountain tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Gangtok – Leisure and Local Exploration</h6>
+                <p>Upon arrival at Bagdogra Airport or New Jalpaiguri Railway Station, embark on a scenic drive to Gangtok, the capital city of Sikkim. Nestled in the Eastern Himalayas, Gangtok offers stunning views and a pleasant climate. After check-in at the hotel, the rest of the day is at leisure. You may choose to relax or take a casual evening stroll along MG Marg, Gangtok's vibrant pedestrian street known for its cafes, local shops, and cultural vibes. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Gangtok Sightseeing – Spiritual & Natural Charms</h6>
+                <p>Begin your day with a hearty breakfast and set off for a full-day city tour exploring Gangtok's key attractions. Visit the famous Tsomgo Lake, a glacial lake surrounded by snow-capped mountains, and the Baba Harbhajan Singh Mandir, a shrine dedicated to an Indian army soldier revered as a folk hero. Return to Gangtok for lunch, followed by visits to Enchey Monastery, Banjhakri Falls, and the Namgyal Institute of Tibetology to understand Sikkim's spiritual and cultural heritage. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Transfer to Darjeeling – Queen of the Hills</h6>
+                <p>After breakfast, check out from the hotel and drive to Darjeeling, a charming hill station known for its colonial charm and panoramic views of the Kanchenjunga range. The scenic drive passes through lush tea gardens and forested hills. Upon arrival in Darjeeling, check-in at your hotel and spend the afternoon at leisure. In the evening, walk through the Chowrasta and Mall Road, soaking in the cool mountain air and exploring local markets. Don't miss a hot cup of world-famous Darjeeling tea before resting for the night. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Darjeeling Sunrise & Local Highlights – Departure</h6>
+                <p>Start your day early with a drive to Tiger Hill to witness a breathtaking sunrise over the Kanchenjunga peak, a sight that remains etched in memory. On the return, stop at the iconic Batasia Loop and the historic Ghoom Monastery. After breakfast at the hotel, explore attractions like the Padmaja Naidu Himalayan Zoological Park, the Himalayan Mountaineering Institute, and the Darjeeling Tea Estate where you can see tea processing and sample fresh brews. Later, proceed to Bagdogra/NJP for your onward journey, taking back unforgettable memories of the majestic Eastern Himalayas.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Magical Maharashtra Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MAGICAL MAHARASHTRA TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹16,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/maharashtra.jpg" alt="Magical Maharashtra Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Hills, Beaches & Colonial Charm</h4>
+            <p>Experience the perfect blend of hill stations, coastal beaches, and colonial heritage in this magical 4-day tour of Maharashtra's most scenic destinations.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Mumbai – Transfer to Matheran – Sightseeing</h6>
+                <p>On arrival in Mumbai, you'll be warmly received by our tour representative. Drive towards Matheran (approx. 2.5 to 3 hrs), a quaint hill station free of vehicles and known for its colonial charm. Park your vehicle at Dasturi Point and take a horse ride or toy train (if operational) to reach the town. After hotel check-in, visit major viewpoints like Echo Point, Charlotte Lake, Panorama Point, and Louisa Point. Enjoy the serene environment and pleasant climate. Overnight stay in Matheran.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Matheran – Lonavala – Khandala – Sightseeing</h6>
+                <p>After breakfast, descend from Matheran and proceed to the twin hill stations of Lonavala and Khandala (approx. 1.5 hrs). Check in to your hotel in Lonavala. Begin exploring attractions like Karla & Bhaja Caves, Lonavala Lake, Bhushi Dam, and Tiger's Leap in Khandala. Enjoy scenic views from Duke's Nose and visit Lion's Point for sunset. Lonavala is also famous for its chikki (local sweet), so don't forget to shop some. Overnight stay in Lonavala.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Lonavala – Alibag – Beachside Retreat</h6>
+                <p>Post breakfast, drive towards Alibag (approx. 3 hrs), a charming coastal town known for its tranquil beaches. Check in to your hotel/resort and later visit Alibag Beach, Varsoli Beach, and Kolaba Fort (accessible during low tide). Enjoy water sports (optional) or a relaxing time by the sea. Explore the local markets and savor fresh seafood in the evening. Overnight stay in Alibag.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Alibag – Mumbai Departure</h6>
+                <p>After breakfast, check out and proceed back to Mumbai (approx. 3.5 hrs by road or optional ferry ride to Gateway of India, subject to weather and ferry availability). You'll be dropped at your desired location or airport/railway station for your onward journey, wrapping up your short but magical Maharashtra tour with fond memories.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ooty Coonoor Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">OOTY & COONOOR TOUR PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹18,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/ooty.jpg" alt="Ooty Coonoor Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Queen of Hill Stations Experience</h4>
+            <p>Discover the enchanting beauty of the Nilgiri Hills with visits to Ooty and Coonoor, featuring tea gardens, misty mountains, and colonial heritage in this perfect 4-day getaway.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Ooty</h6>
+                <p>Arrive at Coimbatore/Bangalore/Mysore (based on your choice of entry point) and proceed to Ooty – the "Queen of Hill Stations" (approx. 3 to 6 hours' drive depending on the starting point). Check into your hotel and relax. In the evening, enjoy a peaceful boat ride at Ooty Lake, followed by a walk in the Ooty Rose Garden. Overnight stay in Ooty.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Ooty Local Sightseeing</h6>
+                <p>After breakfast, explore the beauty of Ooty. Visit the Government Botanical Garden, Doddabetta Peak – the highest point in the Nilgiris for panoramic views, and the serene Tea Factory & Museum. Later, spend time at Pykara Lake and Waterfalls and explore Shooting Point. Evening is free to explore the local market or enjoy a cozy dinner. Overnight stay in Ooty.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Coonoor Excursion</h6>
+                <p>Today, after breakfast, take a short drive to Coonoor (approx. 20 km). Optionally, enjoy a scenic ride on the heritage Nilgiri Mountain Railway (Toy Train) from Ooty to Coonoor (subject to availability). Visit Sim's Park, Lamb's Rock, Dolphin's Nose, and Tea Garden Viewpoints. Return to Ooty in the evening for rest and leisure. Overnight stay in Ooty.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure from Ooty</h6>
+                <p>After breakfast, check out from the hotel. Depending on your departure location (Coimbatore, Mysore, or Bangalore), you will be transferred to the respective airport or railway station for your onward journey. Your Ooty & Coonoor getaway ends with sweet memories of misty mountains and fragrant tea gardens.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delhi Nainital Volvo Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">DELHI -NAINITAL -DELHI BY VOLVO</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹14,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/delhi.jpg" alt="Delhi Nainital Volvo Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Lake District Comfort Travel</h4>
+            <p>Experience the beauty of Nainital with comfortable Volvo bus travel from Delhi, featuring scenic lakes, mountain views, and colonial charm in this budget-friendly 5-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Delhi to Nainital (Overnight Journey by Volvo)</h6>
+                <p>Your exciting journey to the hills begins in the evening as you board a comfortable overnight Volvo bus from Delhi, departing around 9:00 PM from ISBT Anand Vihar or RK Ashram Marg. Sit back and relax during the smooth ride as you leave behind the hustle of the city and make your way toward the scenic town of Nainital, nestled in the Kumaon region of Uttarakhand. The overnight journey takes approximately 7–8 hours, ensuring you arrive refreshed by morning.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Nainital Arrival and Local Sightseeing</h6>
+                <p>Arrive in Nainital early in the morning and transfer to your hotel for check-in (standard check-in around 11:00 AM). After freshening up and a quick rest, begin your exploration of Nainital. Visit the sacred Naina Devi Temple, stroll along the lively Mall Road, and enjoy a serene boat ride on Naini Lake (optional). You can also take a ropeway ride to Snow View Point for panoramic Himalayan vistas. Spend your evening enjoying local snacks, cafés, and some relaxed shopping. Return to your hotel. Dinner & Overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Lake Tour – Bhimtal, Sattal, and Naukuchiatal</h6>
+                <p>After breakfast, get ready for a delightful day trip to the nearby lake towns. Start with Bhimtal, known for its calm waters and island aquarium, then proceed to the beautiful Sattal, a cluster of seven interconnected lakes surrounded by thick forests. Finally, visit Naukuchiatal, the lake with nine corners, ideal for boating or simply soaking in the peace of nature. Return to Nainital by evening and spend your leisure time exploring more of the town or enjoying a peaceful walk around the lake. Dinner & Overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Nainital to Delhi (Overnight Volvo Journey)</h6>
+                <p>After breakfast, check out from the hotel and enjoy a few final hours in Nainital—perhaps a last stroll on Mall Road or some souvenir shopping. By late afternoon or early evening, report at the designated bus stand and board your Volvo bus for the return overnight journey to Delhi, which usually departs around 9:00 PM.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Arrival in Delhi</h6>
+                <p>Reach Delhi early in the morning, between 5:00 AM and 7:00 AM, marking the end of a relaxing and refreshing 2-night stay in Nainital. Take back cherished memories of the lakes, hills, and cool mountain air.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Night Hotel Accommodation on double sharing basis</li>
+                <li>❖ Delhi -Nainital -Delhi By Volvo A/c Video Coach</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ One Local Sightseeing tour of Nainital By Pvt. Car</li>
+                <li>❖ One Sightseeing of Lake tour By Pvt. Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delhi Darshan Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">DELHI DARSHAN TOUR PACKAGE</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹12,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/delhi1.jpg" alt="Delhi Darshan Tour Package" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Capital City Heritage Experience</h4>
+            <p>Explore the rich heritage and cultural diversity of India's capital city with visits to iconic monuments, historical sites, and modern marvels in this comprehensive 3-day Delhi tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Delhi – Old Delhi Sightseeing</h6>
+                <p>Upon arrival at Delhi Railway Station or Airport, you will be welcomed and transferred to your hotel. After check-in and freshening up, begin your Delhi Darshan with a heritage tour of Old Delhi. Visit the iconic Red Fort (Lal Qila), followed by Jama Masjid, one of India's largest mosques. Take a rickshaw ride through the bustling lanes of Chandni Chowk, famous for its street food and spice market. End the day with a visit to Raj Ghat, the serene memorial of Mahatma Gandhi. Return to the hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: New Delhi Sightseeing – Monuments & Modern Marvels</h6>
+                <p>After breakfast, set off to explore New Delhi, a blend of history and modernity. Start with India Gate, Rashtrapati Bhavan, and the Parliament House (photo stop). Visit Humayun's Tomb and the grand Qutub Minar, both UNESCO World Heritage Sites. Continue to the Lotus Temple, known for its stunning flower-like architecture and serene ambiance. Later, explore Akshardham Temple (subject to time and schedule), a modern spiritual and cultural complex. In the evening, stroll through Connaught Place or indulge in shopping at Janpath Market. Return to your hotel. Dinner & Overnight Stay at Hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Departure – Optional Last-Minute Visits</h6>
+                <p>After breakfast, check out from the hotel. If time permits before your departure, you may visit the National Museum, Gurudwara Bangla Sahib, or enjoy a brief walk at Lodhi Garden. Later, transfer to Delhi Airport or Railway Station for your return journey, concluding your memorable Delhi Darshan tour.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pick up & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the sightseeing & transfer by Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ayodhya Ram Janmabhoomi Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">AYODHYA RAM JANMABHOOMI TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹14,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/ayodhya.jpg" alt="Ayodhya Ram Janmabhoomi Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Divine Birthplace of Lord Ram</h4>
+            <p>Experience the spiritual journey to the birthplace of Lord Ram with visits to sacred temples, holy sites, and mythological places associated with the Ramayana in this divine 4-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Ayodhya – Spiritual Introduction</h6>
+                <p>Upon arrival in Ayodhya, guests are warmly welcomed and transferred to their hotel for check-in. After some rest, the tour begins with a gentle introduction to the spiritual heart of Ayodhya. In the evening, a peaceful visit to Saryu River Ghat is arranged to witness the enchanting Saryu Aarti, a deeply spiritual experience that sets the tone for the rest of the journey. Guests can take a stroll along the ghats, absorbing the serenity and spiritual aura of the city. Dinner is served at the hotel, followed by an overnight stay in Ayodhya.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Ram Janmabhoomi & Religious Sites Exploration</h6>
+                <p>The second day is dedicated to exploring the most sacred landmarks of Ayodhya. The day starts with a visit to the Shri Ram Janmabhoomi Temple, the birthplace of Lord Ram, where devotees offer prayers and soak in the divine atmosphere. After darshan, the group proceeds to Hanuman Garhi, a revered temple dedicated to Lord Hanuman known for its commanding view of the city. Later, visits are made to other prominent temples such as Kanak Bhawan, Sita Rasoi, and Nageshwarnath Temple. After a traditional lunch at a local eatery or at the hotel, the afternoon is free for leisure or shopping for religious souvenirs. The evening includes a spiritual session or bhajan sandhya (optional). Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Ramayana Circuit Highlights & Local Culture</h6>
+                <p>This day is devoted to exploring sites associated with the Ramayana circuit within Ayodhya and nearby. After breakfast, the tour continues to Treta Ke Thakur, where Lord Ram is believed to have performed Ashwamedha Yagna. Then the group visits Guptar Ghat, where Lord Ram is said to have taken Jal Samadhi. After a break for lunch, the tour proceeds to Mani Parbat, Sugriv Parbat, and Vashistha Kund, adding a mythical dimension to the experience. In the evening, participants may enjoy a cultural program featuring Ramayana-themed performances or light and sound show (if available). Return to the hotel for dinner and an overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Departure with Divine Blessings</h6>
+                <p>After breakfast, guests have some leisure time for personal activities or last-minute temple visits. Depending on the departure schedule, a visit to the local market for religious mementoes and handicrafts can be arranged. Guests then check out from the hotel and are transferred to the railway station or airport with divine blessings and memories of a spiritually enriching journey through the sacred city of Ayodhya.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pick up & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the sightseeing & transfer by Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Golden Temple Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">GOLDEN TEMPLE TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">2 Nights / 3 Days</span>
+            <span class="price">Starting from ₹12,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/goldentemple.jpg" alt="Golden Temple Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Spiritual Journey to Sikhism's Holiest Shrine</h4>
+            <p>Experience the divine spirituality of Sikhism with visits to the Golden Temple, community kitchen, and patriotic border ceremony in this immersive 3-day tour of Amritsar.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Amritsar – Local Sightseeing</h6>
+                <p>Arrive in Amritsar by flight, train, or road. Check in to your hotel and freshen up. In the afternoon, begin your tour with a visit to the iconic Golden Temple (Sri Harmandir Sahib) – the holiest shrine of Sikhism, renowned for its golden façade and serene Sarovar. After spending time in prayer or reflection, visit the Langar Hall, one of the world's largest community kitchens. Later, explore the Partition Museum or take a stroll through the vibrant Hall Bazaar for local handicrafts, Phulkari embroidery, and Amritsari juttis. Return to your hotel for an overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Golden Temple by Morning – Wagah Border Ceremony</h6>
+                <p>Start the day early with a sunrise visit to the Golden Temple to witness the peaceful morning rituals and Palki Sahib ceremony. After breakfast, explore Jallianwala Bagh, a poignant memorial to the 1919 massacre, located close to the temple complex. In the afternoon, drive to Wagah Border (around 30 km from the city) to witness the patriotic Beating Retreat ceremony, where Indian and Pakistani border soldiers perform a coordinated lowering-of-the-flags ceremony. The atmosphere is charged with national pride and is a must-experience. Return to Amritsar by evening.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Local Exploration & Departure</h6>
+                <p>After breakfast, depending on your departure schedule, you can visit Durgiana Temple (often called the Silver Temple) and Ram Bagh Gardens, which houses Maharaja Ranjit Singh's summer palace museum. Taste local Punjabi delicacies like Amritsari Kulcha, Chole, and Lassi before departure. Later, transfer to Amritsar Railway Station or Airport for your onward journey, carrying with you the soulful essence of Sikh spirituality and Punjabi hospitality.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 02 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pick up & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the sightseeing & transfer by Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manali Getaway Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">MANALI GETAWAY TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹5,499/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/manali.jpg" alt="Manali Getaway Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Nature, Calm & Charm in the Himalayas</h4>
+            <p>Experience the perfect blend of nature, adventure, and romance in Manali with comfortable Volvo travel, local sightseeing, and valley excursions in this budget-friendly 5-day getaway.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 01: Delhi – Manali (Departure at 5:00 PM)</h6>
+                <p>Arrive in Delhi by afternoon and reach the boarding point by 5:00 PM (ITO, Bal Bhawan / R.K. Ashram near Metro Station). The Volvo bus will depart at 5:30 PM for Manali. Enjoy the overnight journey in a comfortable A/C Volvo Video Coach. Manali is a beautiful hill station surrounded by snow-covered mountains and lovely waterfalls.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 02: Manali – Local Sightseeing (By Pvt. Car)</h6>
+                <p>Arrive in Manali in the morning and check into your hotel. After a hearty breakfast, proceed for local sightseeing. Visit the 450-year-old Hidimba Devi Temple, set in peaceful cedar forests. Also visit the Tibetan Monastery and Vashisht Village, which is famous for its natural hot sulphur springs. The area offers beautiful views of glaciers and snow-covered peaks. Return to the hotel. Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 03: Manali – Solang Valley (By Pvt. Car)</h6>
+                <p>After breakfast, proceed to Solang Valley, located 14 km from Manali. Also known as Solang Nullah, it is a popular destination for adventure lovers. You can enjoy activities like paragliding, skating, zorbing, and more (at your own cost). The valley offers stunning views and is a great place for photos and fun. Return to the hotel in the evening. Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 04: Manali – Delhi (Departure at 4:00 PM)</h6>
+                <p>After breakfast, check out from the hotel. Spend some time shopping at Mall Road or exploring the local market. The afternoon is free for personal activities. In the evening, board the Volvo bus at 4:00 PM to return to Delhi. Overnight journey by Volvo.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 05: Arrive in Delhi</h6>
+                <p>Reach Delhi in the morning by 7:00 AM. Your trip ends with happy memories of your Manali tour.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ Accommodation in a well-appointed Super Deluxe Room for 2 Nights / 3 Days</li>
+                <li>❖ Delhi – Manali – Delhi by Volvo A/C Video Coach</li>
+                <li>❖ Blanket & Mineral Water provided in the Volvo</li>
+                <li>❖ Welcome Drink (Non-Alcoholic) on arrival</li>
+                <li>❖ Morning Tea, Breakfast, and Dinner (MAP Plan)</li>
+                <li>❖ One Candlelight Dinner</li>
+                <li>❖ Two Glasses of Kesar Milk (once during the stay)</li>
+                <li>❖ One Half-Day Local Manali Sightseeing by Private Car</li>
+                <li>❖ One Full-Day Sightseeing of Solang Valley by Private Car</li>
+                <li>❖ One Night Discotheque Entry (Subject to availability)</li>
+                <li>❖ Pick-up and Drop from Bus Stand to Hotel</li>
+                <li>❖ All Taxes Included</li>
+                <li>❖ No Hidden Charges</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Srinagar Heaven on Earth Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">SRINAGAR HEAVEN ON EARTH TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">3 Nights / 4 Days</span>
+            <span class="price">Starting from ₹18,500/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/srinagar.jpg" alt="Srinagar Heaven on Earth Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Paradise on Earth Experience</h4>
+            <p>Discover the breathtaking beauty of Kashmir with visits to Srinagar, Gulmarg, and Pahalgam, featuring serene lakes, snow-capped mountains, and Mughal gardens in this heavenly 4-day tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 01: Arrival in Srinagar – Dal Lake & Shikara Ride</h6>
+                <p>Arrive in Srinagar, the summer capital of Jammu & Kashmir, and be greeted with the stunning view of the Zabarwan Mountains and the iconic Dal Lake. After check-in at your hotel or houseboat, relax and soak in the beauty of this paradise. In the evening, enjoy a peaceful Shikara ride on Dal Lake, gliding past floating gardens, quaint wooden houseboats, and the golden glow of sunset. Return for dinner and an overnight stay in Srinagar.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 02: Excursion to Gulmarg – The Meadow of Flowers</h6>
+                <p>After breakfast, embark on a full-day excursion to Gulmarg, a beautiful hill station located around 55 km from Srinagar. Famed for its lush meadows and ski slopes, Gulmarg offers a scenic cable car ride known as the Gondola, which takes you up to Kongdori and Apharwat Peak (at your own cost). Explore the meadows, enjoy photography, and optionally try horse riding or snow activities (seasonal). Return to Srinagar by evening for dinner and overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 03: Excursion to Pahalgam – Valley of Shepherds</h6>
+                <p>After an early breakfast, set out for a day trip to Pahalgam, nestled in the Lidder Valley. En route, admire the beautiful saffron fields and the ruins of Avantipur Temple. In Pahalgam, enjoy the mesmerizing landscapes and optional activities like pony rides or visits to Aru Valley, Betaab Valley, and Chandanwari (at your own cost). After spending a refreshing day amidst nature, return to Srinagar in the evening. Dinner and overnight stay at your hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 04: Departure from Srinagar – Tour Ends</h6>
+                <p>After breakfast, check out from the hotel and proceed to Srinagar Airport for your onward journey. Leave with unforgettable memories of snow-capped mountains, tranquil lakes, and Kashmir's warm hospitality.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 03 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Pickup & drop from Railway station</li>
+                <li>❖ Morning tea</li>
+                <li>❖ Buffet Breakfast</li>
+                <li>❖ Buffet Dinner</li>
+                <li>❖ All the Sightseeing & transfer By Car</li>
+                <li>❖ Our assistance at the time of arrival & departure</li>
+                <li>❖ Inclusive all taxes</li>
+                <li>❖ No any Hidden cost</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic)</li>
+                <li> Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train)</li>
+                <li> Travel insurance, entrance fees at monuments or sightseeing spots, professional guide services, and snow vehicle charges (if applicable due to weather conditions)</li>
+                <li> Additional expenses arising due to unforeseen events such as natural calamities (landslides, road blockages), political unrest, strikes, or other force majeure situations</li>
+                <li> Room heater charges at hotels or resorts</li>
+                <li> Any items or services not explicitly mentioned under the "Inclusions" section</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dubai Shopping & Desert Safari Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">DUBAI SHOPPING & DESERT SAFARI TOUR</h3>
+          <div class="package-package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹45,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/dubai.jpg" alt="Dubai Shopping & Desert Safari Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Modern Marvels & Desert Adventures</h4>
+            <p>Experience the perfect blend of modern luxury and traditional desert adventures in Dubai with shopping in world-class malls, thrilling desert safaris, and iconic city tours in this spectacular 5-day international getaway.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Dubai – City Orientation</h6>
+                <p>Arrive at Dubai International Airport where you'll be greeted by our representative and transferred to your hotel. After check-in and freshening up, begin your Dubai exploration with a visit to the iconic Burj Khalifa, the world's tallest building. Enjoy breathtaking views from the observation deck. In the evening, take a leisurely walk along Dubai Marina Walk. Return to the hotel for dinner and overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Dubai City Tour & Shopping Paradise</h6>
+                <p>After breakfast, embark on a comprehensive Dubai city tour. Visit the beautiful Jumeirah Mosque, the historic Dubai Museum, and the vibrant Gold Souk. Explore the Dubai Mall and spend the afternoon shopping at world-class stores. In the evening, enjoy the spectacular Dubai Fountain show at the base of Burj Khalifa. Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Desert Safari Adventure</h6>
+                <p>After breakfast, get ready for an exciting desert safari experience. Drive to the desert camp where you'll enjoy dune bashing, camel riding, and traditional entertainment. Watch the sunset over the golden sand dunes. Enjoy a delicious BBQ dinner under the stars with belly dancing performances. Overnight stay in the desert camp.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Abu Dhabi Day Trip</h6>
+                <p>After breakfast, take a day trip to Abu Dhabi, the capital of UAE. Visit the magnificent Sheikh Zayed Grand Mosque, the beautiful Louvre Abu Dhabi, and the Corniche. Explore the Yas Marina Circuit and enjoy shopping at Yas Mall. Return to Dubai by evening. Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Leisure & Departure</h6>
+                <p>After breakfast, enjoy some last-minute shopping or visit any missed attractions. Later, transfer to Dubai International Airport for your onward journey, carrying unforgettable memories of your Dubai adventure.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 04 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Airport pickup & drop</li>
+                <li>❖ Daily breakfast</li>
+                <li>❖ Desert safari with BBQ dinner</li>
+                <li>❖ All sightseeing & transfers by private car</li>
+                <li>❖ Entry tickets to major attractions</li>
+                <li>❖ Visa assistance</li>
+                <li>❖ All taxes included</li>
+                <li>❖ No hidden charges</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> International airfare</li>
+                <li> Personal expenses and shopping</li>
+                <li> Travel insurance</li>
+                <li> Optional activities not mentioned</li>
+                <li> Tips and gratuities</li>
+                <li> Any items not explicitly mentioned</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Singapore City & Sentosa Island Tour Package -->
+      <div class="package-card">
+        <div class="package-header">
+          <h3 class="package-title">SINGAPORE CITY & SENTOSA ISLAND TOUR</h3>
+          <div class="package-meta">
+            <span class="duration">4 Nights / 5 Days</span>
+            <span class="price">Starting from ₹42,999/-</span>
+          </div>
+        </div>
+        <div class="package-content">
+          <div class="package-image">
+            <img src="/images/singapore.jpg" alt="Singapore City & Sentosa Island Tour" class="package-img">
+          </div>
+          <div class="package-details">
+            <h4>Garden City & Island Paradise</h4>
+            <p>Experience the perfect blend of urban sophistication and island paradise in Singapore with visits to iconic landmarks, cultural districts, and the famous Sentosa Island in this exciting 5-day international tour.</p>
+            
+            <div class="itinerary-section">
+              <h5>Detailed Itinerary:</h5>
+              <div class="day-plan">
+                <h6>Day 1: Arrival in Singapore – City Orientation</h6>
+                <p>Arrive at Changi Airport where you'll be greeted by our representative and transferred to your hotel. After check-in, take a leisurely walk around the local area. In the evening, visit the spectacular Gardens by the Bay and enjoy the light and sound show at the Supertree Grove. Return to the hotel for dinner and overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 2: Singapore City Tour</h6>
+                <p>After breakfast, embark on a comprehensive Singapore city tour. Visit the iconic Merlion Park, the cultural Chinatown, and the vibrant Little India. Explore the Singapore Flyer for panoramic city views. Visit the beautiful Botanic Gardens and the National Orchid Garden. In the evening, enjoy shopping at Orchard Road. Return to the hotel for dinner and overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 3: Sentosa Island Adventure</h6>
+                <p>After breakfast, head to Sentosa Island via cable car. Visit Universal Studios Singapore for thrilling rides and entertainment. Alternatively, explore the S.E.A. Aquarium, Adventure Cove Waterpark, or the Skyline Luge. Enjoy the Wings of Time show at the Wings of Time show. Return to the mainland by evening. Dinner and overnight stay at the hotel.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 4: Jurong Bird Park & Night Safari</h6>
+                <p>After breakfast, visit the Jurong Bird Park, home to over 5,000 birds across 400 species. Explore the various aviaries including the Waterfall Aviary and Lory Loft. In the evening, visit the Night Safari for a unique nocturnal wildlife experience. Return to the hotel for dinner and overnight stay.</p>
+              </div>
+              <div class="day-plan">
+                <h6>Day 5: Leisure & Departure</h6>
+                <p>After breakfast, enjoy some last-minute shopping or visit any missed attractions. Later, transfer to Changi Airport for your onward journey, carrying unforgettable memories of your Singapore adventure.</p>
+              </div>
+            </div>
+
+            <div class="service-inclusions">
+              <h5>Service Includes:</h5>
+              <ul class="service-list">
+                <li>❖ 04 Nights Hotel Accommodation on double sharing basis</li>
+                <li>❖ Airport pickup & drop</li>
+                <li>❖ Daily breakfast</li>
+                <li>❖ Sentosa Island entry</li>
+                <li>❖ Universal Studios Singapore entry</li>
+                <li>❖ All sightseeing & transfers</li>
+                <li>❖ Entry tickets to major attractions</li>
+                <li>❖ Visa assistance</li>
+                <li>❖ All taxes included</li>
+                <li>❖ No hidden charges</li>
+              </ul>
+            </div>
+
+            <div class="service-exclusions">
+              <h5>Package Exclusions:</h5>
+              <ul class="service-list">
+                <li> International airfare</li>
+                <li> Personal expenses and shopping</li>
+                <li> Travel insurance</li>
+                <li> Optional activities not mentioned</li>
+                <li> Tips and gratuities</li>
+                <li> Any items not explicitly mentioned</li>
+              </ul>
+            </div>
+
+            <div class="package-actions">
+              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section py-5">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2 class="display-4 fw-bold mb-4 text-white">Find Your Perfect Tour Package</h2>
+        <p class="lead mb-4 text-white">Explore our wide range of tour packages and find your perfect match for your next adventure</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg me-3" (click)="navigateToPackages()">Browse All Packages</button>
+          <button class="btn btn-outline-secondary btn-lg me-3" (click)="navigateToContact()">Custom Tour</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

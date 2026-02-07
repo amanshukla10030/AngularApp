@@ -1,0 +1,112 @@
+<div class="food-tours-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-text">
+              <h1 class="display-3 fw-bold mb-4 text-white">
+                Culinary Journeys
+              </h1>
+              <p class="lead mb-4 text-white">
+                Taste the flavors of India with our food tours
+              </p>
+              <div class="hero-features">
+                <div class="feature-item">
+                  <i class="fas fa-utensils"></i>
+                  <span>Street Food</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-utensils"></i>
+                  <span>Regional Cuisine</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-wine-glass"></i>
+                  <span>Food & Wine Tours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Featured Food Tours -->
+  <section class="featured-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Food Tours</h2>
+      <div class="featured-grid">
+        <div class="featured-card" (click)="navigateToPackages()">
+          <div class="featured-image">
+            <img src="../../assets/images/HGI-image3.avif" alt="Street Food Tour" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Street Food Tour</h4>
+            <p>Explore local markets and street food culture</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> Local Guide</li>
+              <li><i class="fas fa-check"></i> Food Tasting</li>
+              <li><i class="fas fa-check"></i> Market Visits</li>
+              <li><i class="fas fa-check"></i> Cultural Experience</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card" (click)="navigateToPackages()">
+          <div class="featured-image">
+            <img src="../../assets/images/HGI-image4.jpg" alt="Regional Cuisine" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Regional Cuisine</h4>
+            <p>Discover authentic regional dishes and cooking traditions</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> Cooking Classes</li>
+              <li><i class="fas fa-check"></i> Farm Visits</li>
+              <li><i class="fas fa-check"></i> Local Ingredients</li>
+              <li><i class="fas fa-check"></i> Traditional Recipes</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card" (click)="navigateToPackages()">
+          <div class="featured-image">
+            <img src="../../assets/images/133949262268459566.jpg" alt="Food & Wine Tours" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Food & Wine Tours</h4>
+            <p>Perfect pairing of local cuisine with fine wines</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> Wine Tasting</li>
+              <li><i class="fas fa-check"></i> Vineyard Visits</li>
+              <li><i class="fas fa-check"></i> Food Pairing</li>
+              <li><i class="fas fa-check"></i> Expert Sommelier</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section py-5">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2 class="display-4 fw-bold mb-4 text-white">Hungry for Adventure?</h2>
+        <p class="lead mb-4 text-white">Let us take you on a delicious journey through India's culinary landscape</p>
+        <div class="cta-buttons">
+          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All Food Tours</button>
+          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

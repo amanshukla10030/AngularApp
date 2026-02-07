@@ -1,0 +1,99 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-text">
+              <h1 class="display-3 fw-bold mb-4 text-white">
+                Discover Incredible India
+              </h1>
+              <p class="lead mb-4 text-white">
+                Experience the magic of India with our curated tour packages
+              </p>
+              <div class="hero-features">
+                <div class="feature-item">
+                  <i class="fas fa-camera"></i>
+                  <span>Adventure Photography</span>
+                </div>
+                <button class="btn btn-warning btn-lg" (click)="navigateToAdventurePhotography()">Explore Photography Tours</button>
+                <div class="feature-item">
+                  <i class="fas fa-campground"></i>
+                  <span>Camping</span>
+                </div>
+                <button class="btn btn-warning btn-lg" (click)="navigateToCamping()">Explore Camping Tours</button>
+                <div class="feature-item">
+                  <i class="fas fa-utensils"></i>
+                  <span>Food Tours</span>
+                </div>
+                <button class="btn btn-warning btn-lg" (click)="navigateToFoodTours()">Explore Food Tours</button>
+                <div class="feature-item">
+                  <i class="fas fa-om"></i>
+                  <span>Spiritual Tours</span>
+                </div>
+                <button class="btn btn-warning btn-lg" (click)="navigateToSpiritualTours()">Explore Spiritual Tours</button>
+                <div class="feature-item">
+                  <i class="fas fa-globe"></i>
+                  <span>International Tours</span>
+                </div>
+                <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">View All Tours</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Featured Destinations -->
+  <section class="featured-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Destinations</h2>
+      <div class="featured-grid">
+        <div class="featured-card" (click)="navigateToDestination('madhya-pradesh')">
+          <div class="featured-image">
+            <img src="../../assets/images/HGI-image1.jpg" alt="Madhya Pradesh" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Madhya Pradesh</h4>
+            <p>The Heart of India</p>
+          </div>
+        </div>
+
+        <div class="featured-card" (click)="navigateToDestination('north-india')">
+          <div class="featured-image">
+            <img src="../../assets/images/HGI-image2.jpg" alt="North India" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>North India</h4>
+            <p>Cultural Heritage</p>
+          </div>
+        </div>
+
+        <div class="featured-card" (click)="navigateToDestination('jammu-kashmir')">
+          <div class="featured-image">
+            <img src="../../assets/images/133949262247186237.jpg" alt="Jammu & Kashmir" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Jammu & Kashmir</h4>
+            <p>Paradise on Earth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section py-5">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2 class="display-4 fw-bold mb-4 text-white">Find Your Perfect Tour Package</h2>
+        <p class="lead mb-4 text-white">Explore our wide range of tour packages and find your perfect match for your next adventure</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg me-3" (click)="navigateToPackages()">Browse All Packages</button>
+          <button class="btn btn-outline-secondary btn-lg me-3" (click)="navigateToContact()">Custom Tour</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

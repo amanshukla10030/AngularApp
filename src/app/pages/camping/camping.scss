@@ -1,0 +1,236 @@
+/* Camping Page Styles */
+.camping-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8)), url('/assets/images/HGI-image2.jpg') center/cover;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-features {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-item i {
+  font-size: 1.5rem;
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.feature-item:hover span {
+  opacity: 1;
+}
+
+/* Featured Tours */
+.featured-section {
+  padding: 4rem 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featured-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.featured-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-image img {
+  transform: scale(1.1);
+}
+
+.featured-content {
+  padding: 1.5rem;
+}
+
+.featured-content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.featured-content p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+.package-highlights {
+  list-style: none;
+  padding: 0;
+}
+
+.package-highlights li {
+  padding: 0.5rem 0;
+  color: #333;
+}
+
+.package-highlights i {
+  color: #ffc107;
+  margin-right: 0.5rem;
+}
+
+.package-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ffc107;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Call to Action */
+.cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-outline-light:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,91 @@
+<!-- Modern Navigation Header -->
+<header class="modern-header" [class.scrolled]="isScrolled()">
+  <div class="header-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="contact-info">
+          <span class="me-3"><i class="fas fa-phone"></i> +91 8447133338</span>
+          <span><i class="fas fa-envelope"></i> info@happyghumakkads.com</span>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="main-nav">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="brand-section">
+          <a class="brand d-flex align-items-center" (click)="navigateToHome()" style="cursor: pointer;">
+            <div class="logo-container me-3">
+              <img src="cropped-Logo-png.png" alt="Happy Ghumakkads" class="brand-logo">
+            </div>
+            <div class="brand-text">
+              <h1 class="brand-name mb-0">HAPPY GHUMAKKADS</h1>
+              <p class="brand-tagline mb-0">Discover Incredible India</p>
+            </div>
+          </a>
+        </div>
+        
+        <div class="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="isActive('home')" (click)="navigateToHome()">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="isActive('packages')" (click)="navigateToPackages()">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="isActive('about')" (click)="navigateToAbout()">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="isActive('careers')" (click)="navigateToCareers()">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="isActive('contact')" (click)="navigateToContact()">Contact</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="header-actions">
+          <!-- Book Now Button -->
+          <button class="btn btn-warning btn-sm me-2" (click)="navigateToContact()">
+            Book Now
+          </button>
+          
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<app-footer></app-footer>
+
+<!-- Scroll to Top Button -->
+<div class="scrollToTop" (click)="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/918447133338" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>

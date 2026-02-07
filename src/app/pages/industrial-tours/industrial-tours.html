@@ -1,0 +1,198 @@
+<div class="industrial-tours-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="hero-text">
+              <h1 class="display-3 fw-bold mb-4 text-white">
+                Industrial Tours
+              </h1>
+              <p class="lead mb-4 text-white">
+                Explore manufacturing facilities, industrial sites, and technological innovations
+              </p>
+              <div class="hero-features">
+                <div class="feature-item">
+                  <i class="fas fa-industry"></i>
+                  <span>Factory Visits</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-cogs"></i>
+                  <span>Manufacturing Tours</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-microscope"></i>
+                  <span>Research Centers</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-robot"></i>
+                  <span>Technology Parks</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-hard-hat"></i>
+                  <span>Industrial Safety</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tours -->
+  <section class="featured-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Industrial Tours</h2>
+      <div class="featured-grid">
+        <div class="featured-card" (click)="navigateToPackages()">
+          <div class="featured-image">
+            <img src="/assets/images/HGI-image1.jpg" alt="Industrial Tour" class="featured-img">
+          </div>
+          <div class="featured-content">
+            <h4>Automotive Manufacturing Tour</h4>
+            <p>Witness the marvel of modern automobile production lines</p>
+            <ul class="package-highlights">
+              <li><i class="fas fa-check"></i> 2 Days guided factory tour</li>
+              <li><i class="fas fa-check"></i> Expert industrial guide</li>
+              <li><i class="fas fa-check"></i> Safety equipment provided</li>
+              <li><i class="fas fa-check"></i> Transportation included</li>
+              <li><i class="fas fa-check"></i> Lunch at facility canteen</li>
+              <li><i class="fas fa-check"></i> Certificate of participation</li>
+              <li><i class="fas fa-check"></i> Inclusive all taxes</li>
+              <li><i class="fas fa-check"></i> No any Hidden cost</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary Section -->
+  <section class="itinerary-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Automotive Manufacturing Tour Itinerary</h2>
+      <div class="itinerary-timeline">
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 1: Assembly Line Visit</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Morning:</strong> Arrival at automotive manufacturing plant. Safety briefing and equipment distribution. Guided tour through the main assembly line, witnessing the complete vehicle manufacturing process from raw materials to finished products.</p>
+            <p><strong>Afternoon:</strong> Visit to quality control department and testing facilities. Interactive session with plant engineers. Lunch at the facility canteen with management team. Evening departure to hotel.</p>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <h3>Day 2: Technology & Innovation Center</h3>
+          </div>
+          <div class="day-content">
+            <p><strong>Morning:</strong> Visit to R&D center and technology innovation lab. Demonstration of latest manufacturing technologies and automation systems. Q&A session with senior engineers and technology experts.</p>
+            <p><strong>Afternoon:</strong> Tour of the paint shop and final assembly area. Certificate distribution ceremony. Departure with comprehensive understanding of modern automotive manufacturing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Exclusions -->
+  <section class="exclusions-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Package Exclusions</h2>
+      <div class="exclusions-list">
+        <ul>
+          <li>Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic).</li>
+          <li>Charges for optional activities or special equipment not mentioned in the inclusions.</li>
+          <li>Travel insurance, personal accident insurance, and medical expenses.</li>
+          <li>Additional expenses arising due to unforeseen events such as natural calamities, political unrest, strikes, or other force majeure situations.</li>
+          <li>Any items or services not explicitly mentioned under the "Inclusions" section.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Book Your Industrial Tour</h2>
+      <div class="booking-form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="organization-name" class="form-label">Organization Name</label>
+              <input type="text" class="form-control" id="organization-name" placeholder="Enter your organization name">
+            </div>
+            <div class="form-group">
+              <label for="contact-person" class="form-label">Contact Person</label>
+              <input type="text" class="form-control" id="contact-person" placeholder="Enter contact person name">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+              <label for="tour-date" class="form-label">Preferred Tour Date</label>
+              <input type="date" class="form-control" id="tour-date">
+            </div>
+            <div class="form-group">
+              <label for="group-size" class="form-label">Group Size</label>
+              <select class="form-control" id="group-size">
+                <option value="5-10">5-10 People</option>
+                <option value="11-20">11-20 People</option>
+                <option value="21-50">21-50 People</option>
+                <option value="50+">50+ People</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="special-requirements" class="form-label">Special Requirements</label>
+              <textarea class="form-control" id="special-requirements" rows="4" placeholder="Any specific industrial interests or requirements..."></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="booking-info">
+              <h4>Tour Highlights</h4>
+              <ul>
+                <li>Expert industrial guides</li>
+                <li>Safety equipment provided</li>
+                <li>Behind-the-scenes access</li>
+                <li>Interactive sessions</li>
+                <li>Transportation included</li>
+                <li>Certificate of participation</li>
+              </ul>
+            </div>
+            <div class="price-info">
+              <h4>Starting from ₹3,500 per person</h4>
+              <p class="lead">2 Days - All inclusive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg" (click)="navigateToContact()">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section py-5">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Industrial Experience?</h2>
+        <p class="lead mb-4 text-white">Discover the marvels of modern manufacturing</p>
+        <div class="cta-buttons">
+          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All Industrial Tours</button>
+          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

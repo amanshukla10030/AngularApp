@@ -1,0 +1,336 @@
+.corporate-events-page {
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8)), url('/assets/images/HGI-image1.jpg') center/cover;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-content {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 600px;
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .feature-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  .feature-item span {
+    font-weight: 500;
+  }
+
+  /* Featured Tours */
+  .featured-section {
+    padding: 5rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .featured-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .featured-image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .featured-content {
+    padding: 1.5rem;
+  }
+
+  .featured-content h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .featured-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .package-highlights {
+    list-style: none;
+    padding: 0;
+  }
+
+  .package-highlights li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .package-highlights li:last-child {
+    border-bottom: none;
+  }
+
+  .package-highlights i {
+    color: #28a745;
+    margin-right: 0.5rem;
+  }
+
+  .package-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #0056b3;
+  }
+
+  /* Itinerary Section */
+  .itinerary-section {
+    padding: 5rem 0;
+  }
+
+  .itinerary-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .day-header {
+    background: #007bff;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    margin: -1rem 1rem 0;
+  }
+
+  .day-header h3 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .day-content {
+    padding: 1.5rem;
+  }
+
+  .day-content p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .day-content strong {
+    color: #333;
+    font-weight: 600;
+  }
+
+  /* Package Exclusions */
+  .exclusions-section {
+    padding: 5rem 0;
+  }
+
+  .exclusions-list {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  .exclusions-list ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exclusions-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+    color: #666;
+  }
+
+  .exclusions-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Booking Section */
+  .booking-section {
+    padding: 5rem 0;
+  }
+
+  .booking-form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .booking-info {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-info h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .booking-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .booking-info li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    color: #666;
+  }
+
+  .booking-info li:last-child {
+    border-bottom: none;
+  }
+
+  .price-info {
+    background: #28a745;
+    color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .price-info h4 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .price-info p {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  /* Call to Action */
+  .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .cta-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+  }
+}
