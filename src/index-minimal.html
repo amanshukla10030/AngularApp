@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <style>
+    body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+    .test { background: #f0f0f0; padding: 20px; border: 2px solid #333; }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <h1>STATIC HTML TEST</h1>
+    <p>If you see this, HTML is loading but Angular is not.</p>
+    <div id="app-root"></div>
+  </div>
+  <script>
+    console.log('Static script loaded');
+    document.getElementById('app-root').innerHTML = '<h2>JavaScript is working!</h2>';
+  </script>
+</body>
+</html>
