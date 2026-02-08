@@ -61,7 +61,7 @@
               <li><i class="fas fa-check"></i> No any Hidden cost</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary">View Details</button>
+              <a class="btn btn-primary" routerLink="/packages">View Details</a>
             </div>
           </div>
         </div>
@@ -128,8 +128,8 @@
         <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Camping Adventure?</h2>
         <p class="lead mb-4 text-white">Experience the wilderness like never before</p>
         <div class="cta-buttons">
-          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All Camping Tours</button>
-          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+          <a class="btn btn-warning btn-lg" routerLink="/packages">Browse All Camping Tours</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/contact">Contact Us</a>
         </div>
       </div>
     </div>

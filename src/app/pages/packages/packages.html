@@ -20,7 +20,7 @@
     <div class="container">
       <h2 class="section-title text-center mb-5">Explore Our Tour Categories</h2>
       <div class="categories-grid">
-        <div class="category-card" (click)="navigateToAdventurePhotography()">
+        <a class="category-card" routerLink="/adventure-photography">
           <div class="category-icon">
             <i class="fas fa-mountain"></i>
           </div>
@@ -28,9 +28,15 @@
           <div class="category-description">
             <p>Thrilling wildlife safaris, trekking, paragliding, and adventure sports activities</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToCamping()">
+        <a class="category-card" routerLink="/camping">
           <div class="category-icon">
             <i class="fas fa-campground"></i>
           </div>
@@ -38,9 +44,15 @@
           <div class="category-description">
             <p>Experience the great outdoors with our camping adventures</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToSpiritualTours()">
+        <a class="category-card" routerLink="/spiritual-tours">
           <div class="category-icon">
             <i class="fas fa-om"></i>
           </div>
@@ -48,9 +60,15 @@
           <div class="category-description">
             <p>Sacred journeys to holy sites, temple visits, and spiritual experiences</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToInternationalTours()">
+        <a class="category-card" routerLink="/international-tours">
           <div class="category-icon">
             <i class="fas fa-globe"></i>
           </div>
@@ -58,9 +76,15 @@
           <div class="category-description">
             <p>Explore destinations beyond India with our curated international packages</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToCorporateEvents()">
+        <a class="category-card" routerLink="/corporate-events">
           <div class="category-icon">
             <i class="fas fa-briefcase"></i>
           </div>
@@ -68,9 +92,15 @@
           <div class="category-description">
             <p>Customized corporate travel packages for team building and business events</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToStudentGroups()">
+        <a class="category-card" routerLink="/student-groups">
           <div class="category-icon">
             <i class="fas fa-graduation-cap"></i>
           </div>
@@ -78,9 +108,15 @@
           <div class="category-description">
             <p>Educational tours and special packages for student groups and young travelers</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToIndustrialTours()">
+        <a class="category-card" routerLink="/industrial-tours">
           <div class="category-icon">
             <i class="fas fa-industry"></i>
           </div>
@@ -88,9 +124,15 @@
           <div class="category-description">
             <p>Explore manufacturing facilities, industrial sites, and technological innovations</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
         
-        <div class="category-card" (click)="navigateToCulturalHeritageTours()">
+        <a class="category-card" routerLink="/cultural-heritage-tours">
           <div class="category-icon">
             <i class="fas fa-monument"></i>
           </div>
@@ -98,7 +140,13 @@
           <div class="category-description">
             <p>Discover India's rich cultural heritage and historical treasures</p>
           </div>
-        </div>
+          <div class="category-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-arrow-right"></i>
+              <span>Click for details</span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -131,7 +179,7 @@
               <li><i class="fas fa-check"></i> Airport Transfers</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -160,7 +208,7 @@
               <li><i class="fas fa-check"></i> Transportation</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -189,7 +237,7 @@
               <li><i class="fas fa-check"></i> Spiritual Guide</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -218,7 +266,7 @@
               <li><i class="fas fa-check"></i> Non-Forest & Forest Area Sightseeing</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -247,7 +295,7 @@
               <li><i class="fas fa-check"></i> Non-Forest, Forest & Spiritual Tours</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -320,7 +368,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -388,7 +436,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -455,7 +503,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -532,7 +580,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -613,7 +661,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -685,7 +733,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -762,7 +810,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -835,7 +883,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -903,7 +951,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -975,7 +1023,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1043,7 +1091,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1115,7 +1163,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1182,7 +1230,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1257,7 +1305,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1324,7 +1372,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1395,7 +1443,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1470,7 +1518,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1541,7 +1589,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1612,7 +1660,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1683,7 +1731,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1759,7 +1807,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1826,7 +1874,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1897,7 +1945,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -1964,7 +2012,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -2043,7 +2091,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -2114,7 +2162,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -2189,7 +2237,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -2265,7 +2313,7 @@
             </div>
 
             <div class="package-actions">
-              <button class="btn btn-primary" (click)="navigateToContact()">Book Now</button>
+              <a class="btn btn-primary" routerLink="/contact">Book Now</a>
             </div>
           </div>
         </div>
@@ -2280,8 +2328,8 @@
         <h2 class="display-4 fw-bold mb-4 text-white">Find Your Perfect Tour Package</h2>
         <p class="lead mb-4 text-white">Explore our wide range of tour packages and find your perfect match for your next adventure</p>
         <div class="cta-buttons">
-          <button class="btn btn-primary btn-lg me-3" (click)="navigateToPackages()">Browse All Packages</button>
-          <button class="btn btn-outline-secondary btn-lg me-3" (click)="navigateToContact()">Custom Tour</button>
+          <a class="btn btn-primary btn-lg me-3" routerLink="/packages">Browse All Packages</a>
+          <a class="btn btn-outline-secondary btn-lg me-3" routerLink="/contact">Custom Tour</a>
         </div>
       </div>
     </div>

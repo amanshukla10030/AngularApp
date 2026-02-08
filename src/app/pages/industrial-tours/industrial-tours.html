@@ -32,8 +32,8 @@
                 </div>
               </div>
               <div class="hero-actions animate__fadeInUp">
-                <button class="btn btn-warning btn-lg me-3" (click)="navigateToContact()">Book Now</button>
-                <button class="btn btn-outline-light btn-lg" (click)="navigateToPackages()">View Packages</button>
+                <a class="btn btn-warning btn-lg me-3" routerLink="/contact">Book Now</a>
+                <a class="btn btn-outline-light btn-lg" routerLink="/packages">View Packages</a>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
               <li><i class="fas fa-check"></i> No any Hidden cost</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary">View Details</button>
+              <a class="btn btn-primary" routerLink="/packages">View Details</a>
             </div>
           </div>
         </div>
@@ -124,8 +124,8 @@
         <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Industrial Experience?</h2>
         <p class="lead mb-4 text-white">Discover the marvels of modern manufacturing</p>
         <div class="cta-buttons">
-          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All Industrial Tours</button>
-          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+          <a class="btn btn-warning btn-lg" routerLink="/packages">Browse All Industrial Tours</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/contact">Contact Us</a>
         </div>
       </div>
     </div>

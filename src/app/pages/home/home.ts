@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section with Image Background -->
     <section class="hero-section">
@@ -372,8 +372,8 @@ import { Router } from '@angular/router';
           <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Next Adventure?</h2>
           <p class="lead mb-4 text-white">Let us help you plan the perfect trip to your dream destination</p>
           <div class="d-flex gap-3 justify-content-center">
-            <button class="btn btn-warning btn-lg px-5" (click)="navigateToDestination('packages')">Start Planning</button>
-            <button class="btn btn-outline-light btn-lg px-5" (click)="navigateToContact()">Download Brochure</button>
+            <a class="btn btn-warning btn-lg px-5" routerLink="/packages">Start Planning</a>
+            <a class="btn btn-outline-light btn-lg px-5" routerLink="/contact">Download Brochure</a>
           </div>
         </div>
       </div>
@@ -676,9 +676,9 @@ import { Router } from '@angular/router';
         
         <!-- Gallery CTA -->
         <div class="text-center mt-5">
-          <button class="btn btn-warning btn-lg px-5" (click)="navigateToDestination('packages')">
+          <a class="btn btn-warning btn-lg px-5" routerLink="/packages">
             Explore All Destinations
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -1444,6 +1444,11 @@ export class Home {
     this.router.navigate([destination]);
   }
 
+  navigateToPackages(): void {
+    console.log('Start Planning button clicked - Navigating to packages');
+    this.router.navigate(['/packages']);
+  }
+
   navigateToAdventurePhotography(): void {
     console.log('Navigating to adventure-photography');
     this.router.navigate(['/adventure-photography']);
@@ -1465,6 +1470,7 @@ export class Home {
   }
 
   navigateToContact(): void {
+    console.log('Download Brochure button clicked - Navigating to contact');
     this.router.navigate(['/contact']);
   }
 }

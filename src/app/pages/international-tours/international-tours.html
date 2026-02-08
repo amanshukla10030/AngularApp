@@ -46,7 +46,7 @@
     <div class="container">
       <h2 class="section-title text-center mb-5">Featured International Tours</h2>
       <div class="featured-grid">
-        <div class="featured-card" (click)="navigateToPackages()">
+        <a class="featured-card" routerLink="/packages">
           <div class="featured-image">
             <img src="/images/international.jpg" alt="International Tour" class="featured-img">
           </div>
@@ -65,10 +65,10 @@
               <li><i class="fas fa-check"></i> No any Hidden cost</li>
             </ul>
             <div class="package-actions">
-              <button class="btn btn-primary">View Details</button>
+              <a class="btn btn-primary" routerLink="/packages">View Details</a>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -150,8 +150,8 @@
         <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your International Adventure?</h2>
         <p class="lead mb-4 text-white">Explore the world with confidence</p>
         <div class="cta-buttons">
-          <button class="btn btn-warning btn-lg" (click)="navigateToPackages()">Browse All International Tours</button>
-          <button class="btn btn-outline-light btn-lg" (click)="navigateToContact()">Contact Us</button>
+          <a class="btn btn-warning btn-lg" routerLink="/packages">Browse All International Tours</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/contact">Contact Us</a>
         </div>
       </div>
     </div>

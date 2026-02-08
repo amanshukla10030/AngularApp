@@ -40,16 +40,6 @@ export const routes: Routes = [
 
   {
 
-    path: 'home',
-
-    component: Home,
-
-    title: 'Happy Ghumakkads - Discover Incredible India'
-
-  },
-
-  {
-
     path: 'packages',
 
     component: PackagesComponent,

@@ -35,7 +35,7 @@
         <div class="nav-menu">
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+              <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/packages" routerLinkActive="active">Packages</a>
@@ -54,9 +54,9 @@
         
         <div class="header-actions">
           <!-- Book Now Button -->
-          <button class="btn btn-warning btn-sm me-2" routerLink="/contact">
+          <a class="btn btn-warning btn-sm me-2" routerLink="/contact" routerLinkActive="active">
             Book Now
-          </button>
+          </a>
           
           <!-- Mobile Menu Toggle -->
           <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">

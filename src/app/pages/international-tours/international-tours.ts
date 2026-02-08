@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-international-tours',
   templateUrl: './international-tours.html',
-  styleUrls: ['./international-tours.scss']
+  styleUrls: ['./international-tours.scss'],
+  standalone: true,
+  imports: [RouterLink]
 })
 export class InternationalToursComponent {
   constructor(private router: Router) {}
