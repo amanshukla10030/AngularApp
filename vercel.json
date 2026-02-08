@@ -1,11 +1,22 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/happy-ghumakkads/browser",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/happy-ghumakkads/browser"
+      }
+    },
+    {
+      "src": "dist/happy-ghumakkads/server/server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "dist/happy-ghumakkads/server/server.mjs"
     }
   ]
 }

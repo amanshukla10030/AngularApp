@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:happy-ghumakkads": "node dist/happy-ghumakkads/server/server.mjs",
-    "vercel-build": "npm run build"
+    "vercel-build": "npm run build:ssr"
   },
   "prettier": {
     "printWidth": 100,
