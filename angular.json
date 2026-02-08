@@ -22,8 +22,6 @@
           "options": {
             "outputPath": "dist/happy-ghumakkads/browser",
             "browser": "src/main.ts",
-            "server": "src/server.ts",
-            "outputMode": "static",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -79,12 +77,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "main-server": {
-          "builder": "@angular/ssr:build",
-          "options": {
-            "outputPath": "dist/happy-ghumakkads/server"
-          }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
