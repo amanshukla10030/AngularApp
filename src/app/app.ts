@@ -19,13 +19,14 @@ export class App implements OnInit, AfterViewInit {
   protected openDropdowns = signal<Set<string>>(new Set());
   protected isAppLoaded = signal(false);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    console.log('App component initialized');
+  }
 
   ngOnInit() {
-    // Initialize any required functionality
-    setTimeout(() => {
-      this.isAppLoaded.set(true);
-    }, 1000);
+    console.log('App ngOnInit called');
+    // Set app as loaded immediately
+    this.isAppLoaded.set(true);
   }
 
   ngAfterViewInit() {
