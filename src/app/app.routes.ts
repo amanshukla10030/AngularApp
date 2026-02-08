@@ -1,29 +1,16 @@
 import { Routes } from '@angular/router';
-
 import { Home } from './pages/home/home';
-
 import { PackagesComponent } from './pages/packages/packages';
-
 import { AdventurePhotographyComponent } from './pages/adventure-photography/adventure-photography';
-
 import { CampingComponent } from './pages/camping/camping';
-
 import { SpiritualToursComponent } from './pages/spiritual-tours/spiritual-tours';
-
 import { Contact } from './pages/contact/contact';
-
 import { About } from './pages/about/about';
-
 import { Careers } from './pages/careers/careers';
-
 import { InternationalToursComponent } from './pages/international-tours/international-tours';
-
 import { CorporateEventsComponent } from './pages/corporate-events/corporate-events';
-
 import { StudentGroupsComponent } from './pages/student-groups/student-groups';
-
 import { IndustrialToursComponent } from './pages/industrial-tours/industrial-tours';
-
 import { CulturalHeritageToursComponent } from './pages/cultural-heritage-tours/cultural-heritage-tours';
 
 export const routes: Routes = [
