@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment';
+// Now correctly points to the environment file
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   template: `
     <!-- Contact Hero -->
     <section class="contact-hero">
@@ -72,19 +75,19 @@ import { CommonModule } from '@angular/common';
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label for="name" class="form-label">Full Name *</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="formData.name" required>
                   </div>
                   <div class="col-md-6">
                     <label for="email" class="form-label">Email Address *</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required>
                   </div>
                   <div class="col-md-6">
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone">
+                    <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="formData.phone">
                   </div>
                   <div class="col-md-6">
                     <label for="destination" class="form-label">Interested Destination</label>
-                    <select class="form-select" id="destination" name="destination">
+                    <select class="form-select" id="destination" name="destination" [(ngModel)]="formData.destination">
                       <option value="">Select Destination</option>
                       <option value="madhya-pradesh">Madhya Pradesh</option>
                       <option value="north-india">North India</option>
@@ -97,17 +100,34 @@ import { CommonModule } from '@angular/common';
                   </div>
                   <div class="col-12">
                     <label for="subject" class="form-label">Subject *</label>
-                    <input type="text" class="form-control" id="subject" name="subject" required>
+                    <input type="text" class="form-control" id="subject" name="subject" [(ngModel)]="formData.subject" required>
                   </div>
                   <div class="col-12">
                     <label for="message" class="form-label">Message *</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn btn-warning btn-lg w-100">Send Message</button>
+                    <button type="submit" class="btn btn-warning btn-lg w-100" [disabled]="isSubmitting">
+                      <span *ngIf="!isSubmitting">Send Message</span>
+                      <span *ngIf="isSubmitting">
+                        <i class="fas fa-spinner fa-spin me-2"></i>Sending...
+                      </span>
+                    </button>
                   </div>
                 </div>
               </form>
+              
+              <!-- Success Message -->
+              <div *ngIf="showSuccess" class="alert alert-success mt-4" role="alert">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon!
+              </div>
+              
+              <!-- Error Message -->
+              <div *ngIf="showError" class="alert alert-danger mt-4" role="alert">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <strong>Oops!</strong> Something went wrong. Please try again or contact us directly.
+              </div>
             </div>
           </div>
         </div>
@@ -122,19 +142,19 @@ import { CommonModule } from '@angular/common';
           <p class="text-muted">Stay updated with our latest offers and travel tips</p>
         </div>
         <div class="d-flex justify-content-center gap-3">
-          <a href="https://www.facebook.com/happyghumakkads" target="_blank" rel="noopener" class="social-btn facebook">
+          <a href="#" class="social-btn facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/happyghumakkads" target="_blank" rel="noopener" class="social-btn instagram">
+          <a href="#" class="social-btn instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://www.twitter.com/happyghumakkads" target="_blank" rel="noopener" class="social-btn twitter">
+          <a href="#" class="social-btn twitter">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="https://wa.me/918447133338" target="_blank" rel="noopener" class="social-btn whatsapp">
+          <a href="#" class="social-btn whatsapp">
             <i class="fab fa-whatsapp"></i>
           </a>
-          <a href="https://www.youtube.com/happyghumakkads" target="_blank" rel="noopener" class="social-btn youtube">
+          <a href="#" class="social-btn youtube">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
@@ -210,16 +230,73 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class Contact {
-  onSubmit(event: Event): void {
+  formData = {
+    name: '',
+    email: '',
+    phone: '',
+    destination: '',
+    subject: '',
+    message: ''
+  };
+  
+  isSubmitting = false;
+  showSuccess = false;
+  showError = false;
+  
+  onSubmit(event: Event) {
     event.preventDefault();
+    this.isSubmitting = true;
+    this.showSuccess = false;
+    this.showError = false;
+    
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     
-    // Here you would typically send the data to Formspree
-    console.log('Form submitted:', Object.fromEntries(formData));
-    
-    // Show success message
-    alert('Thank you for your inquiry! We will contact you soon.');
-    form.reset();
+    // Submit to Formspree
+    const formspreeId = environment.production ? environment.production.formspreeId : environment.development.formspreeId;
+    fetch(`https://formspree.io/f/${formspreeId}`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      console.log('Formspree response:', response);
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(`Form submission failed with status: ${response.status}`);
+      }
+    })
+    .then(data => {
+      this.showSuccess = true;
+      this.resetForm();
+      // Scroll to success message
+      setTimeout(() => {
+        const successElement = document.querySelector('.alert-success');
+        if (successElement) {
+          successElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      this.showError = true;
+    })
+    .finally(() => {
+      this.isSubmitting = false;
+    });
+  }
+  
+  resetForm() {
+    this.formData = {
+      name: '',
+      email: '',
+      phone: '',
+      destination: '',
+      subject: '',
+      message: ''
+    };
   }
 }
