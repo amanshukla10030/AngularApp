@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/happy-ghumakkads/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
