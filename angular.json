@@ -81,7 +81,7 @@
           "defaultConfiguration": "production"
         },
         "main-server": {
-          "builder": "@angular/build:application",
+          "builder": "@angular/ssr:build",
           "options": {
             "outputPath": "dist/happy-ghumakkads/server"
           }
