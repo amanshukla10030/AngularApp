@@ -1,12 +1,12 @@
 import { Component, signal, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Footer } from './shared/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, Footer, FormsModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, Footer, FormsModule],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
