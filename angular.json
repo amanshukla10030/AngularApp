@@ -20,9 +20,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/happy-ghumakkads/browser",
+            "outputPath": "dist/happy-ghumakkads",
             "browser": "src/main.ts",
-            "outputMode": "static",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
