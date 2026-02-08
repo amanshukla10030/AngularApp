@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/happy-ghumakkads/server/server.mjs",
-      "use": "@vercel/node"
-    },
-    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -16,12 +12,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/happy-ghumakkads/server/server.mjs"
+      "dest": "/index.html"
     }
-  ],
-  "functions": {
-    "dist/happy-ghumakkads/server/server.mjs": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  ]
 }
