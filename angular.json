@@ -80,6 +80,12 @@
           },
           "defaultConfiguration": "production"
         },
+        "main-server": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/happy-ghumakkads/server"
+          }
+        },
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
