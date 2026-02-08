@@ -22,6 +22,7 @@
           "options": {
             "outputPath": "dist/happy-ghumakkads/browser",
             "browser": "src/main.ts",
+            "outputMode": "static",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
