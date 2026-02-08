@@ -31,13 +31,18 @@ jobs:
       - name: Build Angular app
         run: npm run build
 
+      - name: Move build to docs folder
+        run: |
+          mkdir -p docs
+          cp -r dist/happy-ghumakkads/browser/* docs/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/happy-ghumakkads/browser'
+          path: './docs'
 
       - name: Deploy to GitHub Pages
         id: deployment
