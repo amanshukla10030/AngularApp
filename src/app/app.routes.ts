@@ -27,145 +27,74 @@ import { IndustrialToursComponent } from './pages/industrial-tours/industrial-to
 import { CulturalHeritageToursComponent } from './pages/cultural-heritage-tours/cultural-heritage-tours';
 
 export const routes: Routes = [
-
   {
-
     path: '',
-
     component: Home,
-
     title: 'Happy Ghumakkads - Discover Incredible India'
-
   },
-
   {
-
     path: 'packages',
-
     component: PackagesComponent,
-
     title: 'Tour Packages - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'adventure-photography',
-
     component: AdventurePhotographyComponent,
-
     title: 'Adventure Photography Tours - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'camping',
-
     component: CampingComponent,
-
     title: 'Camping Adventures - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'spiritual-tours',
-
     component: SpiritualToursComponent,
-
     title: 'Spiritual Tours - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'about',
-
     component: About,
-
     title: 'About Us - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'careers',
-
     component: Careers,
-
     title: 'Careers - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'contact',
-
     component: Contact,
-
     title: 'Contact Us - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'international-tours',
-
     component: InternationalToursComponent,
-
     title: 'International Tours - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'corporate-events',
-
     component: CorporateEventsComponent,
-
     title: 'Corporate Events - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'student-groups',
-
     component: StudentGroupsComponent,
-
     title: 'Student Groups - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'industrial-tours',
-
     component: IndustrialToursComponent,
-
     title: 'Industrial Tours - Happy Ghumakkads'
-
   },
-
   {
-
     path: 'cultural-heritage-tours',
-
     component: CulturalHeritageToursComponent,
-
     title: 'Cultural & Heritage Tours - Happy Ghumakkads'
-
   },
-
   {
-
     path: '**',
-
     redirectTo: '',
-
     pathMatch: 'full'
-
   }
-
 ];

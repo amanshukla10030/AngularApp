@@ -1,8 +1,0 @@
-[build]
-  publish = "dist/happy-ghumakkads/browser"
-  command = "ng build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
