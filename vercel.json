@@ -7,16 +7,12 @@
       "config": {
         "distDir": "dist/happy-ghumakkads/browser"
       }
-    },
-    {
-      "src": "dist/happy-ghumakkads/server/server.mjs",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/happy-ghumakkads/server/server.mjs"
+      "dest": "/index.html"
     }
   ]
 }
