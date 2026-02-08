@@ -17,11 +17,15 @@ export class App implements OnInit, AfterViewInit {
   protected isScrolled = signal(false);
   protected activeRoute = signal('home');
   protected openDropdowns = signal<Set<string>>(new Set());
+  protected isAppLoaded = signal(false);
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     // Initialize any required functionality
+    setTimeout(() => {
+      this.isAppLoaded.set(true);
+    }, 1000);
   }
 
   ngAfterViewInit() {

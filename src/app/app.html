@@ -73,6 +73,11 @@
 <!-- Main Content -->
 <main class="main-content">
   <router-outlet></router-outlet>
+  <!-- Loading indicator -->
+  <div *ngIf="!isAppLoaded" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
 </main>
 
 <!-- Footer -->
