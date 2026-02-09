@@ -26,28 +26,28 @@
               <img src="/images/cropped-Logo-png.png" alt="Happy Ghumakkads" class="brand-logo">
             </div>
             <div class="brand-text">
-              <h1 class="brand-name mb-0"></h1>
-              <p class="brand-tagline mb-0"></p>
+              <h1 class="brand-name mb-0">HAPPY GHUMAKKADS</h1>
+              <p class="brand-tagline mb-0">Discover Incredible India</p>
             </div>
           </a>
         </div>
         
-        <div class="nav-menu" [class.show]="isMenuOpen()" (click)="closeMobileMenu()">
+        <div class="nav-menu" [class.show]="isMenuOpen()">
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+              <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/packages" routerLinkActive="active">Packages</a>
+              <a class="nav-link" routerLink="/packages" routerLinkActive="active" (click)="closeMobileMenu()">Packages</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/careers" routerLinkActive="active">Careers</a>
+              <a class="nav-link" routerLink="/careers" routerLinkActive="active" (click)="closeMobileMenu()">Careers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+              <a class="nav-link" routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
             </li>
           </ul>
         </div>
