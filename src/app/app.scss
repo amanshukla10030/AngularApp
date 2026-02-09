@@ -787,11 +787,16 @@
     padding-top: 120px !important;
     min-height: 100vh;
     margin-top: 0;
+    height: auto !important;
   }
   
   // Package page specific fixes
   .packages-page {
     .hero-section {
+      height: auto !important;
+      min-height: 100vh;
+      padding-top: 120px !important;
+      
       .display-3 {
         font-size: 2rem;
       }
@@ -825,31 +830,32 @@
         
         .package-header {
           .package-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            align-items: flex-start;
-            width: 100%;
-            overflow: hidden;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 5px !important;
+            align-items: flex-start !important;
+            width: 100% !important;
+            overflow: hidden !important;
+            justify-content: flex-start !important;
             
             .duration, .price {
-              display: block;
-              width: 100%;
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
+              display: block !important;
+              width: 100% !important;
+              white-space: nowrap !important;
+              overflow: hidden !important;
+              text-overflow: ellipsis !important;
             }
             
             .duration {
-              font-size: 0.9rem;
-              color: #666;
-              margin-bottom: 3px;
+              font-size: 0.9rem !important;
+              color: #666 !important;
+              margin-bottom: 3px !important;
             }
             
             .price {
-              font-size: 1rem;
-              font-weight: 600;
-              color: #333;
+              font-size: 1rem !important;
+              font-weight: 600 !important;
+              color: #333 !important;
             }
           }
         }
