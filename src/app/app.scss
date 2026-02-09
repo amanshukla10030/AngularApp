@@ -235,6 +235,15 @@
             overflow-y: auto;
             z-index: 1001;
             
+            &.show {
+              display: flex;
+              z-index: 1000;
+              
+              .nav-list {
+                pointer-events: auto;
+              }
+            }
+            
             .row {
               display: flex;
               gap: 20px;

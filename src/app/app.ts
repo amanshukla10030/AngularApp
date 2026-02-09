@@ -143,7 +143,13 @@ export class App implements OnInit, AfterViewInit {
   }
 
   toggleMobileMenu(): void {
+    console.log('Mobile menu toggled, current state:', this.isMenuOpen());
     this.isMenuOpen.update(open => !open);
+    console.log('New menu state:', this.isMenuOpen());
+    // Close mobile menu when navigating on mobile
+    if (this.isMenuOpen()) {
+      this.closeMobileMenu();
+    }
   }
 
   closeMobileMenu(): void {

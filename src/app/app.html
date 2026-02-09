@@ -32,7 +32,7 @@
           </a>
         </div>
         
-        <div class="nav-menu">
+        <div class="nav-menu" [class.show]="isMenuOpen()" (click)="closeMobileMenu()">
           <ul class="nav-list">
             <li class="nav-item">
               <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
