@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-student-groups',
   templateUrl: './student-groups.html',
-  styleUrls: ['./student-groups.scss']
+  styleUrls: ['./student-groups.scss'],
+  standalone: true,
+  imports: [RouterLink]
 })
 export class StudentGroupsComponent {
   constructor(private router: Router) {}

@@ -142,19 +142,19 @@ import { environment } from '../../../environments/environment';
           <p class="text-muted">Stay updated with our latest offers and travel tips</p>
         </div>
         <div class="d-flex justify-content-center gap-3">
-          <a href="#" class="social-btn facebook">
+          <a href="https://www.facebook.com/happyghumakkads" target="_blank" class="social-btn facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="social-btn instagram">
+          <a href="https://www.instagram.com/happyghumakkads" target="_blank" class="social-btn instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="social-btn twitter">
+          <a href="https://www.twitter.com/happyghumakkads" target="_blank" class="social-btn twitter">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="social-btn whatsapp">
+          <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">
             <i class="fab fa-whatsapp"></i>
           </a>
-          <a href="#" class="social-btn youtube">
+          <a href="https://www.youtube.com/@happyghumakkads" target="_blank" class="social-btn youtube">
             <i class="fab fa-youtube"></i>
           </a>
         </div>

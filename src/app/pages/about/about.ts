@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- About Hero -->
     <section class="about-hero">
@@ -204,8 +205,8 @@ import { CommonModule } from '@angular/common';
           <h2 class="display-4 fw-bold mb-4">Ready to Start Your Journey?</h2>
           <p class="lead mb-4">Join thousands of happy travelers who have explored India with us</p>
           <div class="d-flex gap-3 justify-content-center">
-            <button class="btn btn-warning btn-lg px-5" (click)="navigateToDestination('/packages')">Explore Tours</button>
-            <button class="btn btn-outline-primary btn-lg px-5" (click)="navigateToContact()">Contact Us</button>
+            <a class="btn btn-warning btn-lg px-5" routerLink="/packages">Explore Tours</a>
+            <a class="btn btn-outline-primary btn-lg px-5" routerLink="/contact">Contact Us</a>
           </div>
         </div>
       </div>
@@ -298,16 +299,13 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class About {
-  constructor() {
-    // Add navigation methods if needed
-  }
+  constructor(private router: Router) {}
 
   navigateToDestination(destination: string): void {
-    // Navigate to destination
-    window.location.href = destination;
+    this.router.navigate([destination]);
   }
 
   navigateToContact(): void {
-    window.location.href = '/contact';
+    this.router.navigate(['/contact']);
   }
 }

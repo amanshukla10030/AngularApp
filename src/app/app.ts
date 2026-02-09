@@ -15,7 +15,6 @@ export class App implements OnInit, AfterViewInit {
   protected readonly currentYear = signal(new Date().getFullYear());
   protected isMenuOpen = signal(false);
   protected isScrolled = signal(false);
-  protected activeRoute = signal('home');
   protected openDropdowns = signal<Set<string>>(new Set());
   protected isAppLoaded = signal(false);
 
@@ -95,43 +94,34 @@ export class App implements OnInit, AfterViewInit {
   // Navigation methods
   navigateToHome(): void {
     console.log('Navigating to home');
-    this.activeRoute.set('home');
     this.router.navigate(['/']);
   }
 
   navigateToPackages(): void {
     console.log('Navigating to packages');
-    this.activeRoute.set('packages');
     this.router.navigate(['/packages']);
   }
 
   navigateToDestination(destination: string): void {
     console.log('Navigating to:', destination);
-    this.activeRoute.set(destination);
     this.router.navigate([destination]);
   }
 
   navigateToAbout(): void {
     console.log('Navigating to about');
-    this.activeRoute.set('about');
     this.router.navigate(['/about']);
   }
 
   navigateToCareers(): void {
     console.log('Navigating to careers');
-    this.activeRoute.set('careers');
     this.router.navigate(['/careers']);
   }
 
   navigateToContact(): void {
     console.log('Navigating to contact');
-    this.activeRoute.set('contact');
     this.router.navigate(['/contact']);
   }
 
-  isActive(route: string): boolean {
-    return this.activeRoute() === route;
-  }
 
   navigateToInternationalTours(): void {
     console.log('Navigating to international tours');

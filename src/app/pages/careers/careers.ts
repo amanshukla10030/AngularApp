@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section class="careers-hero">
       <div class="hero-overlay"></div>
@@ -93,7 +94,7 @@ import { CommonModule } from '@angular/common';
                     <li>Passion for travel and customer service</li>
                   </ul>
                 </div>
-                <button class="btn btn-warning w-100" (click)="navigateToContact()">Apply Now</button>
+                <a class="btn btn-warning w-100" routerLink="/contact">Apply Now</a>
               </div>
             </div>
           </div>
@@ -117,7 +118,7 @@ import { CommonModule } from '@angular/common';
                     <li>Creative thinking and content creation</li>
                   </ul>
                 </div>
-                <button class="btn btn-warning w-100" (click)="navigateToContact()">Apply Now</button>
+                <a class="btn btn-warning w-100" routerLink="/contact">Apply Now</a>
               </div>
             </div>
           </div>
@@ -141,7 +142,7 @@ import { CommonModule } from '@angular/common';
                     <li>Knowledge of Indian destinations</li>
                   </ul>
                 </div>
-                <button class="btn btn-warning w-100" (click)="navigateToContact()">Apply Now</button>
+                <a class="btn btn-warning w-100" routerLink="/contact">Apply Now</a>
               </div>
             </div>
           </div>
@@ -165,7 +166,7 @@ import { CommonModule } from '@angular/common';
                     <li>Fluent in English and Hindi</li>
                   </ul>
                 </div>
-                <button class="btn btn-warning w-100" (click)="navigateToContact()">Apply Now</button>
+                <a class="btn btn-warning w-100" routerLink="/contact">Apply Now</a>
               </div>
             </div>
           </div>
@@ -251,8 +252,8 @@ import { CommonModule } from '@angular/common';
           <h2 class="display-4 fw-bold mb-4">Ready to Start Your Journey?</h2>
           <p class="lead mb-4">Send us your resume and let's explore opportunities together</p>
           <div class="d-flex gap-3 justify-content-center">
-            <button class="btn btn-warning btn-lg px-5">View All Positions</button>
-            <button class="btn btn-outline-primary btn-lg px-5" (click)="navigateToContact()">Contact HR</button>
+            <a class="btn btn-warning btn-lg px-5" routerLink="/careers">View All Positions</a>
+            <a class="btn btn-outline-primary btn-lg px-5" routerLink="/contact">Contact HR</a>
           </div>
         </div>
       </div>
@@ -405,7 +406,9 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class Careers {
+  constructor(private router: Router) {}
+
   navigateToContact(): void {
-    window.location.href = '/contact';
+    this.router.navigate(['/contact']);
   }
 }

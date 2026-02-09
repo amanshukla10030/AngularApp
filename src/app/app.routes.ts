@@ -40,16 +40,6 @@ export const routes: Routes = [
 
   {
 
-    path: 'home',
-
-    component: Home,
-
-    title: 'Happy Ghumakkads - Discover Incredible India'
-
-  },
-
-  {
-
     path: 'packages',
 
     component: PackagesComponent,
@@ -165,16 +155,6 @@ export const routes: Routes = [
     component: CulturalHeritageToursComponent,
 
     title: 'Cultural & Heritage Tours - Happy Ghumakkads'
-
-  },
-
-  {
-
-    path: '**',
-
-    redirectTo: '',
-
-    pathMatch: 'full'
 
   }
 
