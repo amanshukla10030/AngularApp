@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
+  standalone: true,
   imports: [CommonModule],
   template: `
     <footer class="footer-section py-5 bg-dark text-white">
