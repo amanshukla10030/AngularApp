@@ -392,12 +392,15 @@
       .mobile-menu-toggle {
         display: none;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background: none;
         border: none;
-        padding: 5px;
+        padding: 10px;
         cursor: pointer;
         
-        span {
+        .bar {
+          display: block;
           width: 25px;
           height: 3px;
           background: #333;
