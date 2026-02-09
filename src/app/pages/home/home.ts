@@ -111,7 +111,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="destination-card" (click)="navigateToDestination('madhya-pradesh')" style="height: 450px !important;">
               <div class="destination-image">
-                <img src="images/HGI-image1.jpg" alt="Madhya Pradesh" class="destination-img">
+                <img src="/images/HGI-image1.jpg" alt="Madhya Pradesh" class="destination-img">
                 <div class="image-overlay">
                   <i class="fas fa-mountain"></i>
                 </div>
@@ -125,7 +125,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="destination-card" (click)="navigateToDestination('north-india')" style="height: 450px !important;">
               <div class="destination-image">
-                <img src="images/133949262247186237.jpg" alt="North India" class="destination-img">
+                <img src="/images/133949262247186237.jpg" alt="North India" class="destination-img">
                 <div class="image-overlay">
                   <i class="fas fa-gopuram"></i>
                 </div>
@@ -139,7 +139,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="destination-card" (click)="navigateToDestination('jammu-kashmir')" style="height: 450px !important;">
               <div class="destination-image">
-                <img src="images/HGI-image2.jpg" alt="Jammu & Kashmir" class="destination-img">
+                <img src="/images/HGI-image2.jpg" alt="Jammu & Kashmir" class="destination-img">
                 <div class="image-overlay">
                   <i class="fas fa-snowflake"></i>
                 </div>
@@ -153,7 +153,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="destination-card" (click)="navigateToDestination('leh-ladakh')" style="height: 450px !important;">
               <div class="destination-image">
-                <img src="images/133949262268459566.jpg" alt="Leh-Ladakh" class="destination-img">
+                <img src="/images/133949262268459566.jpg" alt="Leh-Ladakh" class="destination-img">
                 <div class="image-overlay">
                   <i class="fas fa-hiking"></i>
                 </div>

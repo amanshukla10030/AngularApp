@@ -156,6 +156,16 @@ export const routes: Routes = [
 
     title: 'Cultural & Heritage Tours - Happy Ghumakkads'
 
+  },
+
+  {
+
+    path: '**',
+
+    redirectTo: '',
+
+    pathMatch: 'full'
+
   }
 
 ];

@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build && ng run happy-ghumakkads:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:happy-ghumakkads": "node dist/happy-ghumakkads/server/server.mjs"
+    "serve:ssr:happy-ghumakkads": "node dist/happy-ghumakkads/server/server.mjs",
+    "vercel-build": "npm run build"
   },
   "prettier": {
     "printWidth": 100,
