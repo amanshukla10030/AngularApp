@@ -782,6 +782,81 @@
     margin-bottom: 20px;
   }
   
+  // Fix header overlap for all pages
+  .hero-section {
+    padding-top: 120px !important;
+    min-height: 100vh;
+    margin-top: 0;
+  }
+  
+  // Package page specific fixes
+  .packages-page {
+    .hero-section {
+      .display-3 {
+        font-size: 2rem;
+      }
+      
+      .lead {
+        font-size: 1rem;
+      }
+    }
+    
+    .categories-section {
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .categories-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .category-card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    
+    .featured-section {
+      .package-card {
+        width: 100%;
+        margin-bottom: 20px;
+        
+        .package-header {
+          .package-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+            width: 100%;
+            overflow: hidden;
+            
+            .duration, .price {
+              display: block;
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            
+            .duration {
+              font-size: 0.9rem;
+              color: #666;
+              margin-bottom: 3px;
+            }
+            
+            .price {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+  
   .hero-section {
     .display-3 {
       font-size: 2.5rem;
@@ -824,6 +899,25 @@
     a {
       font-size: 1.2rem;
     }
+  }
+}
+
+// Extra small mobile devices
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 140px !important;
+  }
+  
+  .main-content {
+    padding-top: 80px;
+  }
+  
+  .display-3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .lead {
+    font-size: 0.9rem !important;
   }
 }
 
