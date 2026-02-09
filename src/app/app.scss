@@ -883,10 +883,6 @@ html {
 @media (max-width: 992px) {
   .modern-header {
     .main-nav {
-      .nav-menu {
-        display: none;
-      }
-      
       .header-actions {
         .mobile-menu-toggle {
           display: flex;
@@ -922,7 +918,7 @@ html {
       .nav-menu {
         display: none;
         position: fixed;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
         background: rgba(0, 0, 0, 0.95);
@@ -970,7 +966,7 @@ html {
     }
     
     .main-content {
-      padding-top: 120px !important;
+      padding-top: 70px !important;
     }
   }
 }
