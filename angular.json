@@ -52,8 +52,7 @@
                 "maximumError": "32kB"
               }
             ],
-            "outputHashing": "all",
-            "outputMode": "static"
+            "outputHashing": "all"
           },
           "configurations": {
             "production": {
