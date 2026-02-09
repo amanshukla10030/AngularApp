@@ -162,9 +162,9 @@ export const routes: Routes = [
 
     path: '**',
 
-    redirectTo: '',
+    redirectTo: '/#/',
 
-    pathMatch: 'full'
+    pathMatch: 'prefix'
 
   }
 
