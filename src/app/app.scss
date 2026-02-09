@@ -918,10 +918,59 @@ html {
           }
         }
       }
+      
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 1000;
+        padding: 20px;
+        
+        &.show {
+          display: block;
+        }
+        
+        .nav-list {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 0;
+          
+          .nav-item {
+            margin: 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+          
+          .nav-link {
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+            
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+      
+      .header-actions {
+        .mobile-menu-toggle {
+          display: flex;
+        }
+      }
     }
-  }
-  
-  .main-content {
-    padding-top: 120px !important;
+    
+    .main-content {
+      padding-top: 120px !important;
+    }
   }
 }
