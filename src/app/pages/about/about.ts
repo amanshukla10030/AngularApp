@@ -108,7 +108,7 @@ import { Router, RouterLink } from '@angular/router';
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="images/awards.jpeg" alt="Awards" class="img-fluid rounded shadow">
+            <img src="images/HGI-29.jpeg" alt="Awards" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
