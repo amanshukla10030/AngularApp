@@ -270,8 +270,6 @@ export class Contact {
     
     // Submit to Formspree
     const formspreeId = 'xjgevzwj';
-    console.log('Submitting to Formspree ID:', formspreeId);
-    
     fetch(`https://formspree.io/f/${formspreeId}`, {
       method: 'POST',
       body: formData,
