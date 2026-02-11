@@ -269,8 +269,7 @@ export class Contact {
     formData.append('message', this.formData.message);
     
     // Submit to Formspree
-    // Use environment variable with fallback
-    const formspreeId = environment.production?.formspreeId || environment.development?.formspreeId || 'xjgevzwj';
+    const formspreeId = 'xjgegaao';
     fetch(`https://formspree.io/f/${formspreeId}`, {
       method: 'POST',
       body: formData,
