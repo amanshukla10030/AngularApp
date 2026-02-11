@@ -251,11 +251,27 @@ export class Contact {
     this.showSuccess = false;
     this.showError = false;
     
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
+    // Check honeypot field for spam protection
+    if (this.formData._gotcha) {
+      console.log('Spam detected');
+      this.showError = true;
+      this.isSubmitting = false;
+      return;
+    }
+    
+    // Create form data manually
+    const formData = new FormData();
+    formData.append('name', this.formData.name);
+    formData.append('email', this.formData.email);
+    formData.append('phone', this.formData.phone);
+    formData.append('destination', this.formData.destination);
+    formData.append('subject', this.formData.subject);
+    formData.append('message', this.formData.message);
     
     // Submit to Formspree
     const formspreeId = environment.production ? environment.production.formspreeId : environment.development.formspreeId;
+    console.log('Submitting to Formspree ID:', formspreeId);
+    
     fetch(`https://formspree.io/f/${formspreeId}`, {
       method: 'POST',
       body: formData,
