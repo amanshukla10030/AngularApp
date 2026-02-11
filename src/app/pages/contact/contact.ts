@@ -269,7 +269,7 @@ export class Contact {
     formData.append('message', this.formData.message);
     
     // Submit to Formspree
-    const formspreeId = environment.production ? environment.production.formspreeId : environment.development.formspreeId;
+    const formspreeId = 'xjgevzwj';
     console.log('Submitting to Formspree ID:', formspreeId);
     
     fetch(`https://formspree.io/f/${formspreeId}`, {
