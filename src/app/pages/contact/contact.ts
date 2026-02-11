@@ -32,8 +32,7 @@ import { environment } from '../../../environments/environment';
                 <i class="fas fa-phone-alt"></i>
               </div>
               <h4>Call Us</h4>
-              <p>+91 98765 43210</p>
-              <p>+91 87654 32109</p>
+              <p>+91 84471 33338</p>
               <small>Mon-Sat: 9AM-7PM</small>
             </div>
           </div>
@@ -43,7 +42,7 @@ import { environment } from '../../../environments/environment';
                 <i class="fas fa-envelope"></i>
               </div>
               <h4>Email Us</h4>
-              <p>info@happyghumakkads.com</p>
+              <p>contact@happyghumakkads.com</p>
               <small>We respond within 24 hours</small>
             </div>
           </div>
@@ -73,6 +72,8 @@ import { environment } from '../../../environments/environment';
               
               <form (ngSubmit)="onSubmit($event)">
                 <div class="row g-3">
+                  <!-- Honeypot field for spam protection -->
+                  <input type="text" name="_gotcha" style="display:none;" [(ngModel)]="formData._gotcha">
                   <div class="col-md-6">
                     <label for="name" class="form-label">Full Name *</label>
                     <input type="text" class="form-control" id="name" name="name" [(ngModel)]="formData.name" required>
@@ -236,7 +237,8 @@ export class Contact {
     phone: '',
     destination: '',
     subject: '',
-    message: ''
+    message: '',
+    _gotcha: '' // Honeypot field
   };
   
   isSubmitting = false;
@@ -280,10 +282,6 @@ export class Contact {
         }
       }, 100);
     })
-    .catch(error => {
-      console.error('Error:', error);
-      this.showError = true;
-    })
     .finally(() => {
       this.isSubmitting = false;
     });
@@ -296,7 +294,8 @@ export class Contact {
       phone: '',
       destination: '',
       subject: '',
-      message: ''
+      message: '',
+      _gotcha: ''
     };
   }
 }
