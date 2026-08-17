@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, Icon],
   template: `
     <section class="careers-hero">
       <div class="hero-overlay"></div>
@@ -30,7 +31,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="benefit-card">
               <div class="benefit-icon">
-                <i class="fas fa-rocket"></i>
+                <app-icon name="rocket" />
               </div>
               <h4>Growth Opportunities</h4>
               <p>Learn and grow in the dynamic travel industry with continuous training and development</p>
@@ -39,7 +40,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="benefit-card">
               <div class="benefit-icon">
-                <i class="fas fa-users"></i>
+                <app-icon name="users" />
               </div>
               <h4>Amazing Team</h4>
               <p>Work with passionate travel enthusiasts who love what they do</p>
@@ -48,7 +49,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="benefit-card">
               <div class="benefit-icon">
-                <i class="fas fa-globe-asia"></i>
+                <app-icon name="globe-asia" />
               </div>
               <h4>Travel Perks</h4>
               <p>Enjoy discounted travel and explore incredible destinations</p>
@@ -57,7 +58,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="benefit-card">
               <div class="benefit-icon">
-                <i class="fas fa-heart"></i>
+                <app-icon name="heart" />
               </div>
               <h4>Make a Difference</h4>
               <p>Help travelers create memories that last a lifetime</p>
@@ -82,8 +83,8 @@ import { Router, RouterLink } from '@angular/router';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Satna (M.P.)</span>
-                  <span><i class="fas fa-money-bill"></i> ₹4-6 LPA</span>
+                  <span><app-icon name="map-marker-alt" /> Satna (M.P.)</span>
+                  <span><app-icon name="money-bill" /> ₹4-6 LPA</span>
                 </div>
                 <p class="job-description">Help customers plan their perfect trips, provide expert travel advice, and create customized itineraries.</p>
                 <div class="job-requirements">
@@ -106,8 +107,8 @@ import { Router, RouterLink } from '@angular/router';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Satna, (M.P)</span>
-                  <span><i class="fas fa-money-bill"></i> ₹3-5 LPA</span>
+                  <span><app-icon name="map-marker-alt" /> Satna, (M.P)</span>
+                  <span><app-icon name="money-bill" /> ₹3-5 LPA</span>
                 </div>
                 <p class="job-description">Drive our marketing initiatives, manage social media, and promote our amazing travel packages.</p>
                 <div class="job-requirements">
@@ -130,8 +131,8 @@ import { Router, RouterLink } from '@angular/router';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
-                  <span><i class="fas fa-money-bill"></i> ₹3-4 LPA</span>
+                  <span><app-icon name="map-marker-alt" /> Multiple Locations</span>
+                  <span><app-icon name="money-bill" /> ₹3-4 LPA</span>
                 </div>
                 <p class="job-description">Lead tour groups, coordinate logistics, and ensure amazing travel experiences for our customers.</p>
                 <div class="job-requirements">
@@ -154,8 +155,8 @@ import { Router, RouterLink } from '@angular/router';
               </div>
               <div class="job-details">
                 <div class="job-info">
-                  <span><i class="fas fa-map-marker-alt"></i> Satna (M.P.)</span>
-                  <span><i class="fas fa-money-bill"></i> ₹2-3 LPA</span>
+                  <span><app-icon name="map-marker-alt" /> Satna (M.P.)</span>
+                  <span><app-icon name="money-bill" /> ₹2-3 LPA</span>
                 </div>
                 <p class="job-description">Handle customer inquiries, resolve issues, and ensure exceptional service quality.</p>
                 <div class="job-requirements">
@@ -183,25 +184,25 @@ import { Router, RouterLink } from '@angular/router';
             <p>We foster an environment of collaboration, innovation, and continuous learning. Our team members are not just employees; they're family. We celebrate diversity, encourage creativity, and believe in work-life balance.</p>
             <div class="culture-highlights mt-4">
               <div class="highlight-item">
-                <i class="fas fa-check-circle text-success"></i>
+                <app-icon name="check-circle" class="text-success" />
                 <span>Flexible Working Hours</span>
               </div>
               <div class="highlight-item">
-                <i class="fas fa-check-circle text-success"></i>
+                <app-icon name="check-circle" class="text-success" />
                 <span>Health Insurance</span>
               </div>
               <div class="highlight-item">
-                <i class="fas fa-check-circle text-success"></i>
+                <app-icon name="check-circle" class="text-success" />
                 <span>Annual Team Trips</span>
               </div>
               <div class="highlight-item">
-                <i class="fas fa-check-circle text-success"></i>
+                <app-icon name="check-circle" class="text-success" />
                 <span>Professional Development</span>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="images/HGI-12.jpeg" alt="Office Culture" class="img-fluid rounded shadow">
+            <img src="/images/HGI-12-768.webp" srcset="/images/HGI-12-400.webp 400w, /images/HGI-12-768.webp 768w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="768" height="1024" loading="eager" fetchpriority="high" decoding="async" alt="Office Culture" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
@@ -264,7 +265,7 @@ import { Router, RouterLink } from '@angular/router';
       position: relative;
       height: 60vh;
       min-height: 400px;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/career.avif') center/cover;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/career-626.webp') center/cover;
       display: flex;
       align-items: center;
     }

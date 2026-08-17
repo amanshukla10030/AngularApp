@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-corporate-events',
   templateUrl: './corporate-events.html',
   styleUrls: ['./corporate-events.scss'],
   standalone: true,
-  imports: [RouterLink]
+  imports: [RouterLink, Icon]
 })
 export class CorporateEventsComponent {
   constructor(private router: Router) {}

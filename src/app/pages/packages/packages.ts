@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-packages',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, Icon],
   templateUrl: './packages.html',
   styleUrls: ['./packages.scss']
 })

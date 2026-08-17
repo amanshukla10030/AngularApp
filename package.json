@@ -9,7 +9,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:happy-ghumakkads": "node dist/happy-ghumakkads/server/server.mjs",
-    "vercel-build": "npm run build"
+    "vercel-build": "npm run build",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "icons:generate": "node scripts/generate-icons.mjs"
   },
   "prettier": {
     "printWidth": 100,
@@ -50,6 +52,7 @@
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "jsdom": "^27.1.0",
+    "sharp": "^0.35.3",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

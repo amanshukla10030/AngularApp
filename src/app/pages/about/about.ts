@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, Icon],
   template: `
     <!-- About Hero -->
     <section class="about-hero">
@@ -52,7 +53,7 @@ import { Router, RouterLink } from '@angular/router';
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="images/os.jpeg" alt="Our Team" class="img-fluid rounded shadow">
+            <img src="/images/os-3480.webp" srcset="/images/os-400.webp 400w, /images/os-800.webp 800w, /images/os-1280.webp 1280w, /images/os-1920.webp 1920w, /images/os-3480.webp 3480w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="3480" height="1955" loading="eager" fetchpriority="high" decoding="async" alt="Our Team" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
@@ -65,7 +66,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-6 mb-4">
             <div class="mission-card">
               <div class="card-icon">
-                <i class="fas fa-bullseye"></i>
+                <app-icon name="bullseye" />
               </div>
               <h3>Our Mission</h3>
               <p>To provide exceptional travel experiences that showcase India's rich cultural heritage, natural beauty, and diverse landscapes while ensuring safety, comfort, and unforgettable memories for every traveler.</p>
@@ -74,7 +75,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-6 mb-4">
             <div class="mission-card">
               <div class="card-icon">
-                <i class="fas fa-eye"></i>
+                <app-icon name="eye" />
               </div>
               <h3>Our Vision</h3>
               <p>To become India's most trusted travel brand, known for creating personalized journeys that connect travelers with authentic Indian experiences and foster cultural understanding.</p>
@@ -94,21 +95,21 @@ import { Router, RouterLink } from '@angular/router';
             <p>We are proud to have been awarded the "Best Travel Agency in Satna" for our outstanding services and commitment to customer satisfaction. This prestigious award was presented by the Member of Parliament of Satna, recognizing our dedication to providing exceptional travel experiences and our contribution to promoting tourism in the region.</p>
             <div class="award-highlights mt-4">
               <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-trophy text-warning me-3"></i>
+                <app-icon name="trophy" class="text-warning me-3" />
                 <span>Best Travel Agency in Satna</span>
               </div>
               <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-medal text-warning me-3"></i>
+                <app-icon name="medal" class="text-warning me-3" />
                 <span>Excellence in Customer Service</span>
               </div>
               <div class="d-flex align-items-center">
-                <i class="fas fa-star text-warning me-3"></i>
+                <app-icon name="star" class="text-warning me-3" />
                 <span>Recognized by MP of Satna</span>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="images/HGI-29.jpeg" alt="Awards" class="img-fluid rounded shadow">
+            <img src="/images/HGI-29-1536.webp" srcset="/images/HGI-29-400.webp 400w, /images/HGI-29-800.webp 800w, /images/HGI-29-1280.webp 1280w, /images/HGI-29-1536.webp 1536w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="1536" height="1024" loading="lazy" decoding="async" alt="Awards" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
@@ -125,7 +126,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-icon">
-                <i class="fas fa-heart"></i>
+                <app-icon name="heart" />
               </div>
               <h4>Passion</h4>
               <p>We love what we do and are passionate about creating amazing travel experiences</p>
@@ -134,7 +135,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-icon">
-                <i class="fas fa-shield-alt"></i>
+                <app-icon name="shield-alt" />
               </div>
               <h4>Trust</h4>
               <p>Building lasting relationships through honesty, transparency, and reliability</p>
@@ -143,7 +144,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-icon">
-                <i class="fas fa-star"></i>
+                <app-icon name="star" />
               </div>
               <h4>Excellence</h4>
               <p>Striving for the highest standards in every aspect of our service</p>
@@ -152,7 +153,7 @@ import { Router, RouterLink } from '@angular/router';
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-icon">
-                <i class="fas fa-globe"></i>
+                <app-icon name="globe" />
               </div>
               <h4>Sustainability</h4>
               <p>Committed to responsible tourism that preserves India's natural beauty</p>
@@ -172,7 +173,7 @@ import { Router, RouterLink } from '@angular/router';
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="team-card">
-              <img src="images/HGI-9.jpg" alt="Team Member" class="team-img">
+              <img src="/images/HGI-9-1024.webp" srcset="/images/HGI-9-400.webp 400w, /images/HGI-9-800.webp 800w, /images/HGI-9-1024.webp 1024w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="1024" height="768" loading="lazy" decoding="async" alt="Team Member" class="team-img">
               <h5>Rajesh Kumar</h5>
               <p class="text-muted">Founder & CEO</p>
               <p>15+ years in travel industry, passionate about showcasing India's diversity</p>
@@ -180,7 +181,7 @@ import { Router, RouterLink } from '@angular/router';
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="team-card">
-              <img src="images/HGI-10.jpg" alt="Team Member" class="team-img">
+              <img src="/images/HGI-10-1024.webp" srcset="/images/HGI-10-400.webp 400w, /images/HGI-10-800.webp 800w, /images/HGI-10-1024.webp 1024w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="1024" height="768" loading="lazy" decoding="async" alt="Team Member" class="team-img">
               <h5>Priya Sharma</h5>
               <p class="text-muted">Operations Head</p>
               <p>Expert in logistics and ensuring smooth travel experiences</p>
@@ -188,7 +189,7 @@ import { Router, RouterLink } from '@angular/router';
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="team-card">
-              <img src="images/HGI-11.jpg" alt="Team Member" class="team-img">
+              <img src="/images/HGI-11-1024.webp" srcset="/images/HGI-11-400.webp 400w, /images/HGI-11-800.webp 800w, /images/HGI-11-1024.webp 1024w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="1024" height="768" loading="lazy" decoding="async" alt="Team Member" class="team-img">
               <h5>Amit Singh</h5>
               <p class="text-muted">Customer Experience</p>
               <p>Dedicated to making every journey memorable for our travelers</p>
@@ -217,7 +218,7 @@ import { Router, RouterLink } from '@angular/router';
       position: relative;
       height: 60vh;
       min-height: 400px;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/about us.avif') center/cover;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/about%20us-740.webp') center/cover;
       display: flex;
       align-items: center;
     }

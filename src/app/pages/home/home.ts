@@ -1,1477 +1,1128 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { Img } from '../../shared/img/img';
+import { Reveal } from '../../shared/reveal';
+import { Icon } from '../../shared/icon/icon';
+
+interface Destination {
+  name: string;
+  tagline: string;
+  image: string;
+  icon: string;
+  slug: string;
+}
+
+interface GalleryItem {
+  image: string;
+  title: string;
+  caption: string;
+}
+
+interface Feature {
+  icon: string;
+  title: string;
+  body: string;
+}
+
+interface Service {
+  icon: string;
+  title: string;
+  body: string;
+  points: string[];
+}
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  place: string;
+  avatar: string;
+}
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink, Img, Reveal, Icon],
   template: `
-    <!-- Hero Section with Image Background -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="container">
-          <div class="row align-items-center min-vh-100">
-            <div class="col-lg-10 mx-auto text-center">
-              <div class="hero-text">
-                <div class="hero-icons mb-4">
-                  <div class="hero-icon-grid">
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="100">
-                      <div class="icon-circle">
-                        <i class="fas fa-map-marked-alt"></i>
-                      </div>
-                      <span>Explore</span>
-                    </div>
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="200">
-                
-                    <div class="icon-circle">
-                        <i class="fas fa-hiking"></i>
-                      </div>
-                      <span>Adventure</span>
-                    </div>
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="300">
-                      <div class="icon-circle">
-                        <i class="fas fa-camera"></i>
-                      </div>
-                      <span>Photography</span>
-                    </div>
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="400">
-                      <div class="icon-circle">
-                        <i class="fas fa-campground"></i>
-                      </div>
-                      <span>Camping</span>
-                    </div>
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="500">
-                      <div class="icon-circle">
-                        <i class="fas fa-utensils"></i>
-                      </div>
-                      <span>Food</span>
-                    </div>
-                    <div class="hero-icon-item" data-aos="fade-up" data-aos-delay="600">
-                      <div class="icon-circle">
-                        <i class="fas fa-bed"></i>
-                      </div>
-                      <span>Hotels</span>
-                    </div>
-                  </div>
-                </div>
-                <h1 class="display-2 fw-bold mb-4 text-white">
-                  Discover the <span class="text-warning">Incredible</span> India
-                </h1>
-                <p class="lead mb-5 text-white">
-                  Embark on unforgettable journeys with Happy Ghumakkads - Your trusted travel companion 
-                  for exploring diverse landscapes, ancient heritage, and vibrant cultures across India
-                </p>
-                <div class="d-flex gap-3 justify-content-center flex-wrap mb-5">
-                  <button class="btn btn-warning btn-lg px-5 py-3" (click)="navigateToDestination('madhya-pradesh')">Explore Destinations</button>
-                  <button class="btn btn-outline-light btn-lg px-5 py-3" (click)="navigateToContact()">Plan Your Trip</button>
-                </div>
-                <div class="hero-stats">
-                  <div class="row g-4">
-                    <div class="col-md-3 col-6">
-                      <div class="stat-item">
-                        <h3 class="text-warning">50+</h3>
-                        <p class="text-white">Tour Packages</p>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                      <div class="stat-item">
-                        <h3 class="text-warning">10000+</h3>
-                        <p class="text-white">Happy Travelers</p>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                      <div class="stat-item">
-                        <h3 class="text-warning">8+</h3>
-                        <p class="text-white">Years Experience</p>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                      <div class="stat-item">
-                        <h3 class="text-warning">4.9/5</h3>
-                        <p class="text-white">Customer Rating</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- ================= Hero =================
+         The section height is driven by its content (min-height, not a fixed
+         height with overflow: hidden), so nothing below the fold gets clipped. -->
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <app-img
+          name="133949262247186237"
+          alt=""
+          sizes="100vw"
+          [priority]="true"
+          imgClass="hero__img" />
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Since 2016 · 10,000+ travellers</p>
+        <h1 class="hero__title">
+          Discover the <span class="hero__accent">Incredible</span> India
+        </h1>
+        <p class="hero__lead">
+          Curated journeys across diverse landscapes, ancient heritage and living
+          cultures — planned end to end by people who travel them first.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn-warning btn-lg" routerLink="/packages">Explore Destinations</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/contact">Plan Your Trip</a>
         </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
       </div>
     </section>
 
-    <!-- Featured Destinations -->
-    <section class="featured-destinations py-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="display-4 fw-bold mb-3">Popular Destinations</h2>
-          <p class="lead text-muted">Explore our most sought-after travel experiences</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="destination-card" (click)="navigateToDestination('madhya-pradesh')" style="height: 450px !important;">
-              <div class="destination-image">
-                <img src="/images/HGI-image1.jpg" alt="Madhya Pradesh" class="destination-img">
-                <div class="image-overlay">
-                  <i class="fas fa-mountain"></i>
-                </div>
-              </div>
-              <div class="destination-content">
-                <h4 style="color: #2c3e50 !important; font-weight: 700 !important; height: 3.5rem !important; overflow: hidden;">Madhya Pradesh</h4>
-                <p style="color: #5a6c7d !important; font-weight: 600 !important; height: 2.5rem !important; overflow: hidden;">The Heart of India</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="destination-card" (click)="navigateToDestination('north-india')" style="height: 450px !important;">
-              <div class="destination-image">
-                <img src="/images/133949262247186237.jpg" alt="North India" class="destination-img">
-                <div class="image-overlay">
-                  <i class="fas fa-gopuram"></i>
-                </div>
-              </div>
-              <div class="destination-content">
-                <h4 style="color: #2c3e50 !important; font-weight: 700 !important; height: 3.5rem !important; overflow: hidden;">North India</h4>
-                <p style="color: #5a6c7d !important; font-weight: 600 !important; height: 2.5rem !important; overflow: hidden;">Cultural Heritage</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="destination-card" (click)="navigateToDestination('jammu-kashmir')" style="height: 450px !important;">
-              <div class="destination-image">
-                <img src="/images/HGI-image2.jpg" alt="Jammu & Kashmir" class="destination-img">
-                <div class="image-overlay">
-                  <i class="fas fa-snowflake"></i>
-                </div>
-              </div>
-              <div class="destination-content">
-                <h4 style="color: #2c3e50 !important; font-weight: 700 !important; height: 3.5rem !important; overflow: hidden;">Jammu & Kashmir</h4>
-                <p style="color: #5a6c7d !important; font-weight: 600 !important; height: 2.5rem !important; overflow: hidden;">Paradise on Earth</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="destination-card" (click)="navigateToDestination('leh-ladakh')" style="height: 450px !important;">
-              <div class="destination-image">
-                <img src="/images/133949262268459566.jpg" alt="Leh-Ladakh" class="destination-img">
-                <div class="image-overlay">
-                  <i class="fas fa-hiking"></i>
-                </div>
-              </div>
-              <div class="destination-content">
-                <h4 style="color: #2c3e50 !important; font-weight: 700 !important; height: 3.5rem !important; overflow: hidden;">Leh-Ladakh</h4>
-                <p style="color: #5a6c7d !important; font-weight: 600 !important; height: 2.5rem !important; overflow: hidden;">Land of High Passes</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-choose-us py-5 position-relative overflow-hidden">
-      <!-- Background Decoration -->
-      <div class="position-absolute top-0 start-0 w-100 h-100">
-        <div class="bg-pattern"></div>
-      </div>
-      
-      <div class="container position-relative">
-        <div class="text-center mb-5">
-          <div class="badge bg-warning text-dark mb-3 px-3 py-2">WHY CHOOSE US</div>
-          <h2 class="display-4 fw-bold mb-3">Why Choose Happy Ghumakkads</h2>
-          <p class="lead text-muted">We make your travel dreams come true with exceptional service</p>
-          <div class="divider mx-auto"></div>
-        </div>
-        
-        <!-- Main Features Grid -->
-        <div class="row g-4 mb-5">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-card-modern">
-              <div class="feature-icon-wrapper">
-                <i class="fas fa-award"></i>
-              </div>
-              <h4>Expert Guidance</h4>
-              <p>15+ years of experience in creating unforgettable travel experiences across India</p>
-              <div class="feature-hover-effect"></div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-card-modern">
-              <div class="feature-icon-wrapper">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h4>Safe & Secure</h4>
-              <p>Your safety is our priority with verified partners and 24/7 support throughout your journey</p>
-              <div class="feature-hover-effect"></div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="feature-card-modern">
-              <div class="feature-icon-wrapper">
-                <i class="fas fa-dollar-sign"></i>
-              </div>
-              <h4>Best Prices</h4>
-              <p>Competitive pricing with no hidden costs. Value for money guaranteed on all packages</p>
-              <div class="feature-hover-effect"></div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="feature-card-modern">
-              <div class="feature-icon-wrapper">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <h4>Quality Accommodation</h4>
-              <p>Handpicked hotels and resorts ensuring comfort and authentic local experiences</p>
-              <div class="feature-hover-effect"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Services -->
-        <div class="text-center mb-4">
-          <div class="badge bg-info text-white mb-3 px-3 py-2">EXTRA SERVICES</div>
-          <h3 class="h3 mb-3">Our Additional Services</h3>
-          <div class="divider-small mx-auto"></div>
-        </div>
-        
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card-modern">
-              <div class="service-icon-modern">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div class="service-content-modern">
-                <h5>Travel Insurance</h5>
-                <p>Comprehensive travel insurance coverage for peace of mind during your journey</p>
-                <ul class="service-list">
-                  <li><i class="fas fa-check-circle"></i> Medical Coverage</li>
-                  <li><i class="fas fa-check-circle"></i> Trip Cancellation</li>
-                  <li><i class="fas fa-check-circle"></i> Baggage Protection</li>
-                </ul>
-              </div>
-              <div class="service-hover-effect"></div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card-modern">
-              <div class="service-icon-modern">
-                <i class="fas fa-camera"></i>
-              </div>
-              <div class="service-content-modern">
-                <h5>Photography Tours</h5>
-                <p>Professional photographers to capture your best moments in stunning locations</p>
-                <ul class="service-list">
-                  <li><i class="fas fa-check-circle"></i> Professional Guide</li>
-                  <li><i class="fas fa-check-circle"></i> HD Photos</li>
-                  <li><i class="fas fa-check-circle"></i> Video Editing</li>
-                </ul>
-              </div>
-              <div class="service-hover-effect"></div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card-modern">
-              <div class="service-icon-modern">
-                <i class="fas fa-utensils"></i>
-              </div>
-              <div class="service-content-modern">
-                <h5>Culinary Experiences</h5>
-                <p>Food tours and cooking classes to explore local cuisines and culinary traditions</p>
-                <ul class="service-list">
-                  <li><i class="fas fa-check-circle"></i> Local Chefs</li>
-                  <li><i class="fas fa-check-circle"></i> Food Tasting</li>
-                  <li><i class="fas fa-check-circle"></i> Cooking Classes</li>
-                </ul>
-              </div>
-              <div class="service-hover-effect"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials py-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="display-4 fw-bold mb-3">What Our Travelers Say</h2>
-          <p class="lead text-muted">Real experiences from happy travelers</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p>"Amazing experience in Kashmir! The houseboat stay and shikara ride were unforgettable. Happy Ghumakkads made everything perfect."</p>
-              </div>
-              <div class="testimonial-author">
-                <img src="images/wps1.jpg" alt="Rahul Sharma" class="testimonial-avatar">
-                <div>
-                  <h6>Rahul Sharma</h6>
-                  <small>Mumbai, Maharashtra</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p>"The Leh-Ladakh trip was a dream come true! Excellent planning, great guides, and breathtaking views. Highly recommended!"</p>
-              </div>
-              <div class="testimonial-author">
-                <img src="images/wps.jpg" alt="Priya Patel" class="testimonial-avatar">
-                <div>
-                  <h6>Priya Patel</h6>
-                  <small>Ahmedabad, Gujarat</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p>"Kanha National Park safari was incredible! Saw tigers and the resort was amazing. Thank you Happy Ghumakkads!"</p>
-              </div>
-              <div class="testimonial-author">
-                <img src="images/wps2.jpg" alt="Amit Kumar" class="testimonial-avatar">
-                <div>
-                  <h6>Amit Kumar</h6>
-                  <small>Delhi, NCR</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section py-5">
-      <div class="container">
-        <div class="cta-content text-center">
-          <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Next Adventure?</h2>
-          <p class="lead mb-4 text-white">Let us help you plan the perfect trip to your dream destination</p>
-          <div class="d-flex gap-3 justify-content-center">
-            <a class="btn btn-warning btn-lg px-5" routerLink="/packages">Start Planning</a>
-            <a class="btn btn-outline-light btn-lg px-5" routerLink="/contact">Download Brochure</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Beautiful Gallery Section -->
-    <section class="gallery-section py-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="display-4 fw-bold mb-3">Explore Our <span class="text-warning">Gallery</span></h2>
-          <p class="lead text-muted">Journey through the breathtaking landscapes and cultural heritage of India</p>
-        </div>
-        
-        <!-- Gallery Grid -->
-        <div class="gallery-grid">
-          <!-- Row 1 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-1.jpeg" alt="Beautiful Destination" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Scenic Beauty</h4>
-                  <p>Discover breathtaking landscapes</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-2.jpg" alt="Cultural Heritage" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Heritage Sites</h4>
-                  <p>Ancient architectural marvels</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-3.jpeg" alt="Mountain Views" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Mountain Paradise</h4>
-                  <p>Majestic Himalayan peaks</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 2 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-4.jpg" alt="Desert Landscape" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Desert Safari</h4>
-                  <p>Golden sand dunes</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-5.jpg" alt="Coastal Beauty" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Coastal Wonders</h4>
-                  <p>Pristine beaches and shores</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-6.jpg" alt="Wildlife" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Wildlife Safari</h4>
-                  <p>Exotic flora and fauna</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-              <img src="images/HGI-7.jpg" alt="Temples" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Sacred Temples</h4>
-                  <p>Spiritual architecture</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 3 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-8.jpg" alt="Backwaters" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Backwaters</h4>
-                  <p>Serene waterways</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-9.jpg" alt="Fortresses" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Historic Forts</h4>
-                  <p>Medieval architecture</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-10.jpg" alt="Gardens" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Lush Gardens</h4>
-                  <p>Botanical paradises</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 4 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-11.jpg" alt="Villages" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Rural Life</h4>
-                  <p>Traditional villages</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-12.jpeg" alt="Festivals" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Vibrant Festivals</h4>
-                  <p>Cultural celebrations</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-13.jpg" alt="Markets" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Local Markets</h4>
-                  <p>Bustling bazaars</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-              <img src="images/HGI-14.jpg" alt="Rivers" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Sacred Rivers</h4>
-                  <p>Holy waterways</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 5 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-15.jpg" alt="Hill Stations" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Hill Stations</h4>
-                  <p>Cool mountain retreats</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-16.jpg" alt="Caves" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Ancient Caves</h4>
-                  <p>Rock-cut architecture</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-17.jpg" alt="Lakes" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Pristine Lakes</h4>
-                  <p>Crystal clear waters</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 6 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-18.jpg" alt="Waterfalls" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Majestic Waterfalls</h4>
-                  <p>Nature's cascades</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-19.jpg" alt="Sunsets" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Spectacular Sunsets</h4>
-                  <p>Golden hour magic</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-20.jpg" alt="Architecture" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Modern Architecture</h4>
-                  <p>Contemporary designs</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-              <img src="images/HGI-21.jpg" alt="Forests" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Dense Forests</h4>
-                  <p>Green canopies</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 7 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-22.jpg" alt="Islands" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Tropical Islands</h4>
-                  <p>Paradise destinations</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-23.jpg" alt="Monuments" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Historic Monuments</h4>
-                  <p>Timeless landmarks</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-24.jpg" alt="Valleys" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Scenic Valleys</h4>
-                  <p>Lush green landscapes</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Row 8 -->
-          <div class="gallery-row">
-            <div class="gallery-item" data-aos="fade-up">
-              <img src="images/HGI-25.jpg" alt="Plateaus" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>High Plateaus</h4>
-                  <p>Elevated landscapes</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="images/HGI-26.jpeg" alt="Bridges" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Ancient Bridges</h4>
-                  <p>Engineering marvels</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="images/HGI-27.jpg" alt="Cityscapes" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Modern Cities</h4>
-                  <p>Urban landscapes</p>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-              <img src="images/HGI-28.jpg" alt="Sunrise" class="gallery-img">
-              <div class="gallery-overlay">
-                <div class="gallery-content">
-                  <h4>Dawn Views</h4>
-                  <p>Beautiful sunrises</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Gallery CTA -->
-        <div class="text-center mt-5">
-          <a class="btn btn-warning btn-lg px-5" routerLink="/packages">
-            Explore All Destinations
+    <!-- ================= Quick links =================
+         Lifted out of the hero so the headline has room to breathe and these
+         stay tappable on a phone. -->
+    <nav class="quicklinks" aria-label="Browse by trip type">
+      <div class="container quicklinks__grid">
+        @for (link of quickLinks(); track link.slug) {
+          <a class="quicklink" [routerLink]="'/' + link.slug">
+            <span class="quicklink__icon"><app-icon [name]="link.icon" /></span>
+            <span class="quicklink__label">{{ link.name }}</span>
           </a>
+        }
+      </div>
+    </nav>
+
+    <!-- ================= Stats ================= -->
+    <section class="stats">
+      <div class="container stats__grid">
+        @for (stat of stats(); track stat.label; let i = $index) {
+          <div class="stat" appReveal [revealDelay]="i * 80">
+            <p class="stat__value">{{ stat.value }}</p>
+            <p class="stat__label">{{ stat.label }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- ================= Destinations ================= -->
+    <section class="section destinations">
+      <div class="container">
+        <header class="section-head" appReveal>
+          <p class="eyebrow">Where we go</p>
+          <h2>Popular Destinations</h2>
+          <p class="lead">Our most sought-after routes, refined over hundreds of departures.</p>
+        </header>
+
+        <div class="destinations__grid">
+          @for (d of destinations(); track d.slug; let i = $index) {
+            <button
+              type="button"
+              class="dcard"
+              appReveal
+              [revealDelay]="i * 90"
+              (click)="navigateToDestination(d.slug)">
+              <span class="dcard__media">
+                <!-- .destinations__grid is 1 / 2 / 4 columns. -->
+                <app-img
+                  [name]="d.image"
+                  [alt]="d.name"
+                  sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 280px" />
+                <span class="dcard__badge"><app-icon [name]="d.icon" /></span>
+              </span>
+              <span class="dcard__body">
+                <span class="dcard__title">{{ d.name }}</span>
+                <span class="dcard__tagline">{{ d.tagline }}</span>
+                <span class="dcard__cta">View packages <app-icon name="arrow-right" /></span>
+              </span>
+            </button>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Why choose us ================= -->
+    <section class="section why">
+      <div class="container">
+        <header class="section-head" appReveal>
+          <p class="eyebrow">Why choose us</p>
+          <h2>Travel planned by people who go</h2>
+          <p class="lead">Eight years of routes, fixers and hotels we have personally checked.</p>
+        </header>
+
+        <div class="why__grid">
+          @for (f of features(); track f.title; let i = $index) {
+            <article class="fcard" appReveal [revealDelay]="i * 80">
+              <span class="fcard__icon"><app-icon [name]="f.icon" /></span>
+              <h3 class="fcard__title">{{ f.title }}</h3>
+              <p class="fcard__body">{{ f.body }}</p>
+            </article>
+          }
+        </div>
+
+        <header class="section-head section-head--sub" appReveal>
+          <p class="eyebrow">Extra services</p>
+          <h3>Everything else, handled</h3>
+        </header>
+
+        <div class="services__grid">
+          @for (s of services(); track s.title; let i = $index) {
+            <article class="scard" appReveal [revealDelay]="i * 90">
+              <span class="scard__icon"><app-icon [name]="s.icon" /></span>
+              <div>
+                <h4 class="scard__title">{{ s.title }}</h4>
+                <p class="scard__body">{{ s.body }}</p>
+                <ul class="scard__list">
+                  @for (p of s.points; track p) {
+                    <li><app-icon name="check" />{{ p }}</li>
+                  }
+                </ul>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Gallery =================
+         28 images, every one lazy-loaded and served at gallery-tile size, so
+         they cost nothing until the reader scrolls this far. -->
+    <section class="section gallery">
+      <div class="container">
+        <header class="section-head" appReveal>
+          <p class="eyebrow">Gallery</p>
+          <h2>Scenes from the road</h2>
+          <p class="lead">Landscapes and heritage from recent Happy Ghumakkads departures.</p>
+        </header>
+
+        <div class="gallery__grid">
+          @for (g of visibleGallery(); track g.image; let i = $index) {
+            <figure class="gtile" appReveal [revealDelay]="(i % 4) * 70">
+              <!-- sizes mirrors .gallery__grid's column count at each
+                   breakpoint (1 / 2 / 3 / 4 cols); overstating it makes retina
+                   phones fetch a variant twice as large as the tile needs. -->
+              <app-img
+                [name]="g.image"
+                [alt]="g.title"
+                sizes="(max-width: 420px) 92vw, (max-width: 720px) 46vw, (max-width: 1024px) 31vw, 290px" />
+              <figcaption class="gtile__cap">
+                <span class="gtile__title">{{ g.title }}</span>
+                <span class="gtile__sub">{{ g.caption }}</span>
+              </figcaption>
+            </figure>
+          }
+        </div>
+
+        <div class="gallery__cta">
+          @if (!galleryExpanded() && gallery().length > galleryPreview) {
+            <button type="button" class="btn btn-outline-secondary btn-lg" (click)="showAllGallery()">
+              Show all {{ gallery().length }} photos
+            </button>
+          }
+          <a class="btn btn-primary btn-lg" routerLink="/packages">Explore all destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Testimonials ================= -->
+    <section class="section testimonials">
+      <div class="container">
+        <header class="section-head" appReveal>
+          <p class="eyebrow">Travellers</p>
+          <h2>What our travellers say</h2>
+        </header>
+
+        <div class="testimonials__grid">
+          @for (t of testimonials(); track t.name; let i = $index) {
+            <figure class="tcard" appReveal [revealDelay]="i * 90">
+              <div class="tcard__stars" [attr.aria-label]="'Rated 5 out of 5'">
+                @for (s of [1, 2, 3, 4, 5]; track s) {
+                  <app-icon name="star" />
+                }
+              </div>
+              <blockquote class="tcard__quote">{{ t.quote }}</blockquote>
+              <figcaption class="tcard__author">
+                <span class="tcard__avatar">
+                  <app-img [name]="t.avatar" [alt]="t.name" sizes="52px" />
+                </span>
+                <span>
+                  <span class="tcard__name">{{ t.name }}</span>
+                  <span class="tcard__place">{{ t.place }}</span>
+                </span>
+              </figcaption>
+            </figure>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta">
+      <div class="container cta__inner" appReveal>
+        <h2 class="cta__title">Ready for your next adventure?</h2>
+        <p class="cta__lead">Tell us roughly when and where — we will come back with a route.</p>
+        <div class="cta__actions">
+          <a class="btn btn-warning btn-lg" routerLink="/packages">Start planning</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/contact">Talk to us</a>
         </div>
       </div>
     </section>
   `,
   styles: `
-    .hero-section {
-      position: relative;
-      height: 60vh;
-      overflow: hidden;
+    :host {
+      display: block;
     }
-    
-    .video-background {
+
+    .container {
+      width: min(100% - 2.5rem, var(--container));
+      margin-inline: auto;
+    }
+
+    .section-head {
+      max-width: 62ch;
+      margin-inline: auto;
+      margin-bottom: var(--space-7);
+      text-align: center;
+    }
+
+    .section-head--sub {
+      margin-top: var(--space-8);
+    }
+
+    /* ---------------- hero ---------------- */
+
+    .hero {
+      position: relative;
+      display: grid;
+      place-items: center;
+      /* svh keeps mobile browser chrome from causing a jump on scroll. */
+      min-height: clamp(34rem, 82svh, 48rem);
+      padding-block: var(--space-9) var(--space-8);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero__media {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      inset: 0;
       z-index: -2;
     }
-    
-    .video-overlay {
+
+    .hero__media ::ng-deep .hero__img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      transform: scale(1.06);
+      animation: heroDrift 26s var(--ease-out) infinite alternate;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.06) translate3d(0, 0, 0); }
+      to   { transform: scale(1.14) translate3d(0, -1.5%, 0); }
+    }
+
+    /* Two-stop scrim: darker at the bottom where the text sits, so the headline
+       clears WCAG contrast over any photo without flattening the image. */
+    .hero::after {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      inset: 0;
       z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(6, 48, 46, 0.55) 0%, rgba(6, 48, 46, 0.25) 38%, rgba(6, 48, 46, 0.85) 100%),
+        radial-gradient(90% 60% at 50% 40%, transparent 40%, rgba(6, 48, 46, 0.45) 100%);
     }
-    
-    .hero-icons {
-      .hero-icon-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 20px;
-        max-width: 700px;
-        margin: 0 auto;
-        
-        .hero-icon-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-          animation: fadeInUp 0.8s ease-out forwards;
-          opacity: 0;
-          
-          &:nth-child(1) { animation-delay: 0.1s; }
-          &:nth-child(2) { animation-delay: 0.2s; }
-          &:nth-child(3) { animation-delay: 0.3s; }
-          &:nth-child(4) { animation-delay: 0.4s; }
-          &:nth-child(5) { animation-delay: 0.5s; }
-          &:nth-child(6) { animation-delay: 0.6s; }
-          
-          .icon-circle {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            
-            i {
-              color: white;
-              font-size: 1.5rem;
-              transition: transform 0.3s ease;
-            }
-          }
-          
-          span {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-          }
-          
-          &:hover {
-            .icon-circle {
-              transform: translateY(-5px) scale(1.1);
-              box-shadow: 0 15px 40px rgba(255, 193, 7, 0.5);
-              
-              i {
-                transform: rotate(10deg) scale(1.1);
-              }
-            }
-            
-            span {
-              opacity: 1;
-            }
-          }
-        }
-      }
+
+    .hero__inner {
+      width: min(100% - 2.5rem, 62rem);
+      margin-inline: auto;
+      text-align: center;
+      color: #fff;
     }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    .hero__eyebrow {
+      display: inline-block;
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-200);
+      padding: 0.45rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: var(--r-pill);
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.08);
+      margin-bottom: var(--space-5);
     }
-    
-    .image-placeholder {
+
+    .hero__title {
+      font-size: var(--step-5);
+      color: #fff;
+      margin-bottom: var(--space-4);
+      text-shadow: 0 2px 24px rgba(6, 48, 46, 0.4);
+    }
+
+    .hero__accent {
+      color: var(--accent-400);
+    }
+
+    .hero__lead {
+      max-width: 46ch;
+      margin: 0 auto var(--space-6);
+      font-size: var(--step-1);
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero__actions {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-3);
       justify-content: center;
-      height: 200px;
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-      border-radius: 10px;
     }
-    
-    .avatar-placeholder {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ffc107, #ff8c00);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-    }
-    
-    .hero-stats {
-      margin-top: 60px;
-    }
-    
-    .stat-item {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .destination-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .destination-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
-    
-    .destination-image {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-    
-    .destination-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    .destination-card:hover .destination-image img {
-      transform: scale(1.1);
-    }
-    
-    .testimonial-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
-    .image-overlay {
+
+    .hero__scroll {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .destination-card:hover .image-overlay {
-      opacity: 1;
-    }
-    
-    .image-overlay i {
-      font-size: 3rem;
-      color: #ffc107;
-    }
-    
-    .destination-content {
-      padding: 20px;
-    }
-    
-    .destination-info {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    
-    .feature-card {
-      text-align: center;
-      padding: 30px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-    
-    .feature-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg, #ffc107, #ff8c00);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-    }
-    
-    .testimonial-card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      height: 100%;
-    }
-    
-    .stars {
-      color: #ffc107;
-      margin-bottom: 15px;
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-    
-    .testimonial-author img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
-    .cta-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      bottom: 1.6rem;
+      left: 50%;
+      translate: -50% 0;
     }
 
-    // Why Choose Us Section Styles
-    .why-choose-us {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      
-      .bg-pattern {
-        background-image: 
-          radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
-        opacity: 0.6;
-      }
-      
-      .badge {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-      
-      .divider {
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(135deg, #ffc107, #ff8c00);
-        border-radius: 2px;
-        margin-top: 15px;
-      }
-      
-      .divider-small {
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(135deg, #17a2b8, #138496);
-        border-radius: 2px;
-        margin-top: 10px;
-      }
+    .hero__scroll-line {
+      display: block;
+      inline-size: 2px;
+      block-size: 46px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.85));
+      animation: scrollHint 2.2s var(--ease-out) infinite;
     }
 
-    // Modern Feature Cards
-    .feature-card-modern {
-      background: white;
-      border-radius: 20px;
-      padding: 40px 30px;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    @keyframes scrollHint {
+      0%   { opacity: 0; transform: translateY(-10px) scaleY(0.6); }
+      45%  { opacity: 1; }
+      100% { opacity: 0; transform: translateY(12px) scaleY(1); }
+    }
+
+    /* ---------------- quick links ---------------- */
+
+    .quicklinks {
       position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 193, 7, 0.1);
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(135deg, #ffc107, #ff8c00);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-      
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-color: rgba(255, 193, 7, 0.3);
-        
-        &::before {
-          transform: scaleX(1);
-        }
-        
-        .feature-icon-wrapper {
-          transform: scale(1.1) rotate(5deg);
-          box-shadow: 0 15px 40px rgba(255, 193, 7, 0.4);
-        }
-        
-        .feature-hover-effect {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      
-      .feature-icon-wrapper {
-        width: 90px;
-        height: 90px;
-        margin: 0 auto 25px;
-        background: linear-gradient(135deg, #ffc107, #ff8c00);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        position: relative;
-        z-index: 2;
-        
-        i {
-          font-size: 2.2rem;
-          color: white;
-          transition: transform 0.3s ease;
-        }
-      }
-      
-      h4 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin-bottom: 15px;
-        transition: color 0.3s ease;
-      }
-      
-      p {
-        color: #6c757d;
-        line-height: 1.6;
-        margin-bottom: 0;
-        transition: color 0.3s ease;
-      }
-      
-      &:hover {
-        h4 {
-          color: #ff8c00;
-        }
-        
-        p {
-          color: #495057;
-        }
-      }
-      
-      .feature-hover-effect {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.8);
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(255, 193, 7, 0.05) 0%, transparent 70%);
-        border-radius: 50%;
-        opacity: 0;
-        transition: all 0.4s ease;
-        pointer-events: none;
-      }
+      z-index: 2;
+      margin-top: calc(var(--space-7) * -1);
+      padding-inline: 0;
     }
 
-    // Modern Service Cards
-    .service-card-modern {
-      background: white;
-      border-radius: 20px;
+    .quicklinks__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: var(--space-3);
+      background: var(--surface);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .quicklink {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-1);
+      border-radius: var(--r-md);
+      color: var(--ink-700);
+      text-align: center;
+      transition: background-color var(--dur-fast) var(--ease-out),
+                  transform var(--dur-fast) var(--ease-out);
+    }
+
+    .quicklink:hover {
+      background: var(--brand-50);
+      transform: translateY(-3px);
+      color: var(--brand-800);
+    }
+
+    .quicklink__icon {
+      display: grid;
+      place-items: center;
+      inline-size: 52px;
+      block-size: 52px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, var(--accent-400), var(--accent-600));
+      color: #fff;
+      font-size: 1.25rem;
+      box-shadow: 0 6px 18px rgba(232, 133, 15, 0.28);
+      transition: transform var(--dur) var(--ease-out);
+    }
+
+    .quicklink:hover .quicklink__icon {
+      transform: translateY(-2px) scale(1.06);
+    }
+
+    .quicklink__label {
+      font-size: var(--step--1);
+      font-weight: 600;
+    }
+
+    /* ---------------- stats ---------------- */
+
+    .stats {
+      padding-block: var(--space-8) var(--space-6);
+    }
+
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      text-align: center;
+    }
+
+    .stat__value {
+      font-size: var(--step-3);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--brand-700);
+      letter-spacing: -0.03em;
+    }
+
+    .stat__label {
+      margin-top: var(--space-2);
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-400);
+    }
+
+    /* ---------------- destinations ---------------- */
+
+    .destinations {
+      background: var(--surface);
+    }
+
+    .destinations__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+
+    .dcard {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
       padding: 0;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      position: relative;
-      border: 1px solid rgba(23, 162, 184, 0.1);
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(135deg, #17a2b8, #138496);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-      
-      &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-color: rgba(23, 162, 184, 0.3);
-        
-        &::before {
-          transform: scaleX(1);
-        }
-        
-        .service-icon-modern {
-          transform: scale(1.05);
-          box-shadow: 0 15px 40px rgba(23, 162, 184, 0.4);
-        }
-        
-        .service-hover-effect {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      
-      .service-icon-modern {
-        height: 120px;
-        background: linear-gradient(135deg, #17a2b8, #138496);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        position: relative;
-        
-        i {
-          font-size: 2.5rem;
-          color: white;
-          transition: transform 0.3s ease;
-        }
-        
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -20px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 40px;
-          height: 40px;
-          background: white;
-          border-radius: 50%;
-          box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-        }
-      }
-      
-      .service-content-modern {
-        padding: 40px 30px 30px;
-        text-align: center;
-        
-        h5 {
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #2c3e50;
-          margin-bottom: 15px;
-          transition: color 0.3s ease;
-        }
-        
-        p {
-          color: #6c757d;
-          line-height: 1.6;
-          margin-bottom: 20px;
-          transition: color 0.3s ease;
-        }
-        
-        .service-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          
-          li {
-            color: #495057;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-            
-            i {
-              color: #17a2b8;
-              font-size: 0.8rem;
-            }
-          }
-        }
-      }
-      
-      &:hover {
-        .service-content-modern {
-          h5 {
-            color: #138496;
-          }
-          
-          p {
-            color: #495057;
-          }
-          
-          .service-list li {
-            color: #2c3e50;
-          }
-        }
-      }
-      
-      .service-hover-effect {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at center, rgba(23, 162, 184, 0.03) 0%, transparent 70%);
-        opacity: 0;
-        transition: all 0.4s ease;
-        pointer-events: none;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero-icons .hero-icon-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 15px;
-        
-        .hero-icon-item {
-          .icon-circle {
-            width: 50px;
-            height: 50px;
-            
-            i {
-              font-size: 1.2rem;
-            }
-          }
-          
-          span {
-            font-size: 0.8rem;
-          }
-        }
-      }
-      
-      .display-2 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-stats {
-        margin-top: 30px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero-icons .hero-icon-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        
-        .hero-icon-item {
-          .icon-circle {
-            width: 45px;
-            height: 45px;
-            
-            i {
-              font-size: 1rem;
-            }
-          }
-          
-          span {
-            font-size: 0.75rem;
-          }
-        }
-      }
+      transition: transform var(--dur) var(--ease-out),
+                  box-shadow var(--dur) var(--ease-out),
+                  border-color var(--dur) var(--ease-out);
     }
 
-    // Gallery Styles
-    .gallery-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      
-      .gallery-grid {
-        .gallery-row {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 25px;
-          margin-bottom: 25px;
-          
-          .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            background: #fff;
-            height: 250px; // Fixed height for uniformity
-            
-            .gallery-img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover; // Ensures all images cover the area properly
-              transition: transform 0.4s ease;
-            }
-            
-            .gallery-overlay {
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: linear-gradient(to bottom, 
-                rgba(0,0,0,0.1) 0%, 
-                rgba(0,0,0,0.4) 50%, 
-                rgba(0,0,0,0.8) 100%);
-              display: flex;
-              align-items: flex-end;
-              padding: 20px;
-              opacity: 0;
-              transition: opacity 0.3s ease;
-              
-              .gallery-content {
-                color: white;
-                transform: translateY(15px);
-                transition: transform 0.3s ease;
-                
-                h4 {
-                  font-size: 1.1rem;
-                  font-weight: 700;
-                  margin-bottom: 5px;
-                }
-                
-                p {
-                  font-size: 0.85rem;
-                  margin: 0;
-                  opacity: 0.9;
-                }
-              }
-            }
-            
-            &:hover {
-              transform: translateY(-8px);
-              box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-              
-              .gallery-img {
-                transform: scale(1.05);
-              }
-              
-              .gallery-overlay {
-                opacity: 1;
-                
-                .gallery-content {
-                  transform: translateY(0);
-                }
-              }
-            }
-          }
-        }
-      }
-      
-      // Responsive Gallery
-      @media (max-width: 768px) {
-        .gallery-grid {
-          .gallery-row {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
-            
-            .gallery-item {
-              height: 200px;
-            }
-          }
-        }
-      }
-      
-      @media (max-width: 480px) {
-        .gallery-grid {
-          .gallery-row {
-            grid-template-columns: 1fr;
-            
-            .gallery-item {
-              height: 180px;
-            }
-          }
-        }
-      }
+    .dcard:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--brand-200);
     }
-  `
+
+    .dcard__media {
+      position: relative;
+      display: block;
+      /* Fixed ratio instead of a fixed pixel height: the tile keeps its shape at
+         every breakpoint and reserves space before the image loads. */
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .dcard__media ::ng-deep img {
+      transition: transform 600ms var(--ease-out);
+    }
+
+    .dcard:hover .dcard__media ::ng-deep img {
+      transform: scale(1.07);
+    }
+
+    .dcard__badge {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: grid;
+      place-items: center;
+      inline-size: 40px;
+      block-size: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--brand-700);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .dcard__body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      padding: var(--space-5);
+    }
+
+    .dcard__title {
+      font-size: var(--step-1);
+      font-weight: 700;
+      color: var(--ink-900);
+      line-height: 1.25;
+    }
+
+    .dcard__tagline {
+      font-size: var(--step--1);
+      color: var(--ink-500);
+    }
+
+    .dcard__cta {
+      margin-top: var(--space-3);
+      font-size: var(--step--1);
+      font-weight: 700;
+      color: var(--brand-600);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .dcard__cta i {
+      transition: transform var(--dur) var(--ease-out);
+    }
+
+    .dcard:hover .dcard__cta i {
+      transform: translateX(4px);
+    }
+
+    /* ---------------- why choose us ---------------- */
+
+    .why {
+      background: var(--canvas);
+    }
+
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+
+    .fcard {
+      background: var(--surface);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--r-lg);
+      padding: var(--space-6);
+      transition: transform var(--dur) var(--ease-out),
+                  box-shadow var(--dur) var(--ease-out);
+    }
+
+    .fcard:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fcard__icon {
+      display: grid;
+      place-items: center;
+      inline-size: 56px;
+      block-size: 56px;
+      border-radius: var(--r-md);
+      background: var(--brand-50);
+      color: var(--brand-600);
+      font-size: 1.4rem;
+      margin-bottom: var(--space-4);
+    }
+
+    .fcard__title {
+      font-size: var(--step-1);
+      margin-bottom: var(--space-2);
+    }
+
+    .fcard__body {
+      font-size: var(--step-0);
+      color: var(--ink-500);
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+
+    .scard {
+      display: flex;
+      gap: var(--space-4);
+      background: var(--surface);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--r-lg);
+      padding: var(--space-6);
+      transition: transform var(--dur) var(--ease-out),
+                  box-shadow var(--dur) var(--ease-out);
+    }
+
+    .scard:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .scard__icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      inline-size: 48px;
+      block-size: 48px;
+      border-radius: var(--r-md);
+      background: var(--accent-100);
+      color: var(--accent-600);
+      font-size: 1.2rem;
+    }
+
+    .scard__title {
+      font-size: var(--step-1);
+      margin-bottom: var(--space-2);
+    }
+
+    .scard__body {
+      font-size: var(--step--1);
+      color: var(--ink-500);
+      margin-bottom: var(--space-3);
+    }
+
+    .scard__list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .scard__list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--step--1);
+      color: var(--ink-600);
+    }
+
+    .scard__list i {
+      color: var(--brand-500);
+      font-size: 0.75rem;
+    }
+
+    /* ---------------- gallery ---------------- */
+
+    .gallery {
+      background: var(--surface);
+    }
+
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* dense back-fills the holes the 2x2 feature tiles would otherwise leave. */
+      grid-auto-flow: row dense;
+      gap: var(--space-4);
+    }
+
+    .gtile {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--ink-100);
+    }
+
+    /* Every 6th tile spans two columns and two rows, so the grid reads as a
+       composed layout rather than a uniform contact sheet. */
+    .gtile:nth-child(6n + 1) {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .gtile ::ng-deep img {
+      transition: transform 700ms var(--ease-out);
+    }
+
+    .gtile:hover ::ng-deep img {
+      transform: scale(1.08);
+    }
+
+    .gtile__cap {
+      position: absolute;
+      inset: auto 0 0 0;
+      display: grid;
+      gap: 2px;
+      padding: var(--space-5) var(--space-4) var(--space-4);
+      background: linear-gradient(transparent, rgba(6, 48, 46, 0.88));
+      color: #fff;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+    }
+
+    .gtile:hover .gtile__cap,
+    .gtile:focus-within .gtile__cap {
+      opacity: 1;
+      transform: none;
+    }
+
+    .gtile__title {
+      font-weight: 700;
+      font-size: var(--step-0);
+    }
+
+    .gtile__sub {
+      font-size: var(--step--1);
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .gallery__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-top: var(--space-7);
+    }
+
+    /* ---------------- testimonials ---------------- */
+
+    .testimonials {
+      background: var(--canvas);
+    }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+
+    .tcard {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      background: var(--surface);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--r-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tcard__stars {
+      display: flex;
+      gap: 3px;
+      color: var(--accent-500);
+      font-size: 0.85rem;
+    }
+
+    .tcard__quote {
+      font-size: var(--step-0);
+      color: var(--ink-700);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .tcard__author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--ink-100);
+    }
+
+    .tcard__avatar {
+      flex: 0 0 auto;
+      inline-size: 52px;
+      block-size: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .tcard__name {
+      display: block;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+
+    .tcard__place {
+      display: block;
+      font-size: var(--step--1);
+      color: var(--ink-400);
+    }
+
+    /* ---------------- CTA ---------------- */
+
+    .cta {
+      padding-block: var(--section-y);
+      background:
+        radial-gradient(120% 120% at 15% 0%, var(--brand-600) 0%, transparent 55%),
+        linear-gradient(135deg, var(--brand-800), var(--brand-900));
+      color: #fff;
+    }
+
+    .cta__inner {
+      text-align: center;
+      max-width: 54ch;
+    }
+
+    .cta__title {
+      color: #fff;
+      font-size: var(--step-3);
+      margin-bottom: var(--space-3);
+    }
+
+    .cta__lead {
+      font-size: var(--step-1);
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: var(--space-6);
+    }
+
+    .cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+    }
+
+    /* ---------------- responsive ---------------- */
+
+    @media (max-width: 1024px) {
+      .quicklinks__grid { grid-template-columns: repeat(3, 1fr); }
+      .destinations__grid,
+      .why__grid { grid-template-columns: repeat(2, 1fr); }
+      .services__grid,
+      .testimonials__grid { grid-template-columns: 1fr; }
+      .gallery__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        min-height: clamp(30rem, 76svh, 40rem);
+        padding-block: var(--space-8) var(--space-7);
+      }
+
+      .quicklinks {
+        margin-top: calc(var(--space-6) * -1);
+      }
+
+      .quicklinks__grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: var(--space-4) var(--space-2);
+        gap: var(--space-2);
+        border-radius: var(--r-lg);
+      }
+
+      .quicklink__icon { inline-size: 44px; block-size: 44px; font-size: 1.05rem; }
+
+      .stats__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6) var(--space-4); }
+
+      .destinations__grid,
+      .why__grid { grid-template-columns: 1fr; }
+
+      .gallery__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+
+      /* The feature tile would dominate a 2-column phone grid — flatten it. */
+      .gtile:nth-child(6n + 1) {
+        grid-column: span 2;
+        grid-row: span 1;
+        aspect-ratio: 16 / 10;
+      }
+
+      .scard { flex-direction: column; gap: var(--space-3); }
+
+      /* Captions have no hover on touch, so show them by default. */
+      .gtile__cap { opacity: 1; transform: none; padding: var(--space-4) var(--space-3) var(--space-3); }
+
+      .hero__actions .btn,
+      .cta__actions .btn { flex: 1 1 14rem; }
+    }
+
+    @media (max-width: 420px) {
+      .quicklinks__grid { grid-template-columns: repeat(2, 1fr); }
+      /* Deliberately still two columns: a single full-width column would make
+         each tile ~326px, forcing an 800w file per image on a 2x phone and
+         stretching the page past 18,000px. */
+      .gallery__grid { gap: var(--space-2); }
+    }
+  `,
 })
 export class Home {
-  readonly destinations = signal([
+  readonly quickLinks = signal([
+    { name: 'Packages', slug: 'packages', icon: 'fa-map-marked-alt' },
+    { name: 'Adventure', slug: 'adventure-photography', icon: 'fa-hiking' },
+    { name: 'Camping', slug: 'camping', icon: 'fa-campground' },
+    { name: 'Food', slug: 'food-tours', icon: 'fa-utensils' },
+    { name: 'Spiritual', slug: 'spiritual-tours', icon: 'fa-om' },
+    { name: 'International', slug: 'international-tours', icon: 'fa-globe' },
+  ]);
+
+  readonly stats = signal([
+    { value: '50+', label: 'Tour packages' },
+    { value: '10,000+', label: 'Happy travellers' },
+    { value: '8+', label: 'Years experience' },
+    { value: '4.9/5', label: 'Customer rating' },
+  ]);
+
+  // Images chosen for resolution as well as subject: the destination tiles render
+  // ~280px wide at 2x, so every source here is at least 1000px on the long edge.
+  readonly destinations = signal<Destination[]>([
     {
       name: 'Madhya Pradesh',
-      tagline: 'The Heart of India',
-      icon: 'fa-mountain',
-      places: 25,
-      duration: '3-7 Days',
-      image: 'assets/destinations/madhya-pradesh.jpg'
+      tagline: 'The heart of India',
+      image: 'khajuraho1',
+      icon: 'fa-monument',
+      slug: 'madhya-pradesh',
     },
     {
       name: 'North India',
-      tagline: 'Cultural Heritage',
+      tagline: 'Cultural heritage',
+      image: 'rajasthan',
       icon: 'fa-gopuram',
-      places: 30,
-      duration: '5-10 Days',
-      image: 'assets/destinations/north-india.jpg'
+      slug: 'north-india',
     },
     {
       name: 'Jammu & Kashmir',
-      tagline: 'Paradise on Earth',
+      tagline: 'Paradise on earth',
+      image: '133949262268459566',
       icon: 'fa-snowflake',
-      places: 20,
-      duration: '4-8 Days',
-      image: 'assets/destinations/jammu-kashmir.jpg'
+      slug: 'jammu-kashmir',
     },
     {
       name: 'Leh-Ladakh',
-      tagline: 'Land of High Passes',
-      icon: 'fa-hiking',
-      places: 15,
-      duration: '5-7 Days',
-      image: 'assets/destinations/ladakh.jpg'
-    }
+      tagline: 'Land of high passes',
+      image: '133949262277622400',
+      icon: 'fa-mountain',
+      slug: 'leh-ladakh',
+    },
   ]);
+
+  readonly features = signal<Feature[]>([
+    {
+      icon: 'fa-award',
+      title: 'Expert guidance',
+      body: 'Eight years building routes across India, led by guides who know the ground.',
+    },
+    {
+      icon: 'fa-shield-halved',
+      title: 'Safe & secure',
+      body: 'Verified partners, vetted drivers and 24/7 support for the length of your trip.',
+    },
+    {
+      icon: 'fa-indian-rupee-sign',
+      title: 'Honest pricing',
+      body: 'What we quote is what you pay. No hidden costs bolted on at the last minute.',
+    },
+    {
+      icon: 'fa-hotel',
+      title: 'Stays worth staying in',
+      body: 'Hand-picked hotels, homestays and camps we have checked ourselves.',
+    },
+  ]);
+
+  readonly services = signal<Service[]>([
+    {
+      icon: 'fa-shield-halved',
+      title: 'Travel insurance',
+      body: 'Comprehensive cover arranged alongside your booking.',
+      points: ['Medical coverage', 'Trip cancellation', 'Baggage protection'],
+    },
+    {
+      icon: 'fa-camera',
+      title: 'Photography tours',
+      body: 'Travel with a photographer who knows the light and the locations.',
+      points: ['Professional guide', 'High-resolution photos', 'Edited highlight reel'],
+    },
+    {
+      icon: 'fa-utensils',
+      title: 'Culinary experiences',
+      body: 'Eat the way the region actually eats, beyond the tourist menu.',
+      points: ['Local chefs', 'Street food trails', 'Cooking classes'],
+    },
+  ]);
+
+  readonly testimonials = signal<Testimonial[]>([
+    {
+      quote:
+        'Amazing experience in Kashmir. The houseboat stay and the shikara ride were unforgettable — Happy Ghumakkads got every detail right.',
+      name: 'Rahul Sharma',
+      place: 'Mumbai, Maharashtra',
+      avatar: 'wps1',
+    },
+    {
+      quote:
+        'The Leh-Ladakh trip was a dream come true. Excellent planning, great guides and breathtaking views the whole way.',
+      name: 'Priya Patel',
+      place: 'Ahmedabad, Gujarat',
+      avatar: 'wps',
+    },
+    {
+      quote:
+        'Kanha National Park safari was incredible — we saw tigers, and the resort was superb. Thank you Happy Ghumakkads!',
+      name: 'Amit Kumar',
+      place: 'Delhi, NCR',
+      avatar: 'wps2',
+    },
+  ]);
+
+  readonly gallery = signal<GalleryItem[]>([
+    { image: 'HGI-1', title: 'Scenic beauty', caption: 'Breathtaking landscapes' },
+    { image: 'HGI-2', title: 'Heritage sites', caption: 'Ancient architectural marvels' },
+    { image: 'HGI-3', title: 'Mountain paradise', caption: 'Majestic Himalayan peaks' },
+    { image: 'HGI-4', title: 'Desert safari', caption: 'Golden sand dunes' },
+    { image: 'HGI-5', title: 'Coastal wonders', caption: 'Pristine beaches and shores' },
+    { image: 'HGI-6', title: 'Wildlife safari', caption: 'Exotic flora and fauna' },
+    { image: 'HGI-7', title: 'Sacred temples', caption: 'Spiritual architecture' },
+    { image: 'HGI-8', title: 'Backwaters', caption: 'Serene waterways' },
+    { image: 'HGI-9', title: 'Historic forts', caption: 'Medieval architecture' },
+    { image: 'HGI-10', title: 'Lush gardens', caption: 'Botanical paradises' },
+    { image: 'HGI-11', title: 'Rural life', caption: 'Traditional villages' },
+    { image: 'HGI-12', title: 'Vibrant festivals', caption: 'Cultural celebrations' },
+    { image: 'HGI-13', title: 'Local markets', caption: 'Bustling bazaars' },
+    { image: 'HGI-14', title: 'Sacred rivers', caption: 'Holy waterways' },
+    { image: 'HGI-15', title: 'Hill stations', caption: 'Cool mountain retreats' },
+    { image: 'HGI-16', title: 'Ancient caves', caption: 'Rock-cut architecture' },
+    { image: 'HGI-17', title: 'Pristine lakes', caption: 'Crystal clear waters' },
+    { image: 'HGI-18', title: 'Majestic waterfalls', caption: "Nature's cascades" },
+    { image: 'HGI-19', title: 'Spectacular sunsets', caption: 'Golden hour magic' },
+    { image: 'HGI-20', title: 'Modern architecture', caption: 'Contemporary designs' },
+    { image: 'HGI-21', title: 'Dense forests', caption: 'Green canopies' },
+    { image: 'HGI-22', title: 'Tropical islands', caption: 'Paradise destinations' },
+    { image: 'HGI-23', title: 'Historic monuments', caption: 'Timeless landmarks' },
+    { image: 'HGI-24', title: 'Scenic valleys', caption: 'Lush green landscapes' },
+    { image: 'HGI-25', title: 'High plateaus', caption: 'Elevated landscapes' },
+    { image: 'HGI-26', title: 'Ancient bridges', caption: 'Engineering marvels' },
+    { image: 'HGI-27', title: 'Modern cities', caption: 'Urban landscapes' },
+    { image: 'HGI-28', title: 'Dawn views', caption: 'Beautiful sunrises' },
+  ]);
+
+  /** Tiles rendered before the reader opts into the rest. */
+  readonly galleryPreview = 12;
+  readonly galleryExpanded = signal(false);
+
+  /**
+   * Only the first slice is in the DOM until asked for. Lazy loading already
+   * defers the bytes, but keeping 28 tiles out of the layout also stops the
+   * phone page from running to ~18,000px of mostly-unseen thumbnails.
+   */
+  readonly visibleGallery = computed(() =>
+    this.galleryExpanded() ? this.gallery() : this.gallery().slice(0, this.galleryPreview),
+  );
 
   constructor(private router: Router) {}
 
+  showAllGallery(): void {
+    this.galleryExpanded.set(true);
+  }
+
+  // There are no per-destination routes, so destination cards deep-link into the
+  // packages page with the destination as a query param instead of navigating to
+  // a path that would fall through to the wildcard route.
   navigateToDestination(destination: string): void {
-    console.log('Navigating to:', destination);
-    this.router.navigate([destination]);
+    this.router.navigate(['/packages'], { queryParams: { destination } });
   }
 
   navigateToPackages(): void {
-    console.log('Start Planning button clicked - Navigating to packages');
     this.router.navigate(['/packages']);
   }
 
-  navigateToAdventurePhotography(): void {
-    console.log('Navigating to adventure-photography');
-    this.router.navigate(['/adventure-photography']);
-  }
-
-  navigateToCamping(): void {
-    console.log('Navigating to camping');
-    this.router.navigate(['/camping']);
-  }
-
-  navigateToFoodTours(): void {
-    console.log('Navigating to food-tours');
-    this.router.navigate(['/food-tours']);
-  }
-
-  navigateToSpiritualTours(): void {
-    console.log('Navigating to spiritual-tours');
-    this.router.navigate(['/spiritual-tours']);
-  }
-
   navigateToContact(): void {
-    console.log('Download Brochure button clicked - Navigating to contact');
     this.router.navigate(['/contact']);
   }
 }

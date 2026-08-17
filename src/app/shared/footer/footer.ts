@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Icon } from '../icon/icon';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Icon],
   template: `
     <footer class="footer-section py-5 bg-dark text-white">
       <div class="container">
@@ -15,15 +16,15 @@ import { CommonModule } from '@angular/common';
             <p class="mb-3">Your trusted travel partner for unforgettable journeys across India and beyond.</p>
             <div class="contact-info">
               <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-map-marker-alt me-2"></i>
+                <app-icon name="map-marker-alt" class="me-2" />
                 <span>Mishra Complex, Ground Floor, Chauhan Nagar, Pateri, Satna (M.P.) 485001</span>
               </div>
               <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2"></i>
+                <app-icon name="phone" class="me-2" />
                 <span>+91 84471 33338</span>
               </div>
               <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-envelope me-2"></i>
+                <app-icon name="envelope" class="me-2" />
                 <span>info.happyghumakkads@gmail.com</span>
               </div>
             </div>
@@ -34,15 +35,15 @@ import { CommonModule } from '@angular/common';
             <h4 class="text-warning mb-3">Business Hours</h4>
             <div class="business-hours">
               <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-clock me-2"></i>
+                <app-icon name="clock" class="me-2" />
                 <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
               </div>
               <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-calendar me-2"></i>
+                <app-icon name="calendar" class="me-2" />
                 <span>Sunday: Emergency Only</span>
               </div>
               <div class="d-flex align-items-center">
-                <i class="fas fa-headset me-2"></i>
+                <app-icon name="headset" class="me-2" />
                 <span>24x7 Support Available</span>
               </div>
             </div>
@@ -54,10 +55,10 @@ import { CommonModule } from '@angular/common';
             <p class="mb-3">Follow us for travel inspiration, exclusive deals, and destination updates</p>
             <div class="social-links">
               <a href="https://www.instagram.com/happyghumakkads/" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
-                <i class="fab fa-instagram"></i> Instagram
+                <app-icon name="instagram" /> Instagram
               </a>
               <a href="https://www.facebook.com/happyghumakkads/" target="_blank" class="btn btn-outline-light btn-sm mb-2">
-                <i class="fab fa-facebook"></i> Facebook
+                <app-icon name="facebook" /> Facebook
               </a>
             </div>
           </div>
@@ -68,7 +69,7 @@ import { CommonModule } from '@angular/common';
           <div class="col-12">
             <hr class="bg-white">
             <div class="text-center">
-              <p class="mb-0">&copy; 2024 Happy Ghumakkads. All rights reserved. | Designed with <i class="fas fa-heart text-danger"></i> for travelers</p>
+              <p class="mb-0">&copy; 2024 Happy Ghumakkads. All rights reserved. | Designed with <app-icon name="heart" class="text-danger" /> for travelers</p>
             </div>
           </div>
         </div>

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
+import { Icon } from '../../shared/icon/icon';
 // Now correctly points to the environment file
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Icon],
   template: `
     <!-- Contact Hero -->
     <section class="contact-hero">
@@ -29,7 +30,7 @@ import { environment } from '../../../environments/environment';
           <div class="col-md-4">
             <div class="contact-info-card">
               <div class="info-icon">
-                <i class="fas fa-phone-alt"></i>
+                <app-icon name="phone-alt" />
               </div>
               <h4>Call Us</h4>
               <p>+91 84471 33338</p>
@@ -39,7 +40,7 @@ import { environment } from '../../../environments/environment';
           <div class="col-md-4">
             <div class="contact-info-card">
               <div class="info-icon">
-                <i class="fas fa-envelope"></i>
+                <app-icon name="envelope" />
               </div>
               <h4>Email Us</h4>
               <p>contact@happyghumakkads.com</p>
@@ -49,7 +50,7 @@ import { environment } from '../../../environments/environment';
           <div class="col-md-4">
             <div class="contact-info-card">
               <div class="info-icon">
-                <i class="fas fa-map-marker-alt"></i>
+                <app-icon name="map-marker-alt" />
               </div>
               <h4>Visit Us</h4>
               <p>Mishra Complex, Ground Floor, Chauhan Nagar</p>
@@ -111,7 +112,7 @@ import { environment } from '../../../environments/environment';
                     <button type="submit" class="btn btn-warning btn-lg w-100" [disabled]="isSubmitting">
                       <span *ngIf="!isSubmitting">Send Message</span>
                       <span *ngIf="isSubmitting">
-                        <i class="fas fa-spinner fa-spin me-2"></i>Sending...
+                        <app-icon name="spinner" class="me-2" />Sending...
                       </span>
                     </button>
                   </div>
@@ -120,13 +121,13 @@ import { environment } from '../../../environments/environment';
               
               <!-- Success Message -->
               <div *ngIf="showSuccess" class="alert alert-success mt-4" role="alert">
-                <i class="fas fa-check-circle me-2"></i>
+                <app-icon name="check-circle" class="me-2" />
                 <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon!
               </div>
               
               <!-- Error Message -->
               <div *ngIf="showError" class="alert alert-danger mt-4" role="alert">
-                <i class="fas fa-exclamation-circle me-2"></i>
+                <app-icon name="exclamation-circle" class="me-2" />
                 <strong>Oops!</strong> Something went wrong. Please try again or contact us directly.
               </div>
             </div>
@@ -144,19 +145,19 @@ import { environment } from '../../../environments/environment';
         </div>
         <div class="d-flex justify-content-center gap-3">
           <a href="https://www.facebook.com/happyghumakkads" target="_blank" class="social-btn facebook">
-            <i class="fab fa-facebook-f"></i>
+            <app-icon name="facebook-f" />
           </a>
           <a href="https://www.instagram.com/happyghumakkads" target="_blank" class="social-btn instagram">
-            <i class="fab fa-instagram"></i>
+            <app-icon name="instagram" />
           </a>
           <a href="https://www.twitter.com/happyghumakkads" target="_blank" class="social-btn twitter">
-            <i class="fab fa-twitter"></i>
+            <app-icon name="twitter" />
           </a>
           <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
+            <app-icon name="whatsapp" />
           </a>
           <a href="https://www.youtube.com/@happyghumakkads" target="_blank" class="social-btn youtube">
-            <i class="fab fa-youtube"></i>
+            <app-icon name="youtube" />
           </a>
         </div>
       </div>
@@ -167,7 +168,7 @@ import { environment } from '../../../environments/environment';
       position: relative;
       height: 60vh;
       min-height: 400px;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/contactus.jpg') center/cover;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/contactus-1280.webp') center/cover;
       display: flex;
       align-items: center;
     }

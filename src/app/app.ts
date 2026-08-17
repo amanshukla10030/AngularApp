@@ -1,209 +1,100 @@
-import { Component, signal, OnInit, AfterViewInit, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  OnDestroy,
+  PLATFORM_ID,
+  inject,
+  signal,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Footer } from './shared/footer/footer';
+import { Icon } from './shared/icon/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, Footer, FormsModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, Footer, Icon],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrls: ['./app.scss'],
 })
-export class App implements OnInit, AfterViewInit {
-  protected readonly title = signal('Happy Ghumakkads');
+export class App implements AfterViewInit, OnDestroy {
   protected readonly currentYear = signal(new Date().getFullYear());
-  protected isMenuOpen = signal(false);
-  protected isScrolled = signal(false);
-  protected openDropdowns = signal<Set<string>>(new Set());
-  protected isAppLoaded = signal(false);
+  protected readonly isMenuOpen = signal(false);
+  protected readonly isScrolled = signal(false);
+  protected readonly showScrollTop = signal(false);
 
-  constructor(private router: Router) {
-    console.log('App component initialized');
+  private readonly router = inject(Router);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly subs = new Subscription();
+  private ticking = false;
+
+  constructor() {
+    // Close the mobile menu and return to the top on every navigation, so a
+    // route change never leaves the drawer open over the new page.
+    this.subs.add(
+      this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
+        this.isMenuOpen.set(false);
+        if (this.isBrowser) window.scrollTo({ top: 0, behavior: 'auto' });
+      }),
+    );
   }
 
-  ngOnInit() {
-    console.log('App ngOnInit called');
-    // Set app as loaded immediately
-    this.isAppLoaded.set(true);
+  ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
+    // One passive listener, coalesced into an animation frame. The previous
+    // implementation attached two separate unthrottled listeners that each ran a
+    // querySelector on every scroll event.
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.readScroll();
   }
 
-  ngAfterViewInit() {
-    // Initialize smooth scrolling and other UI interactions only in browser
-    if (this.isBrowser()) {
-      this.initializeSmoothScrolling();
-      this.initializeScrollToTop();
-      this.initializeNavbarScroll();
-    }
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+    if (this.isBrowser) window.removeEventListener('scroll', this.onScroll);
   }
 
-  private isBrowser(): boolean {
-    return typeof window !== 'undefined' && typeof document !== 'undefined';
-  }
-
-  private initializeSmoothScrolling(): void {
-    // Add smooth scrolling behavior
-    if (!this.isBrowser()) return;
-    
-    document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
-      anchor.addEventListener('click', (e: Event) => {
-        e.preventDefault();
-        const target = document.querySelector((anchor as HTMLAnchorElement).getAttribute('href') || '');
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
+  private readonly onScroll = (): void => {
+    if (this.ticking) return;
+    this.ticking = true;
+    requestAnimationFrame(() => {
+      this.readScroll();
+      this.ticking = false;
     });
-  }
+  };
 
-  private initializeScrollToTop(): void {
-    // Show/hide scroll to top button based on scroll position
-    if (!this.isBrowser()) return;
-    
-    window.addEventListener('scroll', () => {
-      const scrollToTopBtn = document.querySelector('.scrollToTop');
-      if (scrollToTopBtn) {
-        if (window.pageYOffset > 300) {
-          scrollToTopBtn.classList.add('show');
-        } else {
-          scrollToTopBtn.classList.remove('show');
-        }
-      }
-    });
-  }
-
-  private initializeNavbarScroll(): void {
-    // Add background to navbar on scroll
-    if (!this.isBrowser()) return;
-    
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        if (window.pageYOffset > 50) {
-          this.isScrolled.set(true);
-        } else {
-          this.isScrolled.set(false);
-        }
-      }
-    });
-  }
-
-  // Navigation methods
-  navigateToHome(): void {
-    console.log('Navigating to home');
-    this.router.navigate(['/']);
-  }
-
-  navigateToPackages(): void {
-    console.log('Navigating to packages');
-    this.router.navigate(['/packages']);
-  }
-
-  navigateToDestination(destination: string): void {
-    console.log('Navigating to:', destination);
-    this.router.navigate([destination]);
-  }
-
-  navigateToAbout(): void {
-    console.log('Navigating to about');
-    this.router.navigate(['/about']);
-  }
-
-  navigateToCareers(): void {
-    console.log('Navigating to careers');
-    this.router.navigate(['/careers']);
-  }
-
-  navigateToContact(): void {
-    console.log('Navigating to contact');
-    this.router.navigate(['/contact']);
-  }
-
-
-  navigateToInternationalTours(): void {
-    console.log('Navigating to international tours');
-    // For now, navigate to contact with a message about international tours
-    this.router.navigate(['/contact']);
-  }
-
-  navigateToCorporateEvents(): void {
-    console.log('Navigating to corporate events');
-    // For now, navigate to contact with a message about corporate events
-    this.router.navigate(['/contact']);
-  }
-
-  navigateToStudentGroups(): void {
-    console.log('Navigating to student groups');
-    // For now, navigate to contact with a message about student groups
-    this.router.navigate(['/contact']);
+  private readScroll(): void {
+    const y = window.scrollY;
+    this.isScrolled.set(y > 50);
+    this.showScrollTop.set(y > 300);
   }
 
   toggleMobileMenu(): void {
-    console.log('Mobile menu clicked!');
-    console.log('Current state:', this.isMenuOpen());
     this.isMenuOpen.update(open => !open);
-    console.log('New state:', this.isMenuOpen());
   }
 
   closeMobileMenu(): void {
     this.isMenuOpen.set(false);
   }
 
-  // Dropdown methods
-  toggleDropdown(dropdownName: string): void {
-    this.openDropdowns.update(dropdowns => {
-      const newDropdowns = new Set(dropdowns);
-      if (newDropdowns.has(dropdownName)) {
-        newDropdowns.delete(dropdownName);
-      } else {
-        newDropdowns.clear(); // Close all other dropdowns
-        newDropdowns.add(dropdownName);
-      }
-      return newDropdowns;
-    });
-  }
-
-  isDropdownOpen(dropdownName: string): boolean {
-    return this.openDropdowns().has(dropdownName);
-  }
-
-  closeAllDropdowns(): void {
-    this.openDropdowns.set(new Set());
-  }
-
-  // Global function for scroll to top (called from template)
   scrollToTop(): void {
-    if (this.isBrowser()) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
+    if (this.isBrowser) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Close dropdown when clicking outside
+  // Close the mobile drawer when tapping outside the header.
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
-    // Close dropdowns when clicking outside
-    this.closeAllDropdowns();
+    if (!this.isMenuOpen()) return;
+    const target = event.target as HTMLElement | null;
+    if (target?.closest('.modern-header')) return;
+    this.isMenuOpen.set(false);
   }
 
-  // Form submission handler
-  onContactFormSubmit(event: Event): void {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    
-    // Here you would typically send the data to Formspree
-    // For now, we'll just log it and show a success message
-    console.log('Form submitted:', Object.fromEntries(formData));
-    
-    // Show success message
-    alert('Thank you for your inquiry! We will contact you soon.');
-    form.reset();
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.isMenuOpen.set(false);
   }
 }

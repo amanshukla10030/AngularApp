@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HappyGhumakkads</title>
+  <title>Happy Ghumakkads — Discover Incredible India</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
+
+  <meta name="description" content="Happy Ghumakkads plans tours across India — Madhya Pradesh, Kashmir, Ladakh and beyond. Spiritual, cultural, camping, photography and corporate travel, handled end to end.">
+  <meta name="theme-color" content="#0f5c56">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Happy Ghumakkads — Discover Incredible India">
+  <meta property="og:description" content="Curated tours across India, planned end to end by people who travel them first.">
+  <meta property="og:image" content="/images/HGI-image1-1280.webp">
+
   <link rel="icon" type="image/png" href="cropped-Logo-png.png">
+
+  <!-- Fonts: preconnect so the handshake overlaps parsing, and load the sheet
+       non-blocking. Previously imported from styles.scss, which serialised the
+       request behind the stylesheet download. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- The hero image is the Largest Contentful Paint element; fetch it in
+       parallel with the JS bundle rather than after hydration. -->
+  <link rel="preload" as="image" href="/images/133949262247186237-1280.webp"
+        imagesrcset="/images/133949262247186237-800.webp 800w,
+                     /images/133949262247186237-1280.webp 1280w,
+                     /images/133949262247186237-1920.webp 1920w"
+        imagesizes="100vw" fetchpriority="high">
 </head>
 <body>
   <app-root></app-root>

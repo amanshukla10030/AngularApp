@@ -1,38 +1,37 @@
-<!-- Modern Navigation Header -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Site header -->
 <header class="modern-header" [class.scrolled]="isScrolled()">
   <div class="header-top">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="header-top__inner">
         <div class="contact-info">
-          <span class="me-3"><i class="fas fa-phone"></i> +91 8447133338</span>
-          <span><i class="fas fa-envelope"></i> contact@happyghumakkads.com</span>
+          <a href="tel:+918447133338"><app-icon name="phone" /> +91 8447133338</a>
+          <a href="mailto:contact@happyghumakkads.com"><app-icon name="envelope" /> contact&#64;happyghumakkads.com</a>
         </div>
         <div class="social-links">
-          <a href="https://www.facebook.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.twitter.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.youtube.com/happyghumakkads" target="_blank" rel="noopener" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/happyghumakkads" target="_blank" rel="noopener" aria-label="Facebook" class="social-link"><app-icon name="facebook-f" /></a>
+          <a href="https://www.instagram.com/happyghumakkads" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><app-icon name="instagram" /></a>
+          <a href="https://www.twitter.com/happyghumakkads" target="_blank" rel="noopener" aria-label="Twitter" class="social-link"><app-icon name="twitter" /></a>
+          <a href="https://www.youtube.com/happyghumakkads" target="_blank" rel="noopener" aria-label="YouTube" class="social-link"><app-icon name="youtube" /></a>
         </div>
       </div>
     </div>
   </div>
-  
-  <nav class="main-nav">
+
+  <nav class="main-nav" aria-label="Primary">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="brand-section">
-          <a class="brand d-flex align-items-center" routerLink="/" style="cursor: pointer;">
-            <div class="logo-container me-3">
-              <img src="/images/cropped-Logo-png.png" alt="Happy Ghumakkads" class="brand-logo">
-            </div>
-            <div class="brand-text">
-              <h1 class="brand-name mb-0">HAPPY GHUMAKKADS</h1>
-              <p class="brand-tagline mb-0">Discover Incredible India</p>
-            </div>
-          </a>
-        </div>
-        
-        <div class="nav-menu" [class.show]="isMenuOpen()">
+      <div class="main-nav__inner">
+        <a class="brand" routerLink="/" (click)="closeMobileMenu()">
+          <img src="/images/cropped-Logo-png-400.webp" alt="" class="brand-logo" width="400" height="489">
+          <span class="brand-text">
+            <span class="brand-name">Happy Ghumakkads</span>
+            <span class="brand-tagline">Discover Incredible India</span>
+          </span>
+        </a>
+
+        <div class="nav-menu" [class.show]="isMenuOpen()" id="primary-menu">
+          <div class="nav-menu__inner">
           <ul class="nav-list">
             <li class="nav-item">
               <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a>
@@ -50,21 +49,26 @@
               <a class="nav-link" routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
             </li>
           </ul>
+          <a class="btn btn-warning btn-sm nav-menu__cta" routerLink="/contact" (click)="closeMobileMenu()">Book Now</a>
+          </div>
         </div>
-        
+
         <div class="header-actions">
-          <!-- Book Now Button -->
-          <a class="btn btn-warning btn-sm me-2" routerLink="/contact" routerLinkActive="active">
-            Book Now
-          </a>
-          
-          <!-- Mobile Menu Toggle -->
-          <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
-            <div class="hamburger-icon">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
+          <a class="btn btn-warning btn-sm header-actions__book" routerLink="/contact">Book Now</a>
+
+          <button
+            class="mobile-menu-toggle"
+            type="button"
+            (click)="toggleMobileMenu()"
+            [class.is-open]="isMenuOpen()"
+            [attr.aria-expanded]="isMenuOpen()"
+            aria-controls="primary-menu"
+            aria-label="Toggle navigation menu">
+            <span class="hamburger-icon">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </span>
           </button>
         </div>
       </div>
@@ -72,27 +76,29 @@
   </nav>
 </header>
 
-<!-- Main Content -->
-<main class="main-content">
+<!-- Main content -->
+<main class="main-content" id="main">
   <router-outlet></router-outlet>
-  <!-- Loading indicator -->
-  <div *ngIf="!isAppLoaded" class="loading-spinner">
-    <div class="spinner"></div>
-    <p>Loading...</p>
-  </div>
 </main>
 
-<!-- Footer -->
 <app-footer></app-footer>
 
-<!-- Scroll to Top Button -->
-<div class="scrollToTop" (click)="scrollToTop()">
-  <i class="fas fa-arrow-up"></i>
-</div>
+<!-- Scroll to top -->
+<button
+  type="button"
+  class="scrollToTop"
+  [class.show]="showScrollTop()"
+  (click)="scrollToTop()"
+  aria-label="Scroll back to top">
+  <app-icon name="arrow-up" />
+</button>
 
-<!-- WhatsApp Floating Button here -->
-<div class="whatsapp-float">
-  <a href="https://wa.me/918447133338" target="_blank" rel="noopener">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
+<!-- WhatsApp -->
+<a
+  class="whatsapp-float"
+  href="https://wa.me/918447133338"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with us on WhatsApp">
+  <app-icon name="whatsapp" />
+</a>
