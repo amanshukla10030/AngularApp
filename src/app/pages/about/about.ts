@@ -30,7 +30,7 @@ import { Deco } from '../../shared/deco/deco';
         <div class="row align-items-center">
           <div class="col-lg-6">
             <h2 class="display-5 fw-bold mb-4">Our Story</h2>
-            <p class="lead mb-4">Founded in 2008, Happy Ghumakkads began with a simple mission: to showcase the incredible diversity and beauty of India to travelers from around the world.</p>
+            <p class="lead mb-4">Founded in 2017, Happy Ghumakkads began with a simple mission: to showcase the incredible diversity and beauty of India to travelers from around the world.</p>
             <p>What started as a small team of passionate travelers has grown into one of India's most trusted travel agencies, serving thousands of happy customers each year. Our name "Ghumakkads" (wanderers) reflects our core belief - that travel is not just about destinations, but about the journey of discovery.</p>
             <div class="mt-4">
               <div class="d-flex gap-4 mb-3">
