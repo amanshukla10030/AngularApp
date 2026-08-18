@@ -177,7 +177,7 @@ import { Deco } from '../../shared/deco/deco';
           <div class="col-lg-4 col-md-6">
             <div class="team-card">
               <img src="/images/HGI-9-1024.webp" srcset="/images/HGI-9-400.webp 400w, /images/HGI-9-800.webp 800w, /images/HGI-9-1024.webp 1024w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="1024" height="768" loading="lazy" decoding="async" alt="Team Member" class="team-img">
-              <h5>Rajesh Kumar</h5>
+              <h5>Krishna Mishra</h5>
               <p class="text-muted">Founder & CEO</p>
               <p>15+ years in travel industry, passionate about showcasing India's diversity</p>
             </div>
