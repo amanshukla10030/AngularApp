@@ -156,7 +156,7 @@ import { Deco } from '../../shared/deco/deco';
           <a href="https://www.twitter.com/happyghumakkads" target="_blank" class="social-btn twitter">
             <app-icon name="twitter" />
           </a>
-          <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp">
+          <a href="https://wa.me/918447133338" target="_blank" class="social-btn whatsapp">
             <app-icon name="whatsapp" />
           </a>
           <a href="https://www.youtube.com/@happyghumakkads" target="_blank" class="social-btn youtube">
