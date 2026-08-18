@@ -1,6 +1,7 @@
-<div class="food-tours-page">
+<div class="food-tours-page tour-page">
   <!-- Hero Section -->
   <section class="hero-section">
+    <app-deco name="contours" class="hero-contours" />
     <div class="hero-content">
       <div class="container">
         <div class="row align-items-center min-vh-100">
@@ -30,13 +31,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <app-deco name="mountains" class="hero-ridge" />
+  </section>
 
   <!-- Featured Food Tours -->
   <section class="featured-section py-5">
     <div class="container">
       <h2 class="section-title text-center mb-5">Featured Food Tours</h2>
       <div class="featured-grid">
-        <div class="featured-card" (click)="navigateToPackages()">
+        <div class="featured-card" (click)="navigateToPackages()" appReveal>
           <div class="featured-image">
             <img src="/images/HGI-image3-740.webp" srcset="/images/HGI-image3-400.webp 400w, /images/HGI-image3-740.webp 740w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="740" height="415" loading="eager" fetchpriority="high" decoding="async" alt="Street Food Tour" class="featured-img">
           </div>
@@ -55,7 +59,7 @@
           </div>
         </div>
 
-        <div class="featured-card" (click)="navigateToPackages()">
+        <div class="featured-card" (click)="navigateToPackages()" appReveal [revealDelay]="90">
           <div class="featured-image">
             <img src="/images/HGI-image4-259.webp" srcset="/images/HGI-image4-259.webp 259w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="259" height="194" loading="lazy" decoding="async" alt="Regional Cuisine" class="featured-img">
           </div>
@@ -74,7 +78,7 @@
           </div>
         </div>
 
-        <div class="featured-card" (click)="navigateToPackages()">
+        <div class="featured-card" (click)="navigateToPackages()" appReveal [revealDelay]="180">
           <div class="featured-image">
             <img src="/images/133949262268459566-3840.webp" srcset="/images/133949262268459566-400.webp 400w, /images/133949262268459566-800.webp 800w, /images/133949262268459566-1280.webp 1280w, /images/133949262268459566-1920.webp 1920w, /images/133949262268459566-3840.webp 3840w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="3840" height="2160" loading="lazy" decoding="async" alt="Food & Wine Tours" class="featured-img">
           </div>
@@ -98,6 +102,7 @@
 
   <!-- Call to Action -->
   <section class="cta-section py-5">
+    <app-deco name="contours" class="cta-contours" />
     <div class="container">
       <div class="cta-content text-center">
         <h2 class="display-4 fw-bold mb-4 text-white">Hungry for Adventure?</h2>

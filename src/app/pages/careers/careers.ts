@@ -2,14 +2,16 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { Icon } from '../../shared/icon/icon';
+import { Deco } from '../../shared/deco/deco';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonModule, RouterLink, Icon],
+  imports: [CommonModule, RouterLink, Icon, Deco],
   template: `
-    <section class="careers-hero">
-      <div class="hero-overlay"></div>
+    <div class="tour-page careers-page">
+    <section class="hero-section">
+      <app-deco name="contours" class="hero-contours" />
       <div class="container">
         <div class="row align-items-center min-vh-100">
           <div class="col-lg-8 mx-auto text-center">
@@ -19,6 +21,7 @@ import { Icon } from '../../shared/icon/icon';
           </div>
         </div>
       </div>
+      <app-deco name="mountains" class="hero-ridge" />
     </section>
 
     <section class="py-5">
@@ -259,15 +262,25 @@ import { Icon } from '../../shared/icon/icon';
         </div>
       </div>
     </section>
+    </div>
   `,
   styles: `
-    .careers-hero {
-      position: relative;
-      height: 60vh;
-      min-height: 400px;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4)), url('/images/career-626.webp') center/cover;
-      display: flex;
-      align-items: center;
+    /* Hero layout now comes from the shared .tour-page system in
+       src/styles/_tour-page.scss — this is just the photograph. Was a fixed
+       60vh box wrapped around a Bootstrap .min-vh-100 row, which clipped the
+       copy on phones. */
+    /* the Happy Ghumakkads team — the previous hero was a generic blue/purple abstract stock
+       graphic, off-palette and unrelated to travel. */
+    :host {
+      --hero-img: url('/images/os-400.webp');
+    }
+
+    @media (min-width: 720px) {
+      :host { --hero-img: url('/images/os-800.webp'); }
+    }
+
+    @media (min-width: 1200px) {
+      :host { --hero-img: url('/images/os-1280.webp'); }
     }
     
     .benefit-card {
@@ -288,7 +301,7 @@ import { Icon } from '../../shared/icon/icon';
       width: 60px;
       height: 60px;
       margin: 0 auto 20px;
-      background: linear-gradient(135deg, #ffc107, #ff8c00);
+      background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -324,7 +337,7 @@ import { Icon } from '../../shared/icon/icon';
       font-weight: 600;
       
       &.full-time {
-        background: #28a745;
+        background: var(--brand-600);
         color: white;
       }
     }
@@ -382,7 +395,7 @@ import { Icon } from '../../shared/icon/icon';
       width: 50px;
       height: 50px;
       margin: 0 auto 20px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, var(--brand-600), var(--brand-800));
       border-radius: 50%;
       display: flex;
       align-items: center;

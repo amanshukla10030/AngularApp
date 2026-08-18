@@ -7,6 +7,9 @@
    repointed at the new palette so existing component styles re-theme for free.
    ========================================================================== */
 
+@use './styles/motion';
+@use './styles/tour-page';
+
 :root {
   /* -- brand: deep teal ------------------------------------------------- */
   --brand-900: #06302e;
@@ -111,6 +114,9 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Jumping to #an-anchor otherwise lands the target underneath the sticky
+     header. --header-h is published by app.ts from the header's real height. */
+  scroll-padding-top: calc(var(--header-h, 110px) + 1rem);
 }
 
 /* `clip` rather than `hidden`: it contains stray horizontal overflow without

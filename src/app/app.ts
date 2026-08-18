@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  ElementRef,
   HostListener,
   OnDestroy,
   PLATFORM_ID,
@@ -28,8 +29,10 @@ export class App implements AfterViewInit, OnDestroy {
   protected readonly showScrollTop = signal(false);
 
   private readonly router = inject(Router);
+  private readonly host = inject(ElementRef<HTMLElement>);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly subs = new Subscription();
+  private headerObserver?: ResizeObserver;
   private ticking = false;
 
   constructor() {
@@ -50,11 +53,35 @@ export class App implements AfterViewInit, OnDestroy {
     // querySelector on every scroll event.
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.readScroll();
+    this.trackHeaderHeight();
   }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+    this.headerObserver?.disconnect();
     if (this.isBrowser) window.removeEventListener('scroll', this.onScroll);
+  }
+
+  /**
+   * Publishes the sticky header's real height as --header-h on <html>.
+   *
+   * Anything else that sticks (the packages filter bar) has to clear the
+   * header, and its height is not a constant: the utility bar's font size
+   * changes at 991px, the brand block shrinks at 560px, and the whole thing
+   * reflows if the nav wraps. Measuring beats three hard-coded magic numbers
+   * that fall out of sync the first time the header changes.
+   */
+  private trackHeaderHeight(): void {
+    const header = this.host.nativeElement.querySelector('.modern-header') as HTMLElement | null;
+    if (!header) return;
+
+    const publish = () =>
+      document.documentElement.style.setProperty('--header-h', `${Math.round(header.offsetHeight)}px`);
+
+    publish();
+    if (typeof ResizeObserver === 'undefined') return;
+    this.headerObserver = new ResizeObserver(publish);
+    this.headerObserver.observe(header);
   }
 
   private readonly onScroll = (): void => {

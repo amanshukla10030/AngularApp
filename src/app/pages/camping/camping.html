@@ -1,6 +1,7 @@
-<div class="camping-page">
+<div class="camping-page tour-page">
   <!-- Hero Section -->
   <section class="hero-section">
+    <app-deco name="contours" class="hero-contours" />
     <div class="hero-content">
       <div class="container">
         <div class="row align-items-center min-vh-100">
@@ -35,6 +36,8 @@
         </div>
       </div>
     </div>
+    <app-deco name="mountains" class="hero-ridge" />
+
   </section>
 
   <!-- Featured Tours -->
@@ -42,7 +45,7 @@
     <div class="container">
       <h2 class="section-title text-center mb-5">Featured Camping Tours</h2>
       <div class="featured-grid">
-        <div class="featured-card" (click)="navigateToPackages()">
+        <div class="featured-card" (click)="navigateToPackages()" appReveal>
           <div class="featured-image">
             <img src="/images/camping-612.webp" srcset="/images/camping-400.webp 400w, /images/camping-612.webp 612w" sizes="(max-width: 720px) 92vw, (max-width: 1024px) 46vw, 400px" width="612" height="408" loading="eager" fetchpriority="high" decoding="async" alt="Wildlife Camping" class="featured-img">
           </div>
@@ -74,7 +77,7 @@
     <div class="container">
       <h2 class="section-title text-center mb-5">Wildlife Camping Itinerary</h2>
       <div class="itinerary-timeline">
-        <div class="day-card">
+        <div class="day-card" appReveal>
           <div class="day-header">
             <h3>Day 1: Arrival & Camp Setup</h3>
           </div>
@@ -83,7 +86,7 @@
           </div>
         </div>
         
-        <div class="day-card">
+        <div class="day-card" appReveal [revealDelay]="90">
           <div class="day-header">
             <h3>Day 2: Full-Day Wildlife Safari & Camping Activities</h3>
           </div>
@@ -92,7 +95,7 @@
           </div>
         </div>
         
-        <div class="day-card">
+        <div class="day-card" appReveal [revealDelay]="180">
           <div class="day-header">
             <h3>Day 3: Departure</h3>
           </div>
@@ -108,7 +111,7 @@
   <section class="exclusions-section py-5">
     <div class="container">
       <h2 class="section-title text-center mb-5">Package Exclusions</h2>
-      <div class="exclusions-list">
+      <div class="exclusions-list" appReveal>
         <ul>
           <li>Personal expenses including but not limited to laundry, porterage, telephone calls, tips, gratuities, bottled water, and beverages (both alcoholic and non-alcoholic).</li>
           <li>Charges for optional or adventure activities such as rafting, rock climbing, paragliding, and joy rides (e.g., toy train).</li>
@@ -123,6 +126,7 @@
 
   <!-- Call to Action -->
   <section class="cta-section py-5">
+    <app-deco name="contours" class="cta-contours" />
     <div class="container">
       <div class="cta-content text-center">
         <h2 class="display-4 fw-bold mb-4 text-white">Ready for Your Camping Adventure?</h2>

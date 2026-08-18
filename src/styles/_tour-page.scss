@@ -1,0 +1,535 @@
+/* ==========================================================================
+   Tour pages — the shared layout behind /camping, /spiritual-tours,
+   /international-tours and the six others.
+   --------------------------------------------------------------------------
+   Those nine templates already emit an identical class vocabulary (hero-section,
+   featured-grid, itinerary-timeline, …); they just each carried their own copy
+   of the CSS, drifting apart and off-palette. This is that vocabulary defined
+   once, globally, under the .tour-page root class. A page's own stylesheet is
+   now only its hero art:
+
+     :host { --hero-img: url('/images/camping-612.webp'); }
+
+   Mobile-first throughout. The old files sized heroes with `height: 100vh` and
+   `overflow: hidden` around a Bootstrap `.min-vh-100` row — content taller than
+   the box was silently clipped on phones. Heroes here grow with their content.
+   ========================================================================== */
+
+.tour-page {
+  /* Long place names and unbroken URLs in copy are the other way a phone
+     layout springs a horizontal scrollbar. */
+  overflow-wrap: break-word;
+}
+
+/* Bootstrap ships these as !important, and both are actively harmful inside a
+   hero: the first forces a viewport-tall row into a shorter box, the second is
+   a 5rem headline on a 360px screen. */
+.tour-page .min-vh-100 {
+  min-height: 0 !important;
+}
+
+.tour-page .display-2 { font-size: var(--step-5); }
+.tour-page .display-3 { font-size: var(--step-4); }
+.tour-page .display-4 { font-size: var(--step-3); }
+
+/* --------------------------------------------------------------------------
+   hero
+   -------------------------------------------------------------------------- */
+
+.tour-page .hero-section {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  /* min-height, never height: the box is free to grow past the fold when the
+     copy needs it. `svh` keeps a phone's collapsing URL bar from adding a
+     scroll jump the way `vh` does. */
+  min-block-size: min(86svh, 720px);
+  padding-block: clamp(3.5rem, 2rem + 9vw, 7rem);
+  color: #fff;
+  text-align: center;
+  background-color: var(--brand-900);
+  background-image: var(--hero-img, none);
+  background-size: cover;
+  background-position: center;
+  /* Deliberately not `fixed`: iOS Safari does not composite fixed backgrounds
+     and renders them at the wrong scale, which is what made these heroes look
+     zoomed-in and cropped on phones. */
+  background-attachment: scroll;
+  overflow: hidden;
+}
+
+/* Brand duotone scrim. Replaces the per-page five-stop rainbows — those fought
+   the photograph and put a different accent hue on every page. */
+.tour-page .hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Tuned against a bright photograph (white marble, pale sky): dark enough at
+     the centre for white type and at the foot for the ridgeline to read, while
+     the subject stays clearly visible. */
+  background:
+    radial-gradient(125% 85% at 50% 22%, rgba(6, 48, 46, 0.18) 0%, rgba(6, 48, 46, 0.72) 100%),
+    linear-gradient(180deg, rgba(6, 48, 46, 0.52) 0%, rgba(10, 66, 62, 0.4) 38%, rgba(6, 48, 46, 0.92) 100%);
+}
+
+.tour-page .hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contour texture, drifting. Sits above the scrim, under the copy. */
+.tour-page .hero-contours {
+  position: absolute;
+  inset: -10% -20%;
+  z-index: -1;
+  color: #fff;
+  opacity: 0.16;
+}
+
+/* The ridgeline that closes the hero and hands off to the next section. */
+.tour-page .hero-ridge {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  z-index: 1;
+  block-size: clamp(70px, 11vw, 150px);
+  color: var(--canvas);
+}
+
+.tour-page .hero-text h1,
+.tour-page .hero-section h1 {
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(6, 48, 46, 0.45);
+  margin-bottom: var(--space-4);
+}
+
+.tour-page .hero-text p,
+.tour-page .hero-section .lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--step-1);
+  max-inline-size: 60ch;
+  margin-inline: auto;
+}
+
+.tour-page .hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.tour-page .feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  padding: 0.6rem 1.1rem;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(8px);
+  transition: transform var(--dur) var(--ease-out),
+              background-color var(--dur) var(--ease-out);
+}
+
+.tour-page .feature-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tour-page .feature-item app-icon {
+  font-size: 1.15em;
+  color: var(--accent-400);
+}
+
+.tour-page .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* Legacy element some pages still render; the ::before scrim replaces it. */
+.tour-page .hero-overlay {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   section rhythm
+   -------------------------------------------------------------------------- */
+
+.tour-page section {
+  position: relative;
+}
+
+.tour-page .featured-section,
+.tour-page .itinerary-section,
+.tour-page .exclusions-section {
+  padding-block: var(--section-y);
+}
+
+.tour-page .featured-section { background: var(--canvas); }
+
+.tour-page .itinerary-section {
+  background:
+    linear-gradient(180deg, var(--brand-50) 0%, var(--canvas) 100%);
+}
+
+/* --------------------------------------------------------------------------
+   featured cards
+   -------------------------------------------------------------------------- */
+
+.tour-page .featured-grid {
+  display: grid;
+  /* min(100%, 320px) rather than a bare 320px: at 360px viewport the bare form
+     demands a track wider than the container and overflows sideways. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  align-items: start;
+}
+
+/* Eight of the nine tour pages carry exactly one featured card. Left to the
+   auto-fit grid it stretched to the full row and became a single 1100px-wide
+   slab with a 700px-tall photo on top. Capped and, once there is room, laid
+   out side by side — which is what a one-item "grid" actually wants to be. */
+.tour-page .featured-grid:has(> .featured-card:only-child) {
+  max-inline-size: 760px;
+  margin-inline: auto;
+}
+
+@media (min-width: 860px) {
+  .tour-page .featured-grid:has(> .featured-card:only-child) {
+    max-inline-size: 1000px;
+  }
+
+  .tour-page .featured-grid:has(> .featured-card:only-child) .featured-card {
+    flex-direction: row;
+  }
+
+  .tour-page .featured-grid:has(> .featured-card:only-child) .featured-image {
+    flex: 0 0 42%;
+    align-self: stretch;
+  }
+
+  /* In the row layout the photo fills the card's height instead of setting
+     it, so a long inclusion list no longer leaves a white gap beside it. */
+  .tour-page .featured-grid:has(> .featured-card:only-child) .featured-img {
+    block-size: 100%;
+    min-block-size: 320px;
+    aspect-ratio: auto;
+  }
+}
+
+.tour-page .featured-card {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  background: var(--surface);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out),
+              border-color var(--dur) var(--ease-out);
+}
+
+.tour-page .featured-card:hover,
+.tour-page .featured-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-200);
+}
+
+.tour-page .featured-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-100);
+}
+
+.tour-page .featured-img,
+.tour-page .featured-image img {
+  inline-size: 100%;
+  /* Required for aspect-ratio to win over the img's width/height attributes,
+     which map to a presentational height hint. */
+  block-size: auto;
+  /* Fixed ratio instead of a fixed pixel height, so the card keeps its
+     proportions from 320px to 1440px. */
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+
+.tour-page .featured-card:hover .featured-img {
+  transform: scale(1.06);
+}
+
+.tour-page .featured-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 1.85rem);
+}
+
+.tour-page .featured-content h4 {
+  color: var(--ink-900);
+  margin-bottom: var(--space-2);
+}
+
+.tour-page .featured-content > p {
+  color: var(--ink-500);
+  margin-bottom: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   inclusion lists
+   -------------------------------------------------------------------------- */
+
+.tour-page .package-highlights {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.tour-page .package-highlights li {
+  /* Icon in its own track, so a wrapping second line aligns under the text
+     rather than under the tick. */
+  display: grid;
+  grid-template-columns: 1.35em 1fr;
+  gap: 0.65em;
+  align-items: start;
+  font-size: var(--step--1);
+  color: var(--ink-600);
+  line-height: 1.55;
+}
+
+.tour-page .package-highlights app-icon {
+  margin-top: 0.28em;
+  font-size: 0.8em;
+  color: var(--brand-600);
+  background: var(--brand-100);
+  border-radius: 50%;
+  padding: 0.32em;
+  box-sizing: content-box;
+}
+
+.tour-page .package-actions {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.tour-page .package-actions .btn {
+  inline-size: 100%;
+}
+
+@media (min-width: 480px) {
+  .tour-page .package-actions .btn {
+    inline-size: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   itinerary timeline
+   -------------------------------------------------------------------------- */
+
+.tour-page .itinerary-timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+  max-inline-size: 860px;
+  margin-inline: auto;
+  padding-inline-start: clamp(1.5rem, 1rem + 3vw, 2.75rem);
+  counter-reset: day;
+}
+
+/* The rail. Drawn on the container rather than per-card so it is continuous
+   through the gaps. */
+.tour-page .itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  inset-block: 0.75rem;
+  inset-inline-start: clamp(0.4rem, 0.2rem + 1vw, 0.95rem);
+  inline-size: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--brand-500), var(--accent-400));
+  opacity: 0.55;
+}
+
+.tour-page .day-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  /* Deliberately NOT overflow: hidden — the numbered node below is positioned
+     outside the card, onto the rail, and clipping hid it entirely. The header
+     rounds its own top corners instead. */
+  transition: transform var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out);
+}
+
+.tour-page .day-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Numbered node on the rail. */
+.tour-page .day-card::before {
+  counter-increment: day;
+  content: counter(day);
+  position: absolute;
+  inset-block-start: 1.35rem;
+  inset-inline-start: calc(-1 * clamp(1.5rem, 1rem + 3vw, 2.75rem) + clamp(0.4rem, 0.2rem + 1vw, 0.95rem) + 1px);
+  translate: -50% 0;
+  display: grid;
+  place-items: center;
+  inline-size: 30px;
+  block-size: 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand-700);
+  border: 3px solid var(--canvas);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.tour-page .day-header {
+  padding: clamp(1rem, 0.85rem + 0.8vw, 1.35rem) clamp(1.1rem, 0.9rem + 1.2vw, 1.75rem);
+  background: linear-gradient(135deg, var(--brand-800), var(--brand-600));
+  border-radius: calc(var(--r-lg) - 1px) calc(var(--r-lg) - 1px) 0 0;
+}
+
+.tour-page .day-header h3,
+.tour-page .day-header h5,
+.tour-page .day-header h6 {
+  color: #fff;
+  font-size: var(--step-1);
+  margin: 0;
+}
+
+.tour-page .day-content {
+  padding: clamp(1.1rem, 0.9rem + 1.2vw, 1.75rem);
+}
+
+.tour-page .day-content p {
+  color: var(--ink-600);
+  margin: 0;
+}
+
+.tour-page .day-content strong {
+  color: var(--brand-800);
+}
+
+/* --------------------------------------------------------------------------
+   exclusions
+   -------------------------------------------------------------------------- */
+
+.tour-page .exclusions-list {
+  max-inline-size: 980px;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 1rem + 2vw, 2.5rem);
+  background: var(--surface);
+  border: 1px solid var(--ink-100);
+  border-inline-start: 4px solid var(--accent-400);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.tour-page .exclusions-list ul {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 860px) {
+  .tour-page .exclusions-list ul {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3) var(--space-6);
+  }
+}
+
+.tour-page .exclusions-list li {
+  display: grid;
+  grid-template-columns: 1.15em 1fr;
+  gap: 0.7em;
+  align-items: start;
+  font-size: var(--step--1);
+  color: var(--ink-600);
+  line-height: 1.6;
+}
+
+.tour-page .exclusions-list li::before {
+  content: '×';
+  display: grid;
+  place-items: center;
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  margin-top: 0.25em;
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-700);
+  background: var(--accent-100);
+  border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   closing call to action
+   -------------------------------------------------------------------------- */
+
+.tour-page .cta-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(120deg, var(--brand-900), var(--brand-700) 45%, var(--brand-800));
+  background-size: 200% 200%;
+  animation: gradient-pan 18s ease-in-out infinite;
+}
+
+.tour-page .cta-section .cta-contours {
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  color: #fff;
+  opacity: 0.12;
+}
+
+.tour-page .cta-content h2 {
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+
+.tour-page .cta-content p {
+  color: rgba(255, 255, 255, 0.86);
+  max-inline-size: 56ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+}
+
+.tour-page .cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* Full-width stacked buttons below the first breakpoint read better than two
+   ragged content-width ones stacked centre-aligned. */
+@media (max-width: 479px) {
+  .tour-page .cta-buttons .btn,
+  .tour-page .hero-actions .btn {
+    inline-size: 100%;
+  }
+}

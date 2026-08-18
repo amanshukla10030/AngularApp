@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Motion — the keyframes shared across the site.
+   --------------------------------------------------------------------------
+   Every animation here is decorative. The prefers-reduced-motion block at the
+   foot of styles.scss neutralises them all, and nothing here conveys meaning
+   that the copy does not already state, so none of them needs its own guard.
+
+   Deliberately only what is actually referenced: a keyframe nobody uses still
+   ships in the stylesheet on every page load.
+   ========================================================================== */
+
+/* Slow lateral drift, for the contour layers behind hero copy — enough to feel
+   alive, not enough to pull the eye off the headline. */
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-60px, 0, 0); }
+}
+
+/* Vertical bob for floating ornaments (the marker riding the route line). */
+@keyframes float-y {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -12px, 0); }
+}
+
+/* Marches a dashed stroke along its path: a route being travelled. */
+@keyframes march {
+  to { stroke-dashoffset: -240; }
+}
+
+/* Very slow rotation for the compass rose — perceptible only if you watch for
+   it, which is the intent. */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* Pans an oversized gradient across its box, giving flat brand fills depth. */
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Disclosure panels easing open. */
+@keyframes fade-up {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to   { opacity: 1; transform: none; }
+}
