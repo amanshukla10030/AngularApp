@@ -176,7 +176,7 @@ import { Deco } from '../../shared/deco/deco';
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="team-card">
-              <img src="/images/founderandceo.jpg" loading="lazy" decoding="async" alt="Krishna Mishra - Founder & CEO" class="team-img">
+              <img src="/images/founderandceo.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="Krishna Mishra - Founder & CEO" class="team-img">
               <h5>Krishna Mishra</h5>
               <p class="text-muted">Founder & CEO</p>
               <p>15+ years in travel industry, passionate about showcasing India's diversity</p>
