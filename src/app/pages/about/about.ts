@@ -17,7 +17,7 @@ import { Deco } from '../../shared/deco/deco';
           <div class="col-lg-8 mx-auto text-center">
             <h1 class="display-2 fw-bold mb-4 text-white">About Happy Ghumakkads</h1>
             <p class="lead mb-4 text-white">Your Trusted Travel Partner for Unforgettable Indian Journeys</p>
-            <p class="text-white mb-5">With over 15 years of experience, we've been crafting extraordinary travel experiences across India, bringing dreams to life one journey at a time.</p>
+            <p class="text-white mb-5">With over 8+ years of experience, we've been crafting extraordinary travel experiences across India, bringing dreams to life one journey at a time.</p>
           </div>
         </div>
       </div>
